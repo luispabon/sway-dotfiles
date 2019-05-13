@@ -1,75 +1,88 @@
-# i3status configuration file.
-# b
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
-
 general {
-        colors = true
-		color_good = "#00e6ac" #"#33cc3"    #"#F08D0C"
-		interval = 5
-		markup="pango"
+  output_format = "i3bar"
+  color_good     = "#FFFFFF"
+  color_degraded = "#FF8000"
+  color_bad      = "#FF0000"
+  colors         = true
+  interval       = 5
 }
 
-#pink   		  #ff80bf		#fa4c7e
-#yellow  		  #ffff66		#fdd243
-#green   		  #aaff80		#78da59
-#Dark blue 		  #1a8cff		#166cd6
-#light blue 	  #99ccff		#33bdf5
-#Grey Shadow      #b3b3b3		#8d8e90
-#Orange 		  #ffa64d 		#fba137
-
-
-
-order += "wireless _first_"
-order += "ethernet enp4s0"
+order += "wireless wlp1s0"
+order += "ethernet enp0s31f6"
+order += "ethernet enp8s0"
 order += "battery 0"
-order += "volume master"
-order += "tztime local"
+#order += "cpu_temperature 0"
+#order += "volume master"
+order += "tztime Vancouver"
+order += "tztime Panama"
+order += "tztime Ottawa"
+order += "time"
 
-wireless _first_ {
-	#	format_up = " [%essid ]"       
-	#	format_down = " [down]"
-	 format_up = "<span color='#73ABFF'>[  ]: On: %essid </span> "   //(%quality at %essid) %ip"
-	 format_down = "" #"[  ]  Wifi: down"
+wireless wlp1s0 {
+  format_up   = "W: %ip (%quality at %essid, %bitrate)"
+  format_down = "W"
 }
 
-ethernet enp4s0 {
+ethernet enp0s31f6 {
   # if you use %speed, i3status requires root privileges
-  format_up =" <span color='#33bdf5'> enp4s0: [  ] %ip</span>"
-  #format_up   = "enp4s0: [  ] %ip"
-  format_down = ""
+  format_up   = "E: %ip (%speed)"
+  format_down = " "
 }
+
+ethernet enp8s0 {
+  # if you use %speed, i3status requires root privileges
+  format_up   = "E: %ip (%speed)"
+  format_down = " "
+}
+
 battery 0 {
-		format = "<span color='#FEFF72'> %status: %percentage </span>"   // %remaining %emptytime"
-		format_down = "No battery"
-#'#fa4c7e'		
-		status_chr = "<span color='#00e64d'>[  ]  </span> "
-		status_bat = "<span color='#8080ff' >[   ] </span>"
-		status_unk = "[? ukwn ] "
-		status_full = "<span color='#66FF99'> [  ] </span>"
-		path = "/sys/class/power_supply/BAT%d/uevent"		
-		low_threshold = 10
-	#	last_full_capacity = true
-		hide_seconds = true
-		integer_battery_capacity = true
+  format                   = "%status %percentage %remaining"
+  integer_battery_capacity = true
+  last_full_capacity       = true
+  status_bat               = "🔋 BAT"
+  status_chr               = "⚡ CHR"
+  status_full              = "☻ FULL"
+  status_unk               = "??? UNK"
+  #low_treshold             = 35
+  path                     = /sys/class/power_supply/BAT%d/uevent
 }
 
-
-tztime local {
-	    format = "<span color='#ffc125'>%time</span>"
-        format_time = "  %I:%M %p |  %a [%d]-%b [%m]"
+run_watch DHCP {
+  pidfile = "/var/run/dhclient*.pid"
 }
 
+time {
+  format = "NL: %Y-%m-%d :: %H:%M:%S"
+}
+
+tztime Ottawa {
+  format = "OTT: %H:%M"
+  timezone = "Canada/Eastern"
+}
+
+tztime Panama {
+  format = "PAN: %H:%M"
+  timezone = "America/Panama"
+}
+
+tztime Vancouver {
+  format = "VANC: %H:%M"
+  timezone = "Canada/Pacific"
+}
+
+disk "/" {
+  format = "%free"
+}
 
 volume master {
-        format = "<span color='#CEA8FF'>[  ]: %volume </span>"
-        format_muted = "<span color='#cfafc8'>[  ]: muted (%volume) </span>"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+  format    = "♪: %volume"
+  device    = "default"
+  mixer     = "Master"
+  mixer_idx = 0
 }
 
+cpu_temperature 0 {
+  format        = "%degrees °C"
+  path          = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+  max_threshold = 100
+}
