@@ -1,0 +1,26 @@
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+	status_command i3status
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    font Monaco,Bold 11px
+
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+    colors {
+        statusline #78da59
+        background #585858
+		separator #fff32e
+							#border 	#bg		#txt
+        focused_workspace	#585858	#585858	#66FF66
+        inactive_workspace	#585858	#585858	 #78da59
+		active_workspace	#777F8B	#777F8B	#ecedee
+    	urgent_workspace	#DEDFE3	#DEDFE3	#767E8A
+    }
+}

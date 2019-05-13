@@ -1,0 +1,14 @@
+ #:::::::::disable_window_borders::::::::
+	 for_window [class="^.*"] border pixel 0
+	 new_window pixel 1
+	 new_float  normal
+
+
+#:::::i3_ gaps::::::::::::::
+	set $default_gaps_inner 5
+	set $default_gaps_outer 5
+	gaps inner $default_gaps_inner
+	gaps outer $default_gaps_outer
+	smart_gaps on
+
+# bindsym $mod+Shift+s sticky toggle
