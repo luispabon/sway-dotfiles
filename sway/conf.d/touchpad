@@ -1,9 +1,5 @@
-#input "739:31251:DLL07BE:01_06CB:7A13_Touchpad" {
-#    accel_profile flat
-#    drag enabled
-#    tap enabled
-#}
-
-input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" tap enabled
-input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" drag enabled
-input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" accel_profile flat
+input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" {
+    accel_profile flat
+    drag enabled
+    tap enabled
+}
