@@ -1,0 +1,9 @@
+#:::::::::control de volume:::::::::::::
+
+bindsym XF86AudioMute exec --no-startup-id  amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+
+#brightness control
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo bright_Up
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo bright_Down

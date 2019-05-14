@@ -19,25 +19,6 @@ set $term gnome-terminal
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_path | dmenu | xargs swaymsg exec
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/backgrounds/1810_FlamyBoil-Parressman.png fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-output eDP-1 scale 2 pos 0 0 res 3840x2160
-#output eDP-1 scale 2 res 3840x2160
-
-# BT screens config
-#output HDMI-A-1 pos 0 0 res 1920x1080
-#output DP-2 pos 0 1921 res 1920x1080
-#output eDP-1 pos 960 1081
-
 ### Idle configuration
 #
 # Example configuration:
@@ -51,22 +32,6 @@ output eDP-1 scale 2 pos 0 0 res 3840x2160
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-input "*" xkb_layout gb
-
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -170,8 +135,6 @@ input "*" xkb_layout gb
 
     # move focus to the parent container
     bindsym $mod+a focus parent
-
-    bindsym Alt+l exec swaylock -i ~/Pictures/backgrounds/1810_FlamyBoil-Parressman.png
 #
 # Scratchpad:
 #
@@ -184,16 +147,6 @@ input "*" xkb_layout gb
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-
-#:::::::::control de volume:::::::::::::
-
-bindsym XF86AudioMute exec --no-startup-id  amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-
-#brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo bright_Up
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo bright_Down
 
 #
 # Resizing containers:
@@ -219,10 +172,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-#
-# Status Bar:
-#
 
 include ~/.config/sway/conf.d/*
 include /etc/sway/config.d/*
