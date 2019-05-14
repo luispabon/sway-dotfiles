@@ -18,3 +18,12 @@ snap_apps_fix=/etc/profile.d/apps-bin-path.sh
 if [[ ! -f "${snap_apps_fix}" ]]; then
     sudo cp snap-apps-fix.sh ${snap_apps_fix}
 fi
+
+echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
+
+folders_to_linky=("sway" "i3status" )
+for folder in ${folders_to_linky[@]}; do
+    if [[ ! -f "~/.config/${folder}" ]]; then
+        ln -s ${PWD}/${folder}/ "${HOME}/.config/${folder}"
+    fi
+done
