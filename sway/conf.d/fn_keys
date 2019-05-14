@@ -1,9 +1,9 @@
 #:::::::::control de volume:::::::::::::
 
-bindsym XF86AudioMute exec --no-startup-id  amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 #brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo bright_Up
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo bright_Down
+bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
