@@ -12,3 +12,19 @@ RUN apt install -y libwlroots-dev \
     libnl-genl-3-dev \
     libmpdclient-dev \
     clang-tidy
+
+RUN apt install -y \
+    wayland-protocols \
+    libjson-c-dev \
+    debhelper \
+    dh-make \
+    cmake \
+    freerdp2-dev \
+    libwinpr2-dev \
+    libxcb-xinput-dev \
+    libavutil-dev \
+    libxcb1-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libxcb-icccm4-dev \
+    devscripts
