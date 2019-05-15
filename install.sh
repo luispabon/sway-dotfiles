@@ -4,7 +4,10 @@ end_green="\033[39m"
 
 echo -e "\n${start_green} Installing dependencies and fonts...${end_green}"
 
-sudo apt install brightnessctl j4-dmenu-desktop
+sudo apt install \
+    brightnessctl \
+    j4-dmenu-desktop
+
 cp monaco.ttf ~/.local/share/fonts
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
@@ -21,7 +24,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("sway" "i3status" )
+folders_to_linky=("sway" "i3status" "waybar" )
 for folder in ${folders_to_linky[@]}; do
     if [[ ! -f "~/.config/${folder}" ]]; then
         ln -s ${PWD}/${folder}/ "${HOME}/.config/${folder}"
