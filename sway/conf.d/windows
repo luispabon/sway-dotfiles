@@ -1,7 +1,7 @@
  #:::::::::disable_window_borders::::::::
 	 for_window [class="^.*"] border pixel 0
-	 new_window pixel 1
-	 new_float  normal
+	 default_border pixel 1
+	 default_floating_border normal
 
 
 #:::::i3_ gaps::::::::::::::
