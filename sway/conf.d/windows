@@ -9,6 +9,8 @@
 	set $default_gaps_outer 8
 	gaps inner $default_gaps_inner
 	gaps outer $default_gaps_outer
+	gaps top 0
+	# gaps bottom 10
 	smart_gaps on
 
 # bindsym $mod+Shift+s sticky toggle
