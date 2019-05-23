@@ -1,11 +1,11 @@
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
- 	status_command i3status
-    #font "Ubuntu Nerd Font" 15px
-    font "Roboto Mono Nerd Font" 15px
-}
-
 #bar {
-#    swaybar_command /home/luis/bin/waybar
+#    position top
+# 	status_command i3status
+#    #font "Ubuntu Nerd Font" 15px
+#    font "Roboto Mono Nerd Font" 15px
 #}
+
+bar {
+    swaybar_command /home/luis/bin/waybar
+}

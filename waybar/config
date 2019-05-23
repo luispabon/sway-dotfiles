@@ -1,70 +1,118 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar at the bottom of your screen
-    "height": 24, // Waybar height
-    // "width": 1366, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/spotify"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "battery", "tray", "clock"],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false
-    },
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "custom/spotify", "custom/weather", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery"],
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": " {}"
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 20
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
     },
     "clock": {
-        "format": "{:%a, %d %b - %H:%M}"
-    },
-    "memory": {
-        "format": "{}% "
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": false
     },
     "battery": {
-        "bat": "BAT0",
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "interval": 30,
         "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 25,
+            "critical": 10
         },
-        "format": "{icon} {capacity}%",
-        // "format-good": "", // An empty format will hide the module
-        "format-full": "Charged  {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "tooltip": false
     },
     "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid}  ({signalStrength}%)  ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": ["", "" ,""],
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "on-click": "gnome-terminal -e nmtui",
+    "tooltip": false
     },
     "pulseaudio": {
-        //"scroll-step": 1,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format": "{icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
         "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+            "phone": [" ", " ", " ", " "],
+            "default": ["", "", "", ""]
         },
+        "scroll-step": 10,
         "on-click": "pavucontrol",
-        "on-scroll-up": "pactl -- set-sink-volume 0 +1%",
-        "on-scroll-down": "pactl -- set-sink-volume 0 -1%"
+        "tooltip": false
     },
     "custom/spotify": {
-        "format": " {}",
-        "max-length": 40,
-        "interval": 30, // Remove this if your script is endless and write in loop
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-        "exec-if": "pgrep spotify"
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/storage": {
+        "format": "{} ",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage.sh"
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "🔓",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "custom/mail": {
+        "format": "",
+        "format-alt": "{alt} ",
+        "format-alt-click": "click-right",
+        "interval": 60,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/mail.py",
+        "tooltip": false
+    },
+    "custom/test": {
+        "format": "{}",
+        "exec": "/tmp/test blub",
+        "param": "blah",
+        "interval": 5
+    },
+    "tray": {
+        "icon-size": 18
     }
 }
