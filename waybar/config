@@ -4,7 +4,7 @@
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "pulseaudio", "network", "temperature", "idle_inhibitor", "battery"],
+    "modules-right": ["tray", "custom/spotify", "idle_inhibitor", "custom/weather", "network", "pulseaudio", "temperature", "battery"],
     "sway/mode": {
         "format": " {}"
     },

@@ -4,3 +4,6 @@
 [submodule "Swytch"]
 	path = Swytch
 	url = git@github.com:wilecoyote2015/Swytch.git
+[submodule "sys-admin"]
+	path = sys-admin
+	url = git@gitlab.com:formigoni/sys-admin.git

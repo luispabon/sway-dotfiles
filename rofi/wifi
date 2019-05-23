@@ -7,7 +7,7 @@
 POSITION=3
 
 #y-offset
-YOFF=17
+YOFF=30
 
 #x-offset
 XOFF=0
@@ -16,4 +16,4 @@ XOFF=0
 FIELDS=SSID,SECURITY,BARS
 
 #font
-FONT="DejaVu Sans Mono 18"
+FONT="DejaVu Sans Mono 14"
