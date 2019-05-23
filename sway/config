@@ -18,7 +18,11 @@ set $term terminator
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec
-set $menu bash -c "source /etc/profile.d/apps-bin-path.sh; j4-dmenu-desktop"
+# set $menu bash -c "source /etc/profile.d/apps-bin-path.sh; j4-dmenu-desktop"
+
+exec --no-startup-id libinput-gestures
+
+font pango:Ubuntu 12
 
 ### Focus
 focus_follows_mouse no

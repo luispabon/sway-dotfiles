@@ -21,7 +21,9 @@ sudo apt install \
     xdg-desktop-portal-wlr \
     wl-clipboard \
     libmpdclient2 \
-    libnl-3-200
+    libnl-3-200 \
+    playerctl \
+    rofi
 
 cp monaco.ttf ~/.local/share/fonts
 
