@@ -35,9 +35,11 @@
 }
 window {
     background-color: @background;
-    border:           0;
+    border:           2px;
+    border-color: black;
     padding:          8;
 }
+
 mainbox {
     border:  0;
     padding: 0;
