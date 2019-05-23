@@ -1,3 +1,0 @@
-[submodule "builds/Waybar"]
-	path = builds/Waybar
-	url = git@github.com:Alexays/Waybar.git
