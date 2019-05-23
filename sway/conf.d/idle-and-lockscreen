@@ -1,4 +1,4 @@
-bindsym Alt+l exec swaylock -i ~/Pictures/backgrounds/1810_FlamyBoil-Parressman.png
+bindsym Alt+l exec swaylock -i ~/Pictures/backgrounds/galen-crout-175291.jpg
 
 ### Idle configuration
 #
