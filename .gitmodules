@@ -1,9 +1,3 @@
 [submodule "builds/Waybar"]
 	path = builds/Waybar
 	url = git@github.com:Alexays/Waybar.git
-[submodule "builds/sway"]
-	path = builds/sway
-	url = git@github.com:swaywm/sway.git
-[submodule "builds/wlroots"]
-	path = builds/wlroots
-	url = git@github.com:swaywm/wlroots.git
