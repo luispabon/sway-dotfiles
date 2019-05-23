@@ -19,7 +19,9 @@ sudo apt install \
     swayidle \
     swaylock \
     xdg-desktop-portal-wlr \
-    wl-clipboard
+    wl-clipboard \
+    libmpdclient2 \
+    libnl-3-200
 
 cp monaco.ttf ~/.local/share/fonts
 
