@@ -41,7 +41,7 @@
             "ethernet": [""],
             "disconnected": [""]
         },
-        "on-click": "gnome-terminal -e nmtui",
+        "on-click": "gnome-terminal -e ~/sway/network-manager",
     "tooltip": false
     },
     "pulseaudio": {
