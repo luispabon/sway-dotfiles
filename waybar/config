@@ -1,11 +1,10 @@
 {
     "layer": "bottom",
     "position": "top",
-    "height": 30,
-
+    "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery"],
+    "modules-right": ["tray", "custom/spotify", "custom/weather", "pulseaudio", "network", "temperature", "idle_inhibitor", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -19,12 +18,13 @@
     },
     "clock": {
         "format": "{:%a %d %b %H:%M}",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "gnome-calendar"
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% ",
+        "format-charging": " {capacity} {time}% ",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -36,11 +36,9 @@
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-right",
-        "format-icons": {
-            "wifi": ["", "" ,""],
-            "ethernet": [""],
-            "disconnected": [""]
-        },
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "🖧 Disconnected",
         "on-click": "gnome-terminal -e ~/sway/network-manager",
     "tooltip": false
     },
@@ -48,10 +46,10 @@
         "format": "{icon}",
         "format-alt": "{volume} {icon}",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": "🔇",
         "format-icons": {
-            "phone": [" ", " ", " ", " "],
-            "default": ["", "", "", ""]
+            "phone": [" 🔇", " ", " ", " "],
+            "default": ["🔇", "", "", ""]
         },
         "scroll-step": 10,
         "on-click": "pavucontrol",
@@ -80,6 +78,10 @@
         "on-scroll-down": "light -A 1",
         "on-scroll-up": "light -U 1"
     },
+    "temperature": {
+        "format": " {temperatureC}°C",
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+    },
     "custom/weather": {
         "format": "{}",
         "format-alt": "{alt}: {}",
@@ -87,10 +89,11 @@
         "interval": 1800,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/weather.sh",
-        "exec-if": "ping wttr.in -c1"
+        "exec-if": "ping wttr.in -c1",
+        "on-click": "gnome-terminal -e curl -s https://en.wttr.in"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} idle {status}",
         "format-icons": {
             "activated": "🔓",
             "deactivated": ""
