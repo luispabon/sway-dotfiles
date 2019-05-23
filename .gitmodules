@@ -1,0 +1,3 @@
+[submodule "builds/Waybar"]
+	path = builds/Waybar
+	url = git@github.com:luispabon/Waybar.git
