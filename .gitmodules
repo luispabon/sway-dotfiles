@@ -1,3 +1,6 @@
 [submodule "builds/Waybar"]
 	path = builds/Waybar
 	url = git@github.com:luispabon/Waybar.git
+[submodule "Swytch"]
+	path = Swytch
+	url = git@github.com:wilecoyote2015/Swytch.git
