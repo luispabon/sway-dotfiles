@@ -17,14 +17,15 @@
         "tooltip": false
     },
     "clock": {
-        "format": "{:%a %d %b %H:%M}",
+        "format": "{:%a %d %b - %H:%M}",
         "tooltip": false,
         "on-click": "gnome-calendar"
     },
     "battery": {
         "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  [ {capacity}% - {time} ]",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "<span font='Font Awesome 5 Free 12'></span>  [ {capacity}% - {time} ]",
+        "format-charging": "<span font='Font Awesome 5 Free 12'> {icon}</span>  [ {capacity}% - {time} ]",
+        "format-full":  "<span font='Font Awesome 5 Free 12'> {icon}</span>  [ {capacity}% - Charged ]",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -46,10 +47,10 @@
         "format": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
         "format-alt": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": "<span font='Font Awesome 5 Free 12'></span>",
         "format-icons": {
-            "phone": [" ", " ", " ", " "],
-            "default": ["", "", "", ""]
+            "phone": [" ", " ", " ", " "],
+            "default": ["", "", "", ""]
         },
         "scroll-step": 2,
         "on-click": "pavucontrol",

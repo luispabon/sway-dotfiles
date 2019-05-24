@@ -7,3 +7,6 @@
 [submodule "sys-admin"]
 	path = sys-admin
 	url = git@gitlab.com:formigoni/sys-admin.git
+[submodule "builds/mako"]
+	path = builds/mako
+	url = git@github.com:luispabon/mako.git
