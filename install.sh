@@ -23,9 +23,10 @@ sudo apt install \
     libmpdclient2 \
     libnl-3-200 \
     playerctl \
-    rofi
+    rofi \
+    fonts-font-awesome
 
-cp monaco.ttf ~/.local/share/fonts
+cp fonts/* ~/.local/share/fonts
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 

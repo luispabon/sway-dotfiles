@@ -22,9 +22,9 @@
         "on-click": "gnome-calendar"
     },
     "battery": {
-        "format": "{icon} {capacity}% - {time}",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  [ {capacity}% - {time} ]",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": " {capacity} {time}% ",
+        "format-charging": "<span font='Font Awesome 5 Free 12'></span>  [ {capacity}% - {time} ]",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -43,13 +43,13 @@
     "tooltip": false
     },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume} {icon}",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {volume}%",
+        "format-alt": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {volume}%",
         "format-alt-click": "click-right",
-        "format-muted": "🔇",
+        "format-muted": "",
         "format-icons": {
-            "phone": [" 🔇", " ", " ", " "],
-            "default": ["🔇", "", "", ""]
+            "phone": [" ", " ", " ", " "],
+            "default": ["", "", "", ""]
         },
         "scroll-step": 10,
         "on-click": "pavucontrol",
@@ -79,7 +79,7 @@
         "on-scroll-up": "light -U 1"
     },
     "temperature": {
-        "format": " {temperatureC}°C",
+        "format": "<span font='Font Awesome 5 Free 12'></span>  {temperatureC}°C",
         "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
     },
     "custom/weather": {
@@ -93,7 +93,9 @@
         "on-click": "gnome-terminal -e curl -s https://en.wttr.in"
     },
     "idle_inhibitor": {
-        "format": "{icon} idle {status}",
+        "format": "{icon}",
+        "format-alt": "{icon} idle {status}",
+        "format-alt-click": "click-right",
         "format-icons": {
             "activated": "🔓",
             "deactivated": ""

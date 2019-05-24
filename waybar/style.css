@@ -2,7 +2,7 @@
     border:        none;
     border-radius: 0;
     font-family:   "Fira Sans SemiBold";
-    font-size:     16px;
+    font-size:     14px;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
@@ -41,18 +41,14 @@ window#waybar.solo {
 }
 
 #pulseaudio {
-    font-size: 26px;
+    /* font-size: 26px; */
 }
 
 #mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
     margin:     0px 0px 0px 10px;
     min-width:  25px;
-    /* background-color: rgba(217, 216, 216, 0.15); */
     padding: 0 5px;
     border-top: 3px solid rgba(217, 216, 216, 0.5);
-
-    /* border-width: 2px; */
-    /* border-color: white; */
 }
 
 #clock {
