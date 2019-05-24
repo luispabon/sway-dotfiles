@@ -43,17 +43,17 @@
     "tooltip": false
     },
     "pulseaudio": {
-        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {volume}%",
-        "format-alt": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {volume}%",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
+        "format-alt": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
         "format-alt-click": "click-right",
         "format-muted": "",
         "format-icons": {
             "phone": [" ", " ", " ", " "],
             "default": ["", "", "", ""]
         },
-        "scroll-step": 10,
+        "scroll-step": 2,
         "on-click": "pavucontrol",
-        "tooltip": true
+        "tooltip": false
     },
     "custom/spotify": {
         "interval": 1,
@@ -79,7 +79,7 @@
         "on-scroll-up": "light -U 1"
     },
     "temperature": {
-        "format": "<span font='Font Awesome 5 Free 12'></span>  {temperatureC}°C",
+        "format": "<span font='Font Awesome 5 Free 12'></span> {temperatureC:3}°C",
         "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
     },
     "custom/weather": {
@@ -97,8 +97,8 @@
         "format-alt": "{icon} idle {status}",
         "format-alt-click": "click-right",
         "format-icons": {
-            "activated": "🔓",
-            "deactivated": ""
+            "activated": "<span font='Font Awesome 5 Free 11'></span>",
+            "deactivated": "<span font='Font Awesome 5 Free 11'></span>"
         },
         "tooltip": false
     },
