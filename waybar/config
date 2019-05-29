@@ -22,10 +22,10 @@
         "on-click": "gnome-calendar"
     },
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  [ {capacity}% - {time} ]",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  [ {capacity}% - {time} ]",
-        "format-full":  "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  [ {capacity}% - Charged ]",
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
+        "format-full":  "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - Charged",
         "interval": 30,
         "states": {
             "warning": 25,
