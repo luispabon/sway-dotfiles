@@ -2,7 +2,7 @@
     bindsym Print exec grim - | wl-copy
 
     # Screenshot to file
-    bindsym $mod+Print exec grim - $(xdg-user-dir PICTURES)/Screenshot-all-$(date +'%Y-%m-%d-%H%M%S.png')
+    bindsym $mod+Print exec grim $(xdg-user-dir PICTURES)/Screenshot-all-$(date +'%Y-%m-%d-%H%M%S.png')
 
     # Region-select-screenshot to clipboard (@todo)
     bindsym alt+Print exec slurp | grim -g - - | wl-copy
