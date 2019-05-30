@@ -56,4 +56,5 @@ cd ${current}
 
 # Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
 cp firefox-wayland.desktop ~/.local/share/applications
-xdg-settings set default-web-browser firefox-wayland.desktop
+cp firefox-nightly.desktop ~/.local/share/applications
+xdg-settings set default-web-browser firefox-nightly.desktop
