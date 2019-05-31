@@ -10,7 +10,6 @@ sudo add-apt-repository ppa:samoilov-lex/sway
 
 sudo apt install \
     brightnessctl \
-    j4-dmenu-desktop \
     grim \
     slurp \
     sway \
@@ -23,8 +22,7 @@ sudo apt install \
     libmpdclient2 \
     libnl-3-200 \
     playerctl \
-    rofi \
-    fonts-font-awesome
+    rofi
 
 cp fonts/* ~/.local/share/fonts
 
