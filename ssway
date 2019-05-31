@@ -1,0 +1,21 @@
+#!/usr/bin/fish
+
+# Fixes issues on jetbrains ides
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# More functional tray on waybar
+export XDG_CURRENT_DESKTOP=Unity
+
+# Start ssh agent
+killall ssh-agent
+eval (ssh-agent -c)
+find ~/.ssh ! -name "*.pub" ! -name "config" ! -name "known_hosts" -type f | xargs ssh-add 2>&1 > /dev/null
+
+# Start sway with or without debug
+argparse --name='ssway' "d/debug" -- $argv
+echo $_flag_d
+if test -n "$_flag_d"
+    sway -d 2> ~/sway.log
+else
+    sway 2> ~/sway.log
+end
