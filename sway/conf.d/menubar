@@ -7,7 +7,7 @@
 #}
 
 bar {
-    swaybar_command /home/luis/bin/waybar
+    swaybar_command ~/bin/waybar
 }
 
 #set $menu rofi -m $(expr $(swaymsg -t get_tree | jq '.nodes | map([recurse(.nodes[]?, .floating_nodes[]?) | .focused] | any) | index(true)') - 1) -show drun -show-icons -drun-icon-theme Yaru -run-command 'swaymsg exec -- {cmd}'
