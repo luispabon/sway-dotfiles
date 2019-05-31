@@ -4,9 +4,15 @@ end_green="\033[39m"
 
 current=${PWD}
 
+mkdir -p ~/.config
+mkdir -p ~/.local/share/applications
+mkdir -p ~/Pictures
+mkdir -p ~/.local/share/fonts
+
 echo -e "\n${start_green} Installing dependencies and fonts...${end_green}"
 
 sudo add-apt-repository ppa:samoilov-lex/sway
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 
 sudo apt install \
     brightnessctl \
@@ -22,7 +28,8 @@ sudo apt install \
     libmpdclient2 \
     libnl-3-200 \
     playerctl \
-    rofi
+    rofi \
+    firefox-trunk
 
 cp fonts/* ~/.local/share/fonts
 
@@ -48,9 +55,17 @@ for folder in ${folders_to_linky[@]}; do
 done
 
 # Install kanshi
-cd builds/kanshi
-make build copy-bin
-cd ${current}
+# cd builds/kanshi
+# make build copy-bin
+# cd ${current}
+
+# Waybar
+# cd builds/Waybar
+# make build-disco-image build-disco bin-install
+# cd ${current}
+
+# Backgrounds
+ln -s ${current}/backgrounds ~/Pictures/
 
 # Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
 cp firefox-wayland.desktop ~/.local/share/applications
