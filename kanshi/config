@@ -1,5 +1,3 @@
 {
-    output HDMI-A-1 vendor LEN product T24i-10 serial VT509484 pos 0 0 res 1920x1080 scale 1
-    output eDP-1 vendor SHP product 0x1476 serial 0x0 pos 960 1081 res 3840x2160 scale 2
-    output DP-2 vendor LEN product T24i-10 serial VT580487 pos 1921 0 res 1920x1080 scale 1
+    output "Sharp Corporation 0x1476 0x00000000" mode 3840x2160 scale 2 position 0,0
 }
