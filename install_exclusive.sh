@@ -14,7 +14,8 @@ sudo apt install \
     libsigc++ \
     libgtkmm-3.0-1v5 \
     pavucontrol \
-    ubuntu-restricted-extras
+    ubuntu-restricted-extras \
+    ack
 
 sudo apt install --no-install-recommends \
     gnome-terminal \
