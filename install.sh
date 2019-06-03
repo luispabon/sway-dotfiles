@@ -47,22 +47,12 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("sway" "i3status" "waybar" "kanshi")
-for folder in ${folders_to_linky[@]}; do
+folders_to_linky=("sway" "i3status" "waybar" "kanshi" "rofi")
+for folder in ${folders_to_linky[@]}; doQ
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -s ${PWD}/${folder}/ "${HOME}/.config/${folder}"
     fi
 done
-
-# Install kanshi
-# cd builds/kanshi
-# make build copy-bin
-# cd ${current}
-
-# Waybar
-# cd builds/Waybar
-# make build-disco-image build-disco bin-install
-# cd ${current}
 
 # Backgrounds
 ln -s ${current}/backgrounds ~/Pictures/
