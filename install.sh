@@ -47,7 +47,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("sway" "i3status" "waybar" "kanshi" "rofi")
+folders_to_linky=("sway" "waybar" "kanshi" "rofi")
 for folder in ${folders_to_linky[@]}; doQ
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -s ${PWD}/${folder}/ "${HOME}/.config/${folder}"
