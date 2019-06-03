@@ -1,14 +1,16 @@
-bindsym Alt+l exec swaylock -i ~/Pictures/backgrounds/galen-crout-175291.jpg
+set $lock_bg ~/Pictures/backgrounds/galen-crout-175291.jpg
+
+bindsym Alt+l exec swaylock -i $lock_bg
 
 ### Idle configuration
 #
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -c 000000' -i $lock_bg \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c 000000 -i $lock_bg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
