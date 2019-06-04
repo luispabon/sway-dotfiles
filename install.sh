@@ -47,7 +47,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("sway" "waybar" "kanshi" "rofi")
+folders_to_linky=("sway" "waybar" "kanshi" "rofi" "icons")
 for folder in ${folders_to_linky[@]}; doQ
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -s ${PWD}/${folder}/ "${HOME}/.config/${folder}"
@@ -61,3 +61,7 @@ ln -s ${current}/backgrounds ~/Pictures/
 cp firefox-wayland.desktop ~/.local/share/applications
 cp firefox-nightly.desktop ~/.local/share/applications
 xdg-settings set default-web-browser firefox-nightly.desktop
+
+# Scripts
+ln -s ${current}/brightness-notification.sh ~/bin/
+ln -s ${current}/notify-send.sh/notify-*.sh ~/bin/

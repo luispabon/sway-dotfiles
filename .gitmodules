@@ -1,0 +1,3 @@
+[submodule "notify-send.sh"]
+	path = notify-send.sh
+	url = git@github.com:vlevit/notify-send.sh.git

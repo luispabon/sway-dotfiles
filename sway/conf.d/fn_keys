@@ -9,5 +9,5 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioPrev exec playerctl previous
 
 #brightness control
-bindsym XF86MonBrightnessUp exec brightnessctl set 3%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 3%-
+bindsym XF86MonBrightnessUp exec sh -c "brightnessctl set 3%+; brightness-notification.sh"
+bindsym XF86MonBrightnessDown exec sh -c "brightnessctl set 3%-; brightness-notification.sh"
