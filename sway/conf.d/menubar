@@ -7,7 +7,7 @@
 #}
 
 bar {
-    swaybar_command /home/luis/bin/waybar
+    swaybar_command waybar
 }
 
 set $menu ~/sway/rofi.sh
