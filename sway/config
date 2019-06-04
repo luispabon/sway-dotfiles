@@ -8,19 +8,17 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term terminator
-# Your preferred application launcher
-# Note: it's recommended that you pass the final command to sway
-# set $menu dmenu_path | dmenu | xargs swaymsg exec
-# set $menu bash -c "source /etc/profile.d/apps-bin-path.sh; j4-dmenu-desktop"
 
-exec --no-startup-id libinput-gestures
+# exec --no-startup-id libinput-gestures
 
 font pango:Ubuntu 12
 
@@ -40,7 +38,7 @@ focus_follows_mouse no
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+Space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -93,6 +91,7 @@ focus_follows_mouse no
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
     bindsym $mod+0 workspace 10
+
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace 1
     bindsym $mod+Shift+2 move container to workspace 2
@@ -127,7 +126,7 @@ focus_follows_mouse no
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Alt+space focus mode_toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
