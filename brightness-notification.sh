@@ -9,7 +9,7 @@ PCT=$(echo $BRIGHTNESS $MAX_BRIGHTNESS  | awk '{printf "%4.0f\n",($1/$2)*100}' |
 LC_ALL=C
 
 # Send the notification with the icon:
-notify-send.sh "  " \
+notify-send.sh "Brightness ${PCT}%" \
     --replace-file=/tmp/brightness-notification \
     -t 2000 \
     --icon ~/.config/icons/brightness-icon.png \
