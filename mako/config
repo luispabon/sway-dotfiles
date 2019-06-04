@@ -1,0 +1,13 @@
+font=Fira Sans
+background-color=#4c3409
+progress-color=#75410b
+icons=1
+padding=20
+width=550
+border-color=#dddddd
+border-size=3
+border-radius=16
+icon-path=/usr/share/icons/Yaru/
+actions=1
+default-timeout=3333
+# ignore-timeout=1
