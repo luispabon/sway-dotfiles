@@ -1,9 +1,9 @@
 font=Fira Sans
-background-color=#4c3409
-progress-color=#75410b
+background-color=#222222
+progress-color=#444444
 icons=1
 padding=20
-width=550
+width=450
 border-color=#dddddd
 border-size=3
 border-radius=16
