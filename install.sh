@@ -64,4 +64,5 @@ xdg-settings set default-web-browser firefox-nightly.desktop
 
 # Scripts
 ln -s ${current}/brightness-notification.sh ~/bin/
+ln -s ${current}/audio-notification.sh ~/bin/
 ln -s ${current}/notify-send.sh/notify-*.sh ~/bin/
