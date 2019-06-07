@@ -11,7 +11,7 @@ mkdir -p ~/Pictures
 mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 
-# sudo add-apt-repository ppa:samoilov-lex/sway
+sudo add-apt-repository ppa:samoilov-lex/sway
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 
 sudo apt install \
