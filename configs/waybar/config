@@ -40,7 +40,7 @@
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
         "format-disconnected": "🖧 Disconnected",
-        "on-click": "gnome-terminal -e ~/sway/network-manager",
+        "on-click": "gnome-terminal -e ~/sway/scripts/network-manager",
     "tooltip": false
     },
     "pulseaudio": {

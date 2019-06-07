@@ -10,4 +10,4 @@ bar {
     swaybar_command waybar
 }
 
-set $menu ~/sway/rofi.sh
+set $menu ~/sway/scripts/rofi.sh
