@@ -15,21 +15,26 @@ sudo add-apt-repository ppa:samoilov-lex/sway
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 
 sudo apt install \
+    bash \
     brightnessctl \
+    firefox-trunk \
     grim \
+    libglib2.0-bin \
+    libmpdclient2 \
+    libnl-3-200 \
+    libnotify4 \
+    libnotify-bin \
+    playerctl \
+    rofi \
     slurp \
     sway \
     sway-backgrounds \
     swaybg \
     swayidle \
     swaylock \
-    xdg-desktop-portal-wlr \
     wl-clipboard \
-    libmpdclient2 \
-    libnl-3-200 \
-    playerctl \
-    rofi \
-    firefox-trunk
+    xdg-desktop-portal-wlr
+
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 
 sudo cp assets/90-brightnessctl.rules /etc/udev/rules.d/
