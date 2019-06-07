@@ -14,3 +14,12 @@
 	smart_gaps on
 
 # bindsym $mod+Shift+s sticky toggle
+
+# Wayland default floats
+for_window [app_id="gnome-calendar"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="gnome-power-statistics"] floating enable
+
+# XWayland default floats
+#for_window [class="[.]*"] floating enable
