@@ -29,7 +29,7 @@ focus_follows_mouse no
 #
 # Basics:
 #
-    bindsym alt+Tab exec ~/sway/Swytch/swytch.sh
+    # bindsym alt+Tab exec ~/sway/Swytch/swytch.sh
 
     # start a terminal
     bindsym $mod+Return exec $term
