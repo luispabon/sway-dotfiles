@@ -65,6 +65,6 @@ ln -sf ${current}/assets/firefox-nightly.desktop ~/.local/share/applications
 xdg-settings set default-web-browser firefox-nightly.desktop
 
 # Install Scripts in bin folder
-ln -sf ${current}/scripts/brightness-notification.sh ~/bin/
-ln -sf ${current}/scripts/audio-notification.sh ~/bin/
+ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
+ln -sf ${current}/scripts/notifications/audio-notification.sh ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh ~/bin/
