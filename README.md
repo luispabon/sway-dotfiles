@@ -5,6 +5,7 @@ This is my sway configuration, together with scripts and assets required to make
 ## Install scripts
 
 I use ubuntu 19.04, and as such any package installation stuff on the scripts are for ubuntu 19.04.
+
   * [install_base.sh](install_base.sh) will install the minimum requirements to build sway from my repo https://github.com/luispabon/sway-ubuntu-build
   * [install_base.sh](install_exclusive.sh) is meant to be used on an ubuntu minimal ISO install, and will install the minimum requirements to run sway with a native wayland file manager, terminal, connection manager and pulseaudio
   * [install.sh](install.sh) does a number of things. Adds a ppa with sway which is reasonably recent (if you don't compile from the repo above), installs stuff like grim, and rofi, fonts, notifications, icons for the notifications, configs for sway, swaylock, mako etc.
