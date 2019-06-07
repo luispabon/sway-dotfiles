@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 sudo apt install \
     connman \
     connman-gtk \
