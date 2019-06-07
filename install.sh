@@ -1,16 +1,35 @@
 #!/bin/bash
-source scripts/colours.sh
+start_green="\033[92m"
+end_green="\033[39m"
 
 current=${PWD}
 
 # Create home directory folders
 mkdir -p ~/.config
-mkdir -p ~/.local/share/applications
+mkdir -p ~/bin
 mkdir -p ~/Pictures
+mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 
-scripts/install-dependencies.sh
+# sudo add-apt-repository ppa:samoilov-lex/sway
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
 
+sudo apt install \
+    brightnessctl \
+    grim \
+    slurp \
+    sway \
+    sway-backgrounds \
+    swaybg \
+    swayidle \
+    swaylock \
+    xdg-desktop-portal-wlr \
+    wl-clipboard \
+    libmpdclient2 \
+    libnl-3-200 \
+    playerctl \
+    rofi \
+    firefox-trunk
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 
 sudo cp assets/90-brightnessctl.rules /etc/udev/rules.d/
@@ -25,7 +44,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("sway" "waybar" "kanshi" "rofi" "assets/icons" "swaylock")
+folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "assets/icons" "configs/swaylock")
 for folder in ${folders_to_linky[@]}; doQ
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -s ${PWD}/${folder}/ "${HOME}/.config/"
@@ -33,7 +52,6 @@ for folder in ${folders_to_linky[@]}; doQ
 done
 
 echo -e "\n${start_green} Installing assets (backgrounds, fonts, app desktop files... ${end_green}"
-
 
 # Backgrounds
 ln -s ${current}/assets/backgrounds ~/Pictures/
