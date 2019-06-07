@@ -45,26 +45,26 @@ fi
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
 folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "assets/icons" "configs/swaylock")
-for folder in ${folders_to_linky[@]}; doQ
+for folder in ${folders_to_linky[@]}; do
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
-        ln -s ${PWD}/${folder}/ "${HOME}/.config/"
+        ln -sf ${PWD}/${folder}/ "${HOME}/.config/"
     fi
 done
 
 echo -e "\n${start_green} Installing assets (backgrounds, fonts, app desktop files... ${end_green}"
 
 # Backgrounds
-ln -s ${current}/assets/backgrounds ~/Pictures/
+ln -sf ${current}/assets/backgrounds ~/Pictures/
 
 # Fonts
-ln -s ${current}/assets/fonts/* ~/.local/share/fonts/
+ln -sf ${current}/assets/fonts/* ~/.local/share/fonts/
 
 # Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
-ln -s ${current}/assets/firefox-wayland.desktop ~/.local/share/applications
-ln -s ${current}/assets/firefox-nightly.desktop ~/.local/share/applications
+ln -sf ${current}/assets/firefox-wayland.desktop ~/.local/share/applications
+ln -sf ${current}/assets/firefox-nightly.desktop ~/.local/share/applications
 xdg-settings set default-web-browser firefox-nightly.desktop
 
 # Install Scripts in bin folder
-ln -s ${current}/scripts/brightness-notification.sh ~/bin/
-ln -s ${current}/scripts/audio-notification.sh ~/bin/
-ln -s ${current}/notify-send.sh/notify-*.sh ~/bin/
+ln -sf ${current}/scripts/brightness-notification.sh ~/bin/
+ln -sf ${current}/scripts/audio-notification.sh ~/bin/
+ln -sf ${current}/notify-send.sh/notify-*.sh ~/bin/
