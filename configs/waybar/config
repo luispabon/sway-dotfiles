@@ -31,7 +31,8 @@
             "warning": 25,
             "critical": 10
         },
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "gnome-power-statistics"
     },
     "network": {
         "format": "{icon}",
@@ -41,7 +42,7 @@
         "format-ethernet": " {ifname}",
         "format-disconnected": "🖧 Disconnected",
         "on-click": "gnome-terminal -e ~/sway/scripts/network-manager",
-    "tooltip": false
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
