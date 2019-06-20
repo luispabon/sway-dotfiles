@@ -1,0 +1,3 @@
+exec clipman -d
+
+bindsym $mod+Shift+f exec clipman -s --selector=rofi
