@@ -2,6 +2,10 @@ set $lock_bg ~/Pictures/backgrounds/galen-crout-175291.jpg
 
 bindsym Alt+l exec swaylock -i $lock_bg
 
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
+# for_window [title="YouTube"] inhibit_idle focus
+
 ### Idle configuration
 #
 # Example configuration:
