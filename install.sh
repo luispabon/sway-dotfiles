@@ -13,8 +13,11 @@ mkdir -p ~/.local/share/fonts
 
 sudo add-apt-repository ppa:samoilov-lex/sway
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
+curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
 
 sudo apt install \
+    azote \
     bash \
     brightnessctl \
     firefox-trunk \
