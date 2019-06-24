@@ -5,5 +5,5 @@
 {
     output eDP-1 mode 3840x2160 scale 2 position 960,1081
     output "Lenovo Group Limited T24i-10 VT509484" mode 1920x1080 scale 1 position 0,0
-    output "Lenovo Group Limited T24i-10 VT580487" mode 1921x1080 scale 1 position 1921,0
+    output "Lenovo Group Limited T24i-10 VT580487" mode 1920x1080 scale 1 position 1921,0
 }
