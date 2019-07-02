@@ -43,6 +43,10 @@ echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 sudo cp assets/90-brightnessctl.rules /etc/udev/rules.d/
 sudo usermod -a -G video $(whoami)
 
+echo -e "\n${start_green} Setting longid config...${end_green}"
+
+sudo cp assets/logind.conf /etc/systemd/logind.conf
+
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
 snap_apps_fix=/etc/profile.d/apps-bin-path.sh
