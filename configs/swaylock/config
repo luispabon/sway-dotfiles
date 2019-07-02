@@ -9,7 +9,7 @@ screenshots
 
 effect-blur=30x3
 effect-greyscale
-effect-scale=2
+effect-scale=0.5
 
 indicator
 indicator-radius=240
