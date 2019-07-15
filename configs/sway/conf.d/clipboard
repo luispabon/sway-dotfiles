@@ -1,3 +1,4 @@
-exec clipman -d
+exec_always pkill clipman
+exec_always clipman -d 1>> ~/clipman.log 2>&1
 
 bindsym $mod+Shift+f exec clipman -s --selector=rofi
