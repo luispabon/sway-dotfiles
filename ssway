@@ -6,6 +6,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # More functional tray on waybar
 export XDG_CURRENT_DESKTOP=Unity
 
+# Force firefox into wayland
+export MOZ_ENABLE_WAYLAND=1
+
 # Start ssh agent
 killall ssh-agent
 eval (ssh-agent -c)
