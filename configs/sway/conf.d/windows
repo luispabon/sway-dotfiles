@@ -4,7 +4,7 @@ default_border pixel 1
 default_floating_border normal
 
 # class                 border  backgr. text    indicator child_border
-client.focused           #be5046 #be5046 #be5046 #be5046   #be5046
+#client.focused           #be5046 #be5046 #be5046 #be5046   #be5046
 #client.focused_inactive  #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 #client.unfocused         #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 
