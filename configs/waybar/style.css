@@ -1,4 +1,4 @@
-* {
+window#waybar {
     border:        none;
     border-radius: 0;
     font-family:   "Fira Sans SemiBold";
@@ -6,10 +6,6 @@
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-window {
     color:      rgba(217, 216, 216, 1);
     background: rgba(0, 0, 0, 0.5);
 }
@@ -44,7 +40,7 @@ window#waybar.solo {
     /* font-size: 26px; */
 }
 
-#mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+#tray, #mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
     margin:     0px 0px 0px 10px;
     min-width:  25px;
     padding: 0 5px;
@@ -74,4 +70,24 @@ window#waybar.solo {
 
 #custom-storage.critical {
     color:      rgba(238, 46, 36, 1);
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    border-bottom: 3px solid #ffffff;
+}
+
+#workspaces button.focused {
+    border-bottom: 3px solid #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
 }

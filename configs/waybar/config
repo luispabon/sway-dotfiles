@@ -4,7 +4,7 @@
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "network", "pulseaudio", "temperature", "battery"],
+    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -120,6 +120,7 @@
         "interval": 5
     },
     "tray": {
-        "icon-size": 18
+        "icon-size": 18,
+        "spacing": 18
     }
 }
