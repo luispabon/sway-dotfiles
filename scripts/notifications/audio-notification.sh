@@ -6,11 +6,10 @@
 sleep 0.05
 
 # Get the volume and check if muted or not (STATE):
-# VOLUME=$(amixer sget Master      | \
-#          egrep -o -m 1 "[0-9]+%" | \
-#          egrep -o "[0-9]+")
-VOLUME=`pactl list sinks | grep '^[[:space:]]Volume:' | \
-    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'`
+VOLUME=`amixer -D pulse sget Master | \
+        grep 'Left:' | \
+        awk -F'[][]' '{ print $2 }' | \
+        sed --expression 's/%//g'`
 
 STATE=`amixer sget Master          | \
        egrep -m 1 'Playback.*?\[o' | \
