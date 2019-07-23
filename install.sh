@@ -11,16 +11,22 @@ mkdir -p ~/Pictures
 mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 
+# Sway ppa
 sudo add-apt-repository ppa:samoilov-lex/sway
-sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+
+# FF beta ppa (wayland support pre-69 is pretty glitchy)
+sudo add-apt-repository ppa:mozillateam/firefox-next
+
+# Azote (wallpaper manager) https://github.com/nwg-piotr/azote
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
 curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
+touch ~/.azotebg
 
 sudo apt install \
     azote \
     bash \
     brightnessctl \
-    firefox-trunk \
+    firefox \
     grim \
     libglib2.0-bin \
     libmpdclient2 \
@@ -65,20 +71,18 @@ done
 
 echo -e "\n${start_green} Installing assets (backgrounds, fonts, app desktop files... ${end_green}"
 
-# Backgrounds
 ln -sf ${current}/assets/backgrounds ~/Pictures/
-
-# Fonts
 ln -sf ${current}/assets/fonts/* ~/.local/share/fonts/
 
 # Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
+# Don't exactly need the desktop file when starting from the ssway script as the env var is set already
 ln -sf ${current}/assets/firefox-wayland.desktop ~/.local/share/applications
-ln -sf ${current}/assets/firefox-nightly.desktop ~/.local/share/applications
 xdg-settings set default-web-browser firefox-nightly.desktop
 
 # Install Scripts in bin folder
 ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
 ln -sf ${current}/scripts/notifications/audio-notification.sh      ~/bin/
+ln -sf ${current}/scripts/notifications/network-manager            ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
 ln -sf ${current}/screenshots.sh                                   ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
