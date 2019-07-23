@@ -11,7 +11,7 @@ VOLUME=`amixer -D pulse sget Master | \
         awk -F'[][]' '{ print $2 }' | \
         sed --expression 's/%//g'`
 
-STATE=`amixer sget Master          | \
+STATE=`amixer -D pulse sget Master          | \
        egrep -m 1 'Playback.*?\[o' | \
        egrep -o '\[o.+\]'`
 
@@ -27,7 +27,7 @@ if [[ $STATE != '[off]' ]]; then
                 ICON=~/.config/icons/vol-high.png
         fi
 
-        notify-send.sh "Volume: $VOLUME" \
+        notify-send.sh "Volume: $VOLUME%" \
             --replace-file=/tmp/audio-notification \
             -t 2000 \
             -i ${ICON} \
@@ -36,8 +36,10 @@ if [[ $STATE != '[off]' ]]; then
 
 # If volume is muted, display the mute sybol:
 else
-        notify-send.sh "Muted" \
+        notify-send.sh "Muted (volume: $VOLUME%)" \
             --replace-file=/tmp/audio-notification \
             -t 2000 \
-            -i ~/.config/icons/vol-mute.png
+            -i ~/.config/icons/vol-mute.png \
+            -h int:value:${VOLUME} \
+            -h string:synchronous:volume-change
 fi
