@@ -16,7 +16,7 @@ set $menu ~/sway/scripts/rofi.sh
 
 for_window [app_id="waybar" floating] {
     move position cursor
-    move down 120px # adjust if some menus still don't fit
+    move down 240px # adjust if some menus still don't fit
 }
 
 #for_window [app_id="waybar" floating] {
