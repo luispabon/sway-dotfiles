@@ -25,7 +25,7 @@
         "interval": 10,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/cpu_speed.sh",
-        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {} MHz",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {}",
         "format-icons": [""],
         "escape": true
     },
