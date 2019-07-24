@@ -1,0 +1,16 @@
+### Touchpad
+input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" {
+    accel_profile flat
+    drag enabled
+    tap enabled
+}
+
+### Keyboards
+input "*" xkb_layout gb
+input "1118:219:Microsoft_Natural®_Ergonomic_Keyboard_4000" xkb_numlock enabled
+
+### Touchscreen
+input "1267:9376:ELAN_Touchscreen" {
+    map_to_output eDP-1
+    natural_scroll disabled
+}
