@@ -4,7 +4,7 @@
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "battery"],
+    "modules-right": ["custom/spotify", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -62,6 +62,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",
         "exec-if": "pgrep spotify",
+        "on-click": "playerctl play-pause",
         "escape": true
     },
     "custom/storage": {
