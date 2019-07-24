@@ -40,9 +40,12 @@ window#waybar.solo {
     /* font-size: 26px; */
 }
 
-#tray, #mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+#custom-cpu_speed {
+    min-width: 82px;
+}
+
+#tray, #mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-cpu_speed, #custom-spotify, #custom-weather, #custom-mail {
     margin:     0px 0px 0px 10px;
-    min-width:  25px;
     padding: 0 5px;
     border-top: 3px solid rgba(217, 216, 216, 0.5);
 }

@@ -4,7 +4,7 @@
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/spotify", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "battery"],
+    "modules-right": ["custom/spotify", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "custom/cpu_speed", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -20,6 +20,14 @@
         "format": "{:%a %d %b - %H:%M}",
         "tooltip": false,
         "on-click": "gnome-calendar"
+    },
+    "custom/cpu_speed": {
+        "interval": 10,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/cpu_speed.sh",
+        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {} MHz",
+        "format-icons": [""],
+        "escape": true
     },
     "battery": {
         "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
@@ -58,7 +66,7 @@
         "tooltip": false
     },
     "custom/spotify": {
-        "interval": 1,
+        "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",
         "exec-if": "pgrep spotify",
@@ -82,7 +90,7 @@
         "on-scroll-up": "light -U 1"
     },
     "temperature": {
-        "format": "<span font='Font Awesome 5 Free 12'></span> {temperatureC:3}°C",
+        "format": "<span font='Font Awesome 5 Free 10'></span> {temperatureC:3}°C",
         "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
     },
     "custom/weather": {
