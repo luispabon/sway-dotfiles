@@ -70,10 +70,8 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 *)
     condition=""
-    echo -e "{\"text\":\""\<span font=\'RobotoMono Nerd Font\'\>$condition\<\/span\>>"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+    echo -e "{\"text\":\""\<span font=\'RobotoMono Nerd Font\'\>$condition\<\/span\>"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
     ;;
 esac
-
-#echo $temp $condition
 
 echo -e "{\"text\":\""\<span font=\'RobotoMono Nerd Font\'\>$condition\<\/span\>"  $temperature \", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
