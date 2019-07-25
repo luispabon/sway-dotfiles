@@ -1,0 +1,26 @@
+[Desktop Entry]
+X-AppInstall-Package=evolution
+X-AppInstall-Popcon=10053
+X-AppInstall-Section=main
+
+Name=Evolution X11
+GenericName=Groupware Suite
+X-GNOME-FullName=Evolution Mail and Calendar
+Comment=Manage your email, contacts and schedule
+Keywords=email;calendar;contact;addressbook;task;
+Exec=env GDK_BACKEND=x11 evolution %U
+Icon=evolution
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Office;Email;Calendar;ContactManagement;X-Red-Hat-Base;
+StartupNotify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=Evolution
+X-GNOME-Bugzilla-Component=BugBuddyBugs
+X-GNOME-Bugzilla-Version=3.16.x
+X-GNOME-Bugzilla-OtherBinaries=evolution-addressbook-factory;evolution-calendar-factory;evolution-source-registry;evolution-user-prompter;
+X-GNOME-UsesNotifications=true
+MimeType=text/calendar;text/x-vcard;text/directory;application/mbox;message/rfc822;x-scheme-handler/mailto;
+
+
+X-Ubuntu-Gettext-Domain=app-install-data

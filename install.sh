@@ -76,8 +76,8 @@ ln -sf ${current}/assets/fonts/* ~/.local/share/fonts/
 
 # Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
 # Don't exactly need the desktop file when starting from the ssway script as the env var is set already
-ln -sf ${current}/assets/firefox-wayland.desktop ~/.local/share/applications
-xdg-settings set default-web-browser firefox-nightly.desktop
+ln -sf ${current}/assets/*.desktop ~/.local/share/applications/
+xdg-settings set default-web-browser firefox-wayland.desktop
 
 # Install Scripts in bin folder
 ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
