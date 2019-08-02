@@ -17,3 +17,6 @@
     # Region-select-screenshot to file
     #bindsym $mod+ctrl+Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/Screenshot-region-$(date +'%Y-%m-%d-%H%M%S.png')
     bindsym $mod+ctrl+Print exec screenshots.sh region-to-file
+
+    # Current display to clipboard
+    bindsym ctrl+alt+Print exec screenshots.sh active-display-to-clipboard
