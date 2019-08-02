@@ -41,49 +41,45 @@ case "$1" in
 	region-to-file)
 		grim -t ${CAPTURE_FORMAT} -g "$(slurp -b '#AFAFAFAF' -c '#FF3F3FAF' -s '#00000000' -w 3 -d)" "$SCREENSHOT_FILENAME"
         notify-send.sh "Region screenshot saved at ${SCREENSHOT_FILENAME}"
-		echo -n ${SCREENSHOT_FILENAME} 
+		echo -n ${SCREENSHOT_FILENAME}
 		;;
 
 	region-to-clipboard)
 		grim -t ${CAPTURE_FORMAT} -g "$(slurp -b '#AFAFAFAF' -c '#FF3F3FAF' -s '#00000000' -w 3 -d)" - | ${COPY_COMMAND}
         notify-send.sh "Region screenshot copied to clipboard"
-		echo -n ${SCREENSHOT_FILENAME} 
 		;;
 
 	window-to-file)
 		grim -t ${CAPTURE_FORMAT} -g "$(swaymsg --type get_tree --raw | jq --raw-output "${filter}")" "$SCREENSHOT_FILENAME"
         notify-send.sh "Active window screenshot saved at ${SCREENSHOT_FILENAME}"
-		echo -n ${SCREENSHOT_FILENAME} 
+		echo -n ${SCREENSHOT_FILENAME}
 		;;
 
 	window-to-clipboard)
 		grim -t ${CAPTURE_FORMAT} -g "$(swaymsg --type get_tree --raw | jq --raw-output "${filter}")" - | ${COPY_COMMAND}
         notify-send.sh "Active window screenshot copied to clipboard"
-		echo -n ${SCREENSHOT_FILENAME} 
 		;;
 
 	active-display-to-clipboard)
 		grim -t ${CAPTURE_FORMAT} -o "$(swaymsg --type get_outputs --raw | jq --raw-output '.[] | select(.focused) | .name')" - | ${COPY_COMMAND}
         notify-send.sh "Active display screenshot copied to clipboard"
-		echo -n ${SCREENSHOT_FILENAME} 
 		;;
 
 	active-display-to-file)
 		grim -t ${CAPTURE_FORMAT} -o "$(swaymsg --type get_outputs --raw | jq --raw-output '.[] | select(.focused) | .name')" "$SCREENSHOT_FILENAME"
         notify-send.sh "Active display screenshot saved at ${SCREENSHOT_FILENAME}"
-		echo -n ${SCREENSHOT_FILENAME} 
+		echo -n ${SCREENSHOT_FILENAME}
 		;;
 
     all-to-file)
         grim -t ${CAPTURE_FORMAT} $(xdg-user-dir PICTURES)/Screenshot-all-$(date +'%Y-%m-%d-%H%M%S.png')
 		notify-send.sh "Whole-screen screenshot saved at ${SCREENSHOT_FILENAME}"
-        echo -n ${SCREENSHOT_FILENAME} 
+        echo -n ${SCREENSHOT_FILENAME}
         ;;
 
     all-to-clipboard)
         grim -t ${CAPTURE_FORMAT} - | ${COPY_COMMAND}
 		notify-send.sh "Whole-screen screenshot copied to clipboard"
-        echo -n ${SCREENSHOT_FILENAME} 
         ;;
 
 	*)
