@@ -22,7 +22,7 @@
         "on-click": "gnome-calendar"
     },
     "custom/cpu_speed": {
-        "interval": 10,
+        "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/cpu_speed.sh",
         "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {}",
