@@ -1,7 +1,7 @@
 #:::::::::disable_window_borders::::::::
 for_window [class="^.*"] border pixel 0
 default_border pixel 1
-default_floating_border normal
+default_floating_border pixel 0
 
 # class                 border  backgr. text    indicator child_border
 #client.focused           #be5046 #be5046 #be5046 #be5046   #be5046
@@ -9,7 +9,7 @@ default_floating_border normal
 #client.unfocused         #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 
 
-#:::::i3_ gaps::::::::::::::
+#:::::i3_ gaps::::::::::::::C
 	set $default_gaps_inner 8
 	set $default_gaps_outer 8
 	gaps inner $default_gaps_inner
@@ -24,6 +24,9 @@ default_floating_border normal
 for_window [app_id="gnome-(calendar|calculator|power-statistics)"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="mpv"] floating enable
+for_window [app_id="mpv"] resize set 960 540
+for_window [app_id="mpv"] border pixel 0
 
 # XWayland default floats
 #for_window [class="[.]*"] floating enable
