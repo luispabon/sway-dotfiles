@@ -10,7 +10,7 @@ bar {
     swaybar_command waybar
 }
 
-exec_always nm-applet
+# exec_always nm-applet
 
 set $menu ~/sway/scripts/rofi.sh
 
