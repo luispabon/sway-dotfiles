@@ -62,7 +62,8 @@
             "default": ["", "", "", ""]
         },
         "scroll-step": 2,
-        "on-click": "pavucontrol",
+        "on-click": "gnome-control-center audio",
+        //"on-click": "pavucontrol",
         "tooltip": false
     },
     "custom/spotify": {
