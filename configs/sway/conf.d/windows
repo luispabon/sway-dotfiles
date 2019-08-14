@@ -21,7 +21,7 @@ default_floating_border pixel 0
 # bindsym $mod+Shift+s sticky toggle
 
 # Wayland default floats
-for_window [app_id="gnome-(calendar|calculator|power-statistics)"] floating enable
+for_window [app_id="gnome-(calendar|calculator|power-statistics|control-center)"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="mpv"] floating enable
