@@ -12,7 +12,7 @@ mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 
 # Sway ppa
-sudo add-apt-repository ppa:samoilov-lex/sway
+# sudo add-apt-repository ppa:samoilov-lex/sway
 
 # FF beta ppa (wayland support pre-69 is pretty glitchy)
 sudo add-apt-repository ppa:mozillateam/firefox-next
@@ -21,6 +21,13 @@ sudo add-apt-repository ppa:mozillateam/firefox-next
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
 curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
 touch ~/.azotebg
+
+# sudo apt install \
+#     sway \
+#     sway-backgrounds \
+#     swaybg \
+#     swayidle \
+#     swaylock
 
 sudo apt install \
     azote \
@@ -34,13 +41,9 @@ sudo apt install \
     libnotify4 \
     libnotify-bin \
     playerctl \
+    gir1.2-playerctl-2.0 \
     rofi \
     slurp \
-    sway \
-    sway-backgrounds \
-    swaybg \
-    swayidle \
-    swaylock \
     wl-clipboard \
     xdg-desktop-portal-wlr
 
@@ -51,7 +54,10 @@ sudo usermod -a -G video $(whoami)
 
 echo -e "\n${start_green} Setting longid config...${end_green}"
 
+sudo cp /etc/systemd/logind.conf-bak /etc/systemd/logind.conf
 sudo cp assets/logind.conf /etc/systemd/logind.conf
+sudo cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf-bak
+sudo cp assets/etc-pulse-daemon.conf /etc/pulse/daemon.conf
 
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
