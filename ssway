@@ -9,6 +9,9 @@ export XDG_CURRENT_DESKTOP=Unity
 # Force firefox into wayland
 export MOZ_ENABLE_WAYLAND=1
 
+# QT apps theme
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # Start ssh agent
 killall ssh-agent
 eval (ssh-agent -c)
