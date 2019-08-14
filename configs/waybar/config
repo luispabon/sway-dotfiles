@@ -4,7 +4,7 @@
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/spotify", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "temperature", "custom/cpu_speed", "battery"],
+    "modules-right": ["custom/media", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery"],
     "sway/mode": {
         "format": " {}"
     },
@@ -48,8 +48,8 @@
         "format-alt-click": "click-right",
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
-        "format-disconnected": "🖧 Disconnected",
-        "on-click": "gnome-terminal -e ~/sway/scripts/network-manager",
+        "format-disconnected": "⚠ Disconnected",
+        "on-click": "gnome-control-center wifi",
         "tooltip": false
     },
     "pulseaudio": {
@@ -72,6 +72,18 @@
         "exec-if": "pgrep spotify",
         "on-click": "playerctl play-pause",
         "escape": true
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/storage": {
         "format": "{} ",
