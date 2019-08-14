@@ -92,3 +92,7 @@ ln -sf ${current}/scripts/notifications/network-manager            ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
 ln -sf ${current}/screenshots.sh                                   ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
+
+# Install login session
+cp ${current}/ssway /usr/bin/ssway
+cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
