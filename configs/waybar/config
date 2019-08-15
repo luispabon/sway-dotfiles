@@ -62,7 +62,7 @@
             "default": ["", "", "", ""]
         },
         "scroll-step": 2,
-        "on-click": "gnome-control-center audio",
+        "on-click": "gnome-control-center sound",
         //"on-click": "pavucontrol",
         "tooltip": false
     },
