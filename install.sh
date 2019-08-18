@@ -34,6 +34,7 @@ sudo apt install \
     bash \
     brightnessctl \
     firefox \
+    jq \
     grim \
     libglib2.0-bin \
     libmpdclient2 \
@@ -54,7 +55,7 @@ sudo usermod -a -G video $(whoami)
 
 echo -e "\n${start_green} Setting longid config...${end_green}"
 
-sudo cp /etc/systemd/logind.conf-bak /etc/systemd/logind.conf
+sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf-bak
 sudo cp assets/logind.conf /etc/systemd/logind.conf
 sudo cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf-bak
 sudo cp assets/etc-pulse-daemon.conf /etc/pulse/daemon.conf
@@ -94,5 +95,5 @@ ln -sf ${current}/screenshots.sh                                   ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session
-cp ${current}/ssway /usr/bin/ssway
-cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
+sudo cp ${current}/ssway /usr/bin/ssway
+sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
