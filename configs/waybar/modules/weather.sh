@@ -48,10 +48,10 @@ temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g')
 # echo $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]')
 case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
 "clear" | "sunny")
-    icon="🌞"
+    icon=""
     ;;
 "partly cloudy")
-    icon="⛅"
+    icon=""
     ;;
 "cloudy")
     icon=""
@@ -60,10 +60,10 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     icon=""
     ;;
 "mist" | "fog" | "freezing fog")
-    icon="🌁"
+    icon=""
     ;;
 "patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "rain")
-    icon="🌧"
+    icon=""
     ;;
 "moderate rain at times" | "moderate rain" | "heavy rain at times" | "heavy rain" | "moderate or heavy rain shower" | "torrential rain shower" | "rain shower")
     icon=""
@@ -78,7 +78,7 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     icon=""
     ;;
 "thundery outbreaks possible" | "patchy light rain with thunder" | "moderate or heavy rain with thunder" | "patchy light snow with thunder")
-    icon="🌩"
+    icon=""
     ;;
 *)
     icon=""
@@ -86,4 +86,4 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 esac
 
-echo -e "{\"text\":\""\<span font=\'RobotoMono Nerd Font\'\>$icon\<\/span\>"  $temperature \", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+echo -e "{\"text\":\""\<span font=\'Font Awesome 5 Free 12\'\>$icon\<\/span\>"  $temperature \", \"class\": \"weather\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
