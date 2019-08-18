@@ -46,7 +46,7 @@
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-right",
-        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-wifi": "<span font='Font Awesome 5 Free 11'></span>  {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
         "format-disconnected": "⚠ Disconnected",
         "on-click": "gnome-control-center wifi",
@@ -104,7 +104,7 @@
     },
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 10'></span> {temperatureC:3}°C",
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
     },
     "custom/weather": {
         "format": "{}",
