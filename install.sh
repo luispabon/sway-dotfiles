@@ -14,6 +14,13 @@ mkdir -p ~/.local/share/fonts
 # Sway ppa
 # sudo add-apt-repository ppa:samoilov-lex/sway
 
+# sudo apt install \
+#     sway \
+#     sway-backgrounds \
+#     swaybg \
+#     swayidle \
+#     swaylock
+
 # FF beta ppa (wayland support pre-69 is pretty glitchy)
 sudo add-apt-repository ppa:mozillateam/firefox-next
 
@@ -22,13 +29,7 @@ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_
 curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
 touch ~/.azotebg
 
-# sudo apt install \
-#     sway \
-#     sway-backgrounds \
-#     swaybg \
-#     swayidle \
-#     swaylock
-
+# Install all the rest of them things
 sudo apt install \
     azote \
     bash \
@@ -42,6 +43,7 @@ sudo apt install \
     libnotify4 \
     libnotify-bin \
     playerctl \
+    python3-pip \
     gir1.2-playerctl-2.0 \
     rofi \
     slurp \
@@ -99,5 +101,6 @@ sudo cp ${current}/ssway /usr/bin/ssway
 sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
 
 # Services
+sudo pip3 install undervolt
 sudo cp assets/undervolt.service /etc/systemd/system/
 sudo systemctl enable undervolt
