@@ -97,3 +97,7 @@ ln -sf ${current}/ssway                                            ~/bin/
 # Install login session
 sudo cp ${current}/ssway /usr/bin/ssway
 sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
+
+# Services
+sudo cp assets/undervolt.service /etc/systemd/system/
+sudo systemctl enable undervolt
