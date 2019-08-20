@@ -104,7 +104,7 @@
     },
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 10'></span> {temperatureC:3}°C",
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
     },
     "custom/weather": {
         "format": "{}",
@@ -114,7 +114,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1",
-        "on-click": "gnome-terminal -e curl -s https://en.wttr.in"
+        "on-click": "alacritty -e curl -s https://en.wttr.in"
     },
     "idle_inhibitor": {
         "format": "{icon}",
