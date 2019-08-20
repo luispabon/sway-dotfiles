@@ -12,6 +12,7 @@ bar {
 
 # exec_always nm-applet
 
+bindsym $mod+P exec ~/.config/rofi/modi/power
 set $menu ~/sway/scripts/rofi.sh
 
 for_window [app_id="waybar" floating] {

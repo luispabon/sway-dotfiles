@@ -1,3 +1,12 @@
+
+configuration {
+    modi: "run,ssh,drun";
+    terminal: "terminator";
+	ssh-client: "ssh";
+	ssh-command: "{terminal} -e "{ssh-client} {host}"";
+
+}
+
 /**
  * Oxide Color theme
  * User: dikiaap
