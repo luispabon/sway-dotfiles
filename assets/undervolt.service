@@ -2,7 +2,7 @@
 Description=Undervolt
 
 [Service]
-ExecStart=/usr/local/bin/undervolt --core -150 --cache -150 --gpu -100
+ExecStart=/usr/local/bin/undervolt --core -125 --cache -125 --gpu -100
 
 
 [Install]
