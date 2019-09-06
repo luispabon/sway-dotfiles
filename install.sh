@@ -47,6 +47,7 @@ sudo apt install \
     gir1.2-playerctl-2.0 \
     rofi \
     slurp \
+    tlp \
     wl-clipboard \
     xdg-desktop-portal-wlr
 
@@ -61,6 +62,7 @@ sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf-bak
 sudo cp assets/logind.conf /etc/systemd/logind.conf
 sudo cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf-bak
 sudo cp assets/etc-pulse-daemon.conf /etc/pulse/daemon.conf
+sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/modprobe.d/audio-powersave.conf
 
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
@@ -92,8 +94,8 @@ xdg-settings set default-web-browser firefox-wayland.desktop
 ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
 ln -sf ${current}/scripts/notifications/audio-notification.sh      ~/bin/
 ln -sf ${current}/scripts/notifications/network-manager            ~/bin/
+ln -sf ${current}/scripts/screenshots.sh                           ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
-ln -sf ${current}/screenshots.sh                                   ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session
@@ -104,3 +106,6 @@ sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
 sudo pip3 install undervolt
 sudo cp assets/undervolt.service /etc/systemd/system/
 sudo systemctl enable undervolt
+
+# Disable dell TB16 dock audio autosuspend in tlp
+sed -i 's/#USB_BLACKLIST="1111:2222 3333:4444"/USB_BLACKLIST="0bda:4014"/g' /etc/default/tlp
