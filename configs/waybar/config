@@ -3,8 +3,8 @@
     "position": "top",
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["custom/media", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery"],
+    "modules-center": [],
+    "modules-right": ["custom/media", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "clock", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -27,7 +27,17 @@
         "exec": "~/.config/waybar/modules/cpu_speed.sh",
         "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {}",
         "format-icons": [""],
-        "escape": true
+        "escape": true,
+        "on-click": "terminator -e htop"
+    },
+    "custom/powermenu": {
+        "interval": 5,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/powermenu.sh",
+        "format": "<span font='Font Awesome 5 Free 10'>{icon}</span>  {}",
+        "format-icons": [""],
+        "escape": true,
+        "on-click": "~/.config/rofi/modi/power"
     },
     "battery": {
         "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
@@ -104,7 +114,10 @@
     },
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 10'></span> {temperatureC:3}°C",
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        //"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
+        "hwmon-path": "/sys/class/thermal/thermal_zone10/temp",
+        //"on-click": "terminator -e 'watch -n1 sensors'"
+        "on-click": "psensor"
     },
     "custom/weather": {
         "format": "{}",
@@ -114,7 +127,8 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1",
-        "on-click": "alacritty -e curl -s https://en.wttr.in"
+        // "on-click": "terminator -p Small -e 'bash -c \"curl -s https://en.wttr.in; read line\"'"
+        "on-click": "gnome-weather"
     },
     "idle_inhibitor": {
         "format": "{icon}",

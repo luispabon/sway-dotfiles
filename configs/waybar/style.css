@@ -44,16 +44,32 @@ window#waybar.solo {
     min-width: 82px;
 }
 
-#tray, #mode, #battery, #temperature, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-cpu_speed, #custom-spotify, #custom-weather, #custom-mail {
+#tray,
+#mode,
+#battery,
+#temperature,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#custom-storage,
+#custom-cpu_speed,
+#custom-powermenu,
+#custom-spotify,
+#custom-weather,
+#custom-mail,
+#clock {
     margin:     0px 0px 0px 10px;
     padding: 0 5px;
     border-top: 3px solid rgba(217, 216, 216, 0.5);
 }
 
-#clock {
+/* #clock {
     margin:     0px 16px 0px 10px;
     min-width:  140px;
-}
+} */
 
 #battery.warning {
    color:       rgba(255, 210, 4, 1);
