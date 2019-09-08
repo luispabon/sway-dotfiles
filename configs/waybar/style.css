@@ -2,7 +2,7 @@ window#waybar {
     border:        none;
     border-radius: 0;
     font-family:   "Fira Sans SemiBold";
-    font-size:     14px;
+    font-size:     13px;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
@@ -60,6 +60,7 @@ window#waybar.solo {
 #custom-spotify,
 #custom-weather,
 #custom-mail,
+#custom-media,
 #clock {
     margin:     0px 0px 0px 10px;
     padding: 0 5px;

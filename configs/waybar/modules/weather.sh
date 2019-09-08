@@ -86,4 +86,4 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
     ;;
 esac
 
-echo -e "{\"text\":\""\<span font=\'Font Awesome 5 Free 12\'\>$icon\<\/span\>"  $temperature \", \"class\": \"weather\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+echo -e "{\"text\":\""\<span font=\'Font Awesome 5 Free 10\'\>$icon\<\/span\>"  $temperature \", \"class\": \"weather\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"

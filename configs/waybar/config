@@ -3,8 +3,8 @@
     "position": "top",
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["custom/media", "tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "clock", "custom/powermenu"],
+    "modules-center": ["custom/media"],
+    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "clock", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -25,7 +25,7 @@
         "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/cpu_speed.sh",
-        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {}",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {}",
         "format-icons": [""],
         "escape": true,
         "on-click": "terminator -e htop"
@@ -34,16 +34,16 @@
         "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/powermenu.sh",
-        "format": "<span font='Font Awesome 5 Free 10'>{icon}</span>  {}",
+        "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>  {}",
         "format-icons": [""],
         "escape": true,
         "on-click": "~/.config/rofi/modi/power"
     },
     "battery": {
-        "format": "<span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - {time}",
-        "format-full":  "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 12'>{icon}</span>  {capacity}% - Charged",
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-full":  "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - Charged",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -56,17 +56,18 @@
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-right",
-        "format-wifi": "<span font='Font Awesome 5 Free 11'></span>  {essid} ({signalStrength}%)",
+        "format-wifi": "<span font='Font Awesome 5 Free 10'></span>  {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
         "format-disconnected": "⚠ Disconnected",
-        "on-click": "gnome-control-center wifi",
+        "on-click": "terminator -e ~/sway/scripts/network-manager",
+        // "on-click": "gnome-control-center wifi",
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
-        "format-alt": "<span font='Font Awesome 5 Free 12'>{icon:2}</span> {volume:4}%",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}%",
+        "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}%",
         "format-alt-click": "click-right",
-        "format-muted": "<span font='Font Awesome 5 Free 12'></span>",
+        "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
         "format-icons": {
             "phone": [" ", " ", " ", " "],
             "default": ["", "", "", ""]
@@ -113,7 +114,7 @@
         "on-scroll-up": "light -U 1"
     },
     "temperature": {
-        "format": "<span font='Font Awesome 5 Free 10'></span> {temperatureC:3}°C",
+        "format": "<span font='Font Awesome 5 Free 9'></span> {temperatureC:3}°C",
         //"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
         "hwmon-path": "/sys/class/thermal/thermal_zone10/temp",
         //"on-click": "terminator -e 'watch -n1 sensors'"
@@ -135,8 +136,8 @@
         "format-alt": "{icon} idle {status}",
         "format-alt-click": "click-right",
         "format-icons": {
-            "activated": "<span font='Font Awesome 5 Free 11'></span>",
-            "deactivated": "<span font='Font Awesome 5 Free 11'></span>"
+            "activated": "<span font='Font Awesome 5 Free 10'></span>",
+            "deactivated": "<span font='Font Awesome 5 Free 10'></span>"
         },
         "tooltip": false
     },
