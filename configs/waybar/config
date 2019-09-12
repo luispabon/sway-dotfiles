@@ -3,8 +3,9 @@
     "position": "top",
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["custom/media"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "clock", "custom/powermenu"],
+    // "modules-center": ["custom/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -31,11 +32,11 @@
         "on-click": "terminator -e htop"
     },
     "custom/powermenu": {
-        "interval": 5,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/powermenu.sh",
         "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>  {}",
         "format-icons": [""],
+        "interval": 3600,
         "escape": true,
         "on-click": "~/.config/rofi/modi/power"
     },
@@ -136,8 +137,8 @@
         "format-alt": "{icon} idle {status}",
         "format-alt-click": "click-right",
         "format-icons": {
-            "activated": "<span font='Font Awesome 5 Free 10'></span>",
-            "deactivated": "<span font='Font Awesome 5 Free 10'></span>"
+            "activated": "<span font='Font Awesome 5 Free 9'></span>",
+            "deactivated": "<span font='Font Awesome 5 Free 9'></span>"
         },
         "tooltip": false
     },
