@@ -5,7 +5,6 @@ X-AppInstall-Section=main
 
 Name=Evolution X11
 GenericName=Groupware Suite
-X-GNOME-FullName=Evolution Mail and Calendar
 Comment=Manage your email, contacts and schedule
 Keywords=email;calendar;contact;addressbook;task;
 Exec=env GDK_BACKEND=x11 GTK_THEME=Adwaita:dark evolution %U
