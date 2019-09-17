@@ -80,6 +80,12 @@ focus_follows_mouse no
 #
 # Workspaces:
 #
+    # Move workspaces
+    bindsym Ctrl+$mod+Left  move workspace to output left
+    bindsym Ctrl+$mod+Right move workspace to output right
+    bindsym Ctrl+$mod+Up    move workspace to output up
+    bindsym Ctrl+$mod+Down  move workspace to output down
+
     # switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
