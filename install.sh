@@ -24,6 +24,9 @@ mkdir -p ~/.local/share/fonts
 # FF beta ppa (wayland support pre-69 is pretty glitchy)
 sudo add-apt-repository ppa:mozillateam/firefox-next
 
+# Ulauncher
+sudo add-apt-repository ppa:agornostal/ulauncher
+
 # Azote (wallpaper manager) https://github.com/nwg-piotr/azote
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
 curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
@@ -45,9 +48,11 @@ sudo apt install \
     playerctl \
     python3-pip \
     gir1.2-playerctl-2.0 \
+    units \
     rofi \
     slurp \
     tlp \
+    ulauncher \
     wl-clipboard \
     xdg-desktop-portal-wlr
 

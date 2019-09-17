@@ -1,0 +1,37 @@
+{
+    "com.github.iboyperson.ulauncher-system": {
+        "id": "com.github.iboyperson.ulauncher-system",
+        "url": "https://github.com/iboyperson/ulauncher-system",
+        "updated_at": "2019-09-16T23:42:09.759914",
+        "last_commit": "a49548bded15b04154f1bc1f2c233583856e1a85",
+        "last_commit_time": "2019-08-05T05:05:32"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2019-09-17T19:37:43.378316",
+        "last_commit": "4734455e255a401ff7507192386ed62361cb3748",
+        "last_commit_time": "2019-05-20T18:00:00"
+    },
+    "com.github.fisadev.ulauncher-better-file-browser": {
+        "id": "com.github.fisadev.ulauncher-better-file-browser",
+        "url": "https://github.com/fisadev/ulauncher-better-file-browser",
+        "updated_at": "2019-09-17T19:38:55.135138",
+        "last_commit": "8ec8a0dda09e172de62051cd1f251816ce4af368",
+        "last_commit_time": "2019-09-06T19:20:09"
+    },
+    "com.github.nesivmi.ulauncher-translate": {
+        "id": "com.github.nesivmi.ulauncher-translate",
+        "url": "https://github.com/nesivmi/ulauncher-translate",
+        "updated_at": "2019-09-17T20:54:11.221097",
+        "last_commit": "9bf5513e57b37a3f68acce459f7c878e57e8a16d",
+        "last_commit_time": "2019-09-16T20:21:07"
+    },
+    "com.github.skykooler.ulauncher-conversion": {
+        "id": "com.github.skykooler.ulauncher-conversion",
+        "url": "https://github.com/skykooler/ulauncher-conversion",
+        "updated_at": "2019-09-17T20:58:20.261823",
+        "last_commit": "e0c707cbdaff04de8d7aecf002535176ad562c4e",
+        "last_commit_time": "2019-07-09T14:41:19"
+    }
+}
