@@ -33,5 +33,12 @@
         "updated_at": "2019-09-17T20:58:20.261823",
         "last_commit": "e0c707cbdaff04de8d7aecf002535176ad562c4e",
         "last_commit_time": "2019-07-09T14:41:19"
+    },
+    "com.github.brpaz.ulauncher-jetbrains": {
+        "id": "com.github.brpaz.ulauncher-jetbrains",
+        "url": "https://github.com/brpaz/ulauncher-jetbrains",
+        "updated_at": "2019-09-17T21:06:04.919950",
+        "last_commit": "36437d99c3afc7dd04691173dde1242407476d39",
+        "last_commit_time": "2019-06-22T13:24:47"
     }
 }
