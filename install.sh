@@ -113,4 +113,9 @@ sudo cp assets/undervolt.service /etc/systemd/system/
 sudo systemctl enable undervolt
 
 # Disable dell TB16 dock audio autosuspend in tlp
-sed -i 's/#USB_BLACKLIST="1111:2222 3333:4444"/USB_BLACKLIST="0bda:4014"/g' /etc/default/tlp
+sudo sed -i 's/#USB_BLACKLIST="1111:2222 3333:4444"/USB_BLACKLIST="0bda:4014"/g' /etc/default/tlp
+
+# Enable mpd to connect to pulseaudio
+mkdir -p ~/.config/pulse
+cp /etc/pulse/default.pa ~/.config/pulse/
+sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1/g' ~/.config/pulse/default.pa
