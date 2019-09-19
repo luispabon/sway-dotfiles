@@ -10,8 +10,8 @@ default_floating_border pixel 0
 
 
 #:::::i3_ gaps::::::::::::::C
-	set $default_gaps_inner 8
-	set $default_gaps_outer 8
+	set $default_gaps_inner 12
+	set $default_gaps_outer 12
 	gaps inner $default_gaps_inner
 	gaps outer $default_gaps_outer
 	gaps top 0
