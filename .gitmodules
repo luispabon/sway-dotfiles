@@ -1,3 +1,6 @@
 [submodule "notify-send.sh"]
 	path = notify-send.sh
 	url = git@github.com:vlevit/notify-send.sh.git
+[submodule "scripts/Swytch"]
+	path = scripts/Swytch
+	url = git@github.com:wilecoyote2015/Swytch.git
