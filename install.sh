@@ -119,3 +119,7 @@ sudo sed -i 's/#USB_BLACKLIST="1111:2222 3333:4444"/USB_BLACKLIST="0bda:4014"/g'
 mkdir -p ~/.config/pulse
 cp /etc/pulse/default.pa ~/.config/pulse/
 sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1/g' ~/.config/pulse/default.pa
+
+# For autotiling git@github.com:nwg-piotr/autotiling.git
+pip3 install i3ipc
+ln -s ${current}/scripts/autotiling/autotiling.py ~/bin/

@@ -4,3 +4,6 @@
 [submodule "scripts/Swytch"]
 	path = scripts/Swytch
 	url = git@github.com:wilecoyote2015/Swytch.git
+[submodule "scripts/autotiling"]
+	path = scripts/autotiling
+	url = git@github.com:nwg-piotr/autotiling.git
