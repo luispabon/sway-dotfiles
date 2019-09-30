@@ -1,4 +1,9 @@
-exec_always pkill clipman
-exec_always clipman -d 1>> ~/clipman.log 2>&1
+# exec_always pkill clipman
+# exec_always clipman -d 1>> ~/clipman.log 2>&1
 
-bindsym $mod+Shift+f exec clipman -s --selector=rofi
+exec_always pkill wl-paste
+
+exec_always wl-paste -t text --watch clipman store 1>> ~/clipman.log 2>&1
+exec_always wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json
+
+bindsym $mod+Shift+f exec clipman pick --tool=wofi
