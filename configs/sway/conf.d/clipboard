@@ -1,6 +1,3 @@
-# exec_always pkill clipman
-# exec_always clipman -d 1>> ~/clipman.log 2>&1
-
 exec_always ~/sway/scripts/clipboard-daemon
 
 bindsym $mod+Shift+f exec clipman pick --tool=wofi
