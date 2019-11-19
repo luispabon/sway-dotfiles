@@ -110,6 +110,7 @@ sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
 # Services
 sudo pip3 install undervolt
 sudo cp assets/undervolt.service /etc/systemd/system/
+sudo cp assets/undervolt.timer /etc/systemd/system/
 sudo systemctl enable undervolt
 
 # Disable dell TB16 dock audio autosuspend in tlp
