@@ -2,8 +2,9 @@
 Description=Undervolt
 
 [Service]
+Type=oneshot
 ExecStart=/usr/local/bin/undervolt --core -125 --cache -125 --gpu -100
 
-
+# Removed in favour of timer
 [Install]
 WantedBy=multi-user.target sleep.target
