@@ -1,29 +1,7 @@
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#    position top
-# 	status_command i3status
-#    #font "Ubuntu Nerd Font" 15px
-#    font "Roboto Mono Nerd Font" 15px
-# }
-
-# bar {
-#     swaybar_command waybar
-# }
-
 exec_always bash -c "pkill waybar; waybar"
 
 # exec_always nm-applet
 exec blueman-applet
-
-bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
-# bindsym $mod+P exec ~/.config/rofi/modi/power
-# set $menu ~/sway/scripts/rofi.sh
-
-exec_always pkill ulauncher
-exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1>> ~/ulauncher.log 2>&1
-set $menu ulauncher-toggle
-
-bindsym $mod+D exec wldash
 
 for_window [app_id="waybar" floating] {
     move position cursor

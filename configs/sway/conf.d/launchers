@@ -1,0 +1,13 @@
+# set $menu ~/sway/scripts/rofi.sh
+
+exec_always pkill ulauncher
+exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1>> ~/ulauncher.log 2>&1
+set $menu ulauncher-toggle
+
+# A fallback in case ulauncher stops working
+bindsym $mod+D exec wldash
+
+## Power menu
+
+bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
+# bindsym $mod+P exec ~/.config/rofi/modi/power
