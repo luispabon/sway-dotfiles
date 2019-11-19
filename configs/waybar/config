@@ -38,7 +38,7 @@
         "format-icons": [""],
         "interval": 3600,
         "escape": true,
-        "on-click": "~/.config/rofi/modi/power"
+        "on-click": "~/sway/scripts/wofi-power.sh"
     },
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
