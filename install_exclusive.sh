@@ -21,6 +21,7 @@ sudo apt install --no-install-recommends \
     gnome-terminal \
     gnome-calendar \
     gnome-online-accounts \
+    gnome-control-center \
     nautilus \
     libreoffice
 
