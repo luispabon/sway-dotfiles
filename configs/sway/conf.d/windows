@@ -32,6 +32,7 @@ for_window [app_id="evolution" title="Compose Message"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] resize set 960 540
 for_window [app_id="mpv"] border pixel 0
+for_window [app_id="firefox" title="Firefox - Sharing Indicator"] floating enable
 
 # XWayland default floats
 #for_window [class="[.]*"] floating enable
