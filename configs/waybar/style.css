@@ -7,7 +7,7 @@ window#waybar {
     text-shadow:   none;
     transition-duration: 0s;
     color:      rgba(217, 216, 216, 1);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.76);
 }
 
 window#waybar.solo {
