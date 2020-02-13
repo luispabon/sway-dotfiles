@@ -6,8 +6,10 @@ for_window [class="^.*"] border pixel 0
 default_border pixel 1
 default_floating_border pixel 0
 
+hide_edge_borders smart
+
 # class                 border  backgr. text    indicator child_border
-#client.focused           #be5046 #be5046 #be5046 #be5046   #be5046
+client.focused           #be5046 #be5046 #ffffff #be5046   #be5046
 #client.focused_inactive  #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 #client.unfocused         #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 
@@ -21,7 +23,7 @@ default_floating_border pixel 0
 	# gaps bottom 10
 	smart_gaps on
 
-# bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+s sticky toggle
 
 # Wayland default floats
 for_window [app_id="gnome-(calendar|calculator|power-statistics|control-center)"] floating enable
