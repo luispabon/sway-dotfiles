@@ -1,0 +1,55 @@
+window {
+	background-color: #2F343F;
+	color: #C9C9CB;
+	font-family: "iosevka";
+}
+label {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-bottom: 3px solid rgba(0,0,0,0);
+}
+
+#left {
+	margin-left: 25px;
+}
+
+#right {
+	margin-right: 25px;
+}
+.ws {
+	margin: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#ws-focused {
+	background-color: #444444;
+	border-bottom: 3px solid #FFB52A;
+}
+
+#clock {
+	border-bottom: 3px solid #C62828;
+}
+
+#cpu {
+	border-bottom: 3px solid #D84315;
+	margin-left: 0;
+}
+
+#memory {
+	border-bottom: 3px solid #EF6C00;
+	margin-left: 0;
+}
+
+#cput {
+	color: #7E7F80;
+	margin-right: 0;
+	padding-right: 5px;
+	border-bottom: 3px solid #D84315;
+}
+#memt {
+	color: #7E7F80;
+	margin-right: 0;
+	padding-right: 5px;
+	border-bottom: 3px solid #EF6C00;
+}

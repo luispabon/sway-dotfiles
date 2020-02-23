@@ -5,7 +5,8 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     // "modules-center": ["custom/media"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
+    // "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
+    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },

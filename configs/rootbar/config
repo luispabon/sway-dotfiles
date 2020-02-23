@@ -1,0 +1,34 @@
+bars=primary
+
+primary-output=eDP-1
+primary-left=ws
+primary-right=memory,cpu,volume,battery
+primary-center=clock
+
+ws-dso=workspace
+ws-show_all=true
+ws-name_only=false
+
+volume-dso=volume
+volume-interval=10
+volume-length=50
+
+battery-dso=battery
+
+
+
+
+clock-dso=clock
+clock-length=50
+clock-format=%a %b %e | %I:%M %p
+
+cpu-dso=cpu
+cpu-format=<span color="\#7E7F80">cpu</span> %u%%
+cpu-allow_markup=true
+cpu-length=50
+
+memory-dso=memory
+memory-percent=true
+memory-format=<span color="\#7E7F80">mem</span> %.0f%s
+memory-allow_markup=true
+memory-length=50
