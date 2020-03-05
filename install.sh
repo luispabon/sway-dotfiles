@@ -105,7 +105,8 @@ ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session
 sudo cp ${current}/ssway /usr/bin/ssway
-sudo cp ${current}/assets/ubuntu-sway*.desktop /usr/share/wayland-sessions/
+sudo cp ${current}/swayfire /usr/bin/swayfire
+sudo cp ${current}/assets/ubuntu-wayfire.desktop /usr/share/wayland-sessions/
 
 # Services
 sudo pip3 install undervolt

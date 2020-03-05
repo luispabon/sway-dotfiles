@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Ubuntu Wayfire
+Comment=An i3-compatible Wayland compositor
+Exec=swayfire
+Type=Application
