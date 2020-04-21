@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 
+export WLR_DRM_NO_MODIFIERS=1
+
 # Fixes issues on jetbrains ides
 export _JAVA_AWT_WM_NONREPARENTING=1
 
