@@ -13,3 +13,8 @@
     output "Iiyama North America PL2410HD 11046A0B03094" mode 1920x1080 scale 1 position 0,0
 }
 
+{
+    output eDP-1 mode 3840x2160 scale 2 position 0,1081
+    output "Iiyama North America PL2410HD 11046A0B03094" mode 1920x1080 scale 1 position 0,0
+    output "Samsung Electric Company SMB1920NW HMDB101546" mode 1440x900 scale 1 position 1920,0
+}
