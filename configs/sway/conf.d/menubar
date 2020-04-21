@@ -2,8 +2,4 @@ exec_always bash -c "pkill waybar; waybar"
 
 # exec_always nm-applet
 exec blueman-applet
-
-for_window [app_id="waybar" floating] {
-    move position cursor
-    move down 240px # adjust if some menus still don't fit
-}
+exec nm-applet
