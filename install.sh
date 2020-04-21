@@ -11,16 +11,6 @@ mkdir -p ~/Pictures
 mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 
-# Sway ppa
-# sudo add-apt-repository ppa:samoilov-lex/sway
-
-# sudo apt install \
-#     sway \
-#     sway-backgrounds \
-#     swaybg \
-#     swayidle \
-#     swaylock
-
 # FF beta ppa (wayland support pre-69 is pretty glitchy)
 sudo add-apt-repository ppa:mozillateam/firefox-next
 
@@ -34,6 +24,11 @@ touch ~/.azotebg
 
 # Install all the rest of them things
 sudo apt install \
+    sway \
+    sway-backgrounds \
+    swaybg \
+    swayidle \
+    mako-notifier \
     azote \
     bash \
     brightnessctl \
