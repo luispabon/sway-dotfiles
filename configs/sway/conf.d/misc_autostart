@@ -1,2 +1,2 @@
-exec_always /usr/lib/gnome-online-accounts/goa-daemon --replace
+exec_always /usr/libexec/goa-daemon --replace
 exec blueman-applet
