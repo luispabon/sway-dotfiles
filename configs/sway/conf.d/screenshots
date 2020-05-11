@@ -1,21 +1,16 @@
-    # Screenshot to clipboard
-    #bindsym Print exec grim - | wl-copy
+    # Screenshot to clipboard (all displays)
     bindsym Print exec screenshots.sh all-to-clipboard
 
-    # Screenshot to file
-    # bindsym $mod+Print exec grim $(xdg-user-dir PICTURES)/Screenshot-all-$(date +'%Y-%m-%d-%H%M%S.png')
+    # Screenshot to file (all displays)
     bindsym $mod+Print exec screenshots.sh all-to-file
 
-    # Current window to clipboard
-    # bindsym alt+Print exec grim -g "$(swaymsg --type get_tree --raw | jq --raw-output "${filter}")" - | wl-copy
+    # Current window to clipboard (doesn't work on floating windows tho)
     bindsym alt+Print exec screenshots.sh window-to-clipboard
 
     # Region-select-screenshot to clipboard
-    #bindsym ctrl+Print exec slurp | grim -g - - | wl-copy
     bindsym ctrl+Print exec screenshots.sh region-to-clipboard
 
     # Region-select-screenshot to file
-    #bindsym $mod+ctrl+Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/Screenshot-region-$(date +'%Y-%m-%d-%H%M%S.png')
     bindsym $mod+ctrl+Print exec screenshots.sh region-to-file
 
     # Current display to clipboard
