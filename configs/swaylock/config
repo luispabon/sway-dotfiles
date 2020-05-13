@@ -7,9 +7,11 @@ datestr=%a, %e of %B
 
 screenshots
 
-effect-blur=30x3
+fade-in=0.2
+
+effect-blur=30x2
 effect-greyscale
-effect-scale=0.5
+effect-scale=0.1
 
 indicator
 indicator-radius=240
@@ -20,7 +22,7 @@ key-hl-color=880033
 
 separator-color=00000000
 
-inside-color=00000088
+inside-color=00000099
 inside-clear-color=ffd20400
 inside-caps-lock-color=009ddc00
 inside-ver-color=d9d8d800
