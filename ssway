@@ -6,7 +6,7 @@ export WLR_DRM_NO_MODIFIERS=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # More functional tray on waybar
-export XDG_CURRENT_DESKTOP=Unity
+export XDG_CURRENT_DESKTOP=sway
 
 # Force firefox into wayland and enable hw video decoding (ff 75+)
 export MOZ_ENABLE_WAYLAND=1
