@@ -85,6 +85,8 @@ for folder in ${folders_to_linky[@]}; do
     fi
 done
 
+ln -sf ${current}/configs/libinput-gestures.conf ~/.config/
+
 echo -e "\n${start_green} Installing assets (backgrounds, fonts, app desktop files... ${end_green}"
 
 ln -sf ${current}/assets/backgrounds ~/Pictures/
