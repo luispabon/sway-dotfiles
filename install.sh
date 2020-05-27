@@ -49,12 +49,17 @@ sudo apt install \
     tlp \
     ulauncher \
     wl-clipboard \
-    xdg-desktop-portal-wlr
+    wmctrl \
+    xdg-desktop-portal-wlr \
+    xdotool
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 
 sudo cp assets/90-brightnessctl.rules /etc/udev/rules.d/
 sudo usermod -a -G video $(whoami)
+
+echo -e "\n${start_green} Libinput festures for ${USER}...${end_green}"
+sudo usermod -a -G input $(whoami)
 
 echo -e "\n${start_green} Setting longid config...${end_green}"
 
@@ -93,6 +98,7 @@ xdg-settings set default-web-browser firefox-wayland.desktop
 # Install Scripts in bin folder
 ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
 ln -sf ${current}/scripts/notifications/audio-notification.sh      ~/bin/
+ln -sf ${current}/scripts/notifications/button.sh                  ~/bin/
 ln -sf ${current}/scripts/notifications/network-manager            ~/bin/
 ln -sf ${current}/scripts/screenshots.sh                           ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
@@ -120,3 +126,7 @@ sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-pr
 # For autotiling git@github.com:nwg-piotr/autotiling.git
 pip3 install i3ipc
 ln -s ${current}/scripts/autotiling/autotiling.py ~/bin/
+
+# Installing crontabs
+cat ${current}/assets/crontab-root | sudo crontab -
+cat ${current}/assets/crontab-luis | crontab -
