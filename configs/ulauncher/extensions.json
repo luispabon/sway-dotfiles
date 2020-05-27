@@ -2,9 +2,9 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2020-01-08T15:34:41.661670",
-        "last_commit": "03c44234d79ecd20aa1d4e86f78842dda8388ea9",
-        "last_commit_time": "2019-12-08T07:41:45"
+        "updated_at": "2020-05-20T10:36:49.897322",
+        "last_commit": "798be158b120605cab9f93f1e0c26b60b80f9e05",
+        "last_commit_time": "2020-04-07T18:11:08"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
@@ -37,9 +37,9 @@
     "com.github.brpaz.ulauncher-jetbrains": {
         "id": "com.github.brpaz.ulauncher-jetbrains",
         "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2019-09-25T10:56:23.347582",
-        "last_commit": "36437d99c3afc7dd04691173dde1242407476d39",
-        "last_commit_time": "2019-06-22T13:24:47"
+        "updated_at": "2020-05-20T10:37:17.541478",
+        "last_commit": "a8be75d004d38212e9cbf8ac38d24b0ac81cd85f",
+        "last_commit_time": "2020-04-13T18:09:43"
     },
     "com.github.luispabon.ulauncher-virtualbox": {
         "id": "com.github.luispabon.ulauncher-virtualbox",
