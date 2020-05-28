@@ -102,6 +102,7 @@ ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
 ln -sf ${current}/scripts/notifications/audio-notification.sh      ~/bin/
 ln -sf ${current}/scripts/notifications/button.sh                  ~/bin/
 ln -sf ${current}/scripts/notifications/network-manager            ~/bin/
+ln -sf ${current}/scripts/docker                                   ~/bin/
 ln -sf ${current}/scripts/screenshots.sh                           ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/

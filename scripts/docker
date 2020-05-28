@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+export PATH="${PATH/$(dirname "$0"):/}"
+
+if ! systemctl is-active --quiet docker; then
+    sudo systemctl start docker
+fi
+
+docker "$@"
