@@ -31,6 +31,8 @@ for_window [app_id="org.gnome.(Nautilus|Weather)"] floating enable
 for_window [app_id="(pavucontrol|psensor)"] floating enable
 for_window [app_id="evolution-alarm-notify"] floating enable
 for_window [app_id="evolution" title="Compose Message"] floating enable
+for_window [app_id="evolution" title="Re(.*)"] floating enable
+for_window [app_id="evolution" title="Fwd(.*)"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] resize set 960 540
 for_window [app_id="mpv"] border pixel 0
