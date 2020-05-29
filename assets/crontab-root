@@ -1,3 +1,3 @@
 28 17 * * MON-FRI nice -n19 chown luis:luis /home/luis -Rf
 45 17 * * MON-FRI nice -n19 journalctl --vacuum-size=500M
-* * * * * pgrep -af '/docker($| )' || (docker ps -q | grep . ||	 (systemctl stop docker &&	 ip -brief link show | awk '{ print $1 }' |   grep -E '^(docker0|br-[0-9a-f]{12})$' | xargs -INAME ip link set dev NAME down ) )
+*/5 * * * * pgrep -af '/docker($| )' || (docker ps -q | grep . ||	 (systemctl stop docker &&	 ip -brief link show | awk '{ print $1 }' |   grep -E '^(docker0|br-[0-9a-f]{12})$' | xargs -INAME ip link set dev NAME down ) )
