@@ -1,6 +1,5 @@
 # set $menu ~/sway/scripts/rofi.sh
 
-exec_always pkill ulauncher
 exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1>> ~/ulauncher.log 2>&1
 set $menu ulauncher-toggle
 

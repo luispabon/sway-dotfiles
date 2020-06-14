@@ -37,8 +37,11 @@ for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] resize set 960 540
 for_window [app_id="mpv"] border pixel 0
 for_window [app_id="firefox" title="Firefox - Sharing Indicator"] floating enable
-for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enable
+
+# Jetbrains popup float fixes
+for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enableC
 for_window [class="jetbrains-(.*)" title="Rename"] floating enable
+for_window [class="jetbrains-(.*)" title="Open Project"] floating enable
 
 # XWayland default floats
 #for_window [class="[.]*"] floating enable
