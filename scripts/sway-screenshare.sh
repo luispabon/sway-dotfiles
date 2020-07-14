@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -x
 
-
 geometry(){
 	windowGeometries=$(
 		# `height - 1` is there because of: https://github.com/ammen99/wf-recorder/pull/56 (I could remove it if it's merged, maybe)
@@ -12,10 +11,8 @@ geometry(){
 	echo $geometry
 }
 
-{
-	geometry=$(geometry) || exit $?
-	wf-recorder -c rawvideo --geometry="$geometry" -m sdl -f pipe:wayland-mirror
+geometry=$(geometry) || exit $?
+wf-recorder -c rawvideo --geometry="$geometry" -m sdl -f pipe:wayland-mirror
 
-	# wf-recorder -c rawvideo --geometry="$geometry" -x yuv420p -m avi -f pipe:99 99>&1 >&2 | ffplay -f avi - &
-
-} > ~/.wayland-share-screen.log 2>&1
+# Alternative method via ffplay
+# wf-recorder -c rawvideo --geometry="$geometry" -x yuv420p -m avi -f pipe:99 99>&1 >&2 | ffplay -f avi - &
