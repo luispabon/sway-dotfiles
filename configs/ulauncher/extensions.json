@@ -51,8 +51,15 @@
     "com.github.brpaz.ulauncher-jetbrains": {
         "id": "com.github.brpaz.ulauncher-jetbrains",
         "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2020-06-01T10:55:18.620762",
-        "last_commit": "45841100205506e52ea89f0012028fb24c5cec43",
-        "last_commit_time": "2020-05-24T13:54:10"
+        "updated_at": "2020-06-19T13:57:40.950021",
+        "last_commit": "f650831570ae79b6d521804fb82c68a1951b6b95",
+        "last_commit_time": "2020-06-02T20:08:25"
+    },
+    "com.github.rdnetto.ulauncher-sway": {
+        "id": "com.github.rdnetto.ulauncher-sway",
+        "url": "https://github.com/rdnetto/ulauncher-sway",
+        "updated_at": "2020-07-02T12:52:36.188280",
+        "last_commit": "ca6e8365723fd444b302236fb72eded4a1378c3e",
+        "last_commit_time": "2020-07-01T16:04:10"
     }
 }

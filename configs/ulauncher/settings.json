@@ -3,6 +3,6 @@
     "clear-previous-query": true,
     "hotkey-show-app": "<Primary>space",
     "show-indicator-icon": false,
-    "show-recent-apps": true,
+    "show-recent-apps": "5",
     "theme-name": "adwaita"
 }
