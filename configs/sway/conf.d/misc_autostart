@@ -2,3 +2,4 @@ exec_always /usr/libexec/goa-daemon --replace
 exec blueman-applet
 
 exec_always bash -c "libinput-gestures-setup stop; libinput-gestures-setup start"
+exec solaar

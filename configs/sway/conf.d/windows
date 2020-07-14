@@ -30,6 +30,8 @@ for_window [app_id="gnome-(calendar|calculator|power-statistics|control-center)"
 for_window [app_id="org.gnome.(Nautilus|Weather)"] floating enable
 for_window [app_id="(pavucontrol|psensor)"] floating enable
 for_window [app_id="evolution-alarm-notify"] floating enable
+for_window [app_id="nemo"] floating enable
+for_window [app_id="solaar"] floating enable
 for_window [app_id="evolution" title="Compose Message"] floating enable
 for_window [app_id="evolution" title="Re(.*)"] floating enable
 for_window [app_id="evolution" title="Fwd(.*)"] floating enable
@@ -39,7 +41,7 @@ for_window [app_id="mpv"] border pixel 0
 for_window [app_id="firefox" title="Firefox - Sharing Indicator"] floating enable
 
 # Jetbrains popup float fixes
-for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enableC
+for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enable
 for_window [class="jetbrains-(.*)" title="Rename"] floating enable
 for_window [class="jetbrains-(.*)" title="Open Project"] floating enable
 
