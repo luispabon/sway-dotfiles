@@ -67,6 +67,7 @@ sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf-bak
 sudo cp assets/logind.conf /etc/systemd/logind.conf
 sudo cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf-bak
 sudo cp assets/etc-pulse-daemon.conf /etc/pulse/daemon.conf
+sudo cp assets/etc-sysctl.d-jetbrains-inotify.conf /etc/sysctl.d/99-jetbrains-inotify.conf
 sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/modprobe.d/audio-powersave.conf
 
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
