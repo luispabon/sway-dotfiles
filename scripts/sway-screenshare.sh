@@ -11,6 +11,9 @@ geometry(){
 	echo $geometry
 }
 
+# Ensure we're not using the wayland backend on SDL
+unset SDL_VIDEODRIVER
+
 geometry=$(geometry) || exit $?
 wf-recorder -c rawvideo --geometry="$geometry" -m sdl -f pipe:wayland-mirror
 
