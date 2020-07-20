@@ -40,6 +40,9 @@ focus_follows_mouse no
     # start your launcher
     bindsym $mod+Space exec $menu
 
+    # Start output recording for screenshare
+    bindsym $mod+Shift+r exec sway-screenshare.sh
+
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
