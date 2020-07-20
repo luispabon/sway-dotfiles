@@ -3,7 +3,7 @@ Description=Undervolt
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/undervolt --core -125 --cache -125 --gpu -100
+ExecStart=/usr/local/bin/undervolt --core -125 --cache -125 --gpu -100 --uncore -100 --analogio -100
 
 # Removed in favour of timer
 [Install]
