@@ -3,3 +3,4 @@ Name=Ubuntu Sway
 Comment=An i3-compatible Wayland compositor
 Exec=ssway
 Type=Application
+DesktopNames=sway
