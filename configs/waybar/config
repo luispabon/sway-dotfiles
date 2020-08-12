@@ -1,7 +1,6 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
-    "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
@@ -9,19 +8,18 @@
         "format": " {}"
     },
     "sway/workspaces": {
-         "disable-scroll": true,
-         "disable-markup" : false,
-         "format": " {icon} ",
-         //"format":"{icon}",
-         "format-icons": {
-             "1": "1 <span font='Font Awesome 5 Free 11'> </span>",
-             "2": "2 <span font='Font Awesome 5 Free 11'> </span>",
-             "3": "3 <span font='Font Awesome 5 Free 11'> </span>",
-             "4": "4 <span font='Font Awesome 5 Free 11'> </span>",
-             "5": "5 <span font='Font Awesome 5 Free 11'> </span>",
-             "6": "6 <span font='Font Awesome 5 Free 11'> </span>"
-         }
-     },
+        "disable-scroll": true,
+        "disable-markup": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1 <span font='Font Awesome 5 Free 11'> </span>",
+            "2": "2 <span font='Font Awesome 5 Free 11'> </span>",
+            "3": "3 <span font='Font Awesome 5 Free 11'> </span>",
+            "4": "4 <span font='Font Awesome 5 Free 11'> </span>",
+            "5": "5 <span font='Font Awesome 5 Free 11'> </span>",
+            "6": "6 <span font='Font Awesome 5 Free 11'> </span>"
+        }
+    },
     "sway/window": {
         "max-length": 80,
         "tooltip": false
@@ -52,8 +50,9 @@
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}:{M}",
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-        "format-full":  "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - Charged",
+        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -84,28 +83,7 @@
         },
         "scroll-step": 2,
         "on-click": "gnome-control-center sound",
-        //"on-click": "pavucontrol",
         "tooltip": false
-    },
-    "custom/spotify": {
-        "interval": 5,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/spotify.sh",
-        "exec-if": "pgrep spotify",
-        "on-click": "playerctl play-pause",
-        "escape": true
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/modules/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/storage": {
         "format": "{} ",
@@ -151,21 +129,7 @@
         },
         "tooltip": false
     },
-    "custom/mail": {
-        "format": "",
-        "format-alt": "{alt} ",
-        "format-alt-click": "click-right",
-        "interval": 60,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/mail.py",
-        "tooltip": false
-    },
-    "custom/test": {
-        "format": "{}",
-        "exec": "/tmp/test blub",
-        "param": "blah",
-        "interval": 5
-    },
+
     "tray": {
         "icon-size": 18,
         "spacing": 18
