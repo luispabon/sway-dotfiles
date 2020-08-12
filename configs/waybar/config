@@ -3,17 +3,25 @@
     "position": "top",
     "height": 35,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    // "modules-center": ["custom/media"],
     "modules-center": ["clock"],
-    // "modules-right": ["tray", "idle_inhibitor", "custom/weather", "pulseaudio", "network", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
     "sway/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
-    },
+         "disable-scroll": true,
+         "disable-markup" : false,
+         "format": " {icon} ",
+         //"format":"{icon}",
+         "format-icons": {
+             "1": "1 <span font='Font Awesome 5 Free 11'> </span>",
+             "2": "2 <span font='Font Awesome 5 Free 11'> </span>",
+             "3": "3 <span font='Font Awesome 5 Free 11'> </span>",
+             "4": "4 <span font='Font Awesome 5 Free 11'> </span>",
+             "5": "5 <span font='Font Awesome 5 Free 11'> </span>",
+             "6": "6 <span font='Font Awesome 5 Free 11'> </span>"
+         }
+     },
     "sway/window": {
         "max-length": 80,
         "tooltip": false
