@@ -30,7 +30,7 @@
         "on-click": "gnome-calendar"
     },
     "custom/cpu_speed": {
-        "interval": 5,
+        "interval": 10,
         "return-type": "json",
         "exec": "~/.config/waybar/modules/cpu_speed.sh",
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {}",
@@ -50,7 +50,7 @@
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
-        "format-time": "{H}:{M}",
+        "format-time": "{H}h{M}m",
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
         "interval": 30,
