@@ -3,7 +3,7 @@ Description=nvidia GPU poweroff hack
 
 [Service]
 Type=oneshot
-ExecStart=bash -c "echo on > /sys/bus/pci/devices/0000:01:00.0/power/control && echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control"
+ExecStart=bash -c "echo on > /sys/bus/pci/devices/0000:01:00.0/power/control && sleep 10 && echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control"
 
 # Removed in favour of timer
 [Install]
