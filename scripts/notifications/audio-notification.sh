@@ -5,11 +5,14 @@
 # Create a delay so the change in volume can be registered:
 sleep 0.05
 
+getsink() {
+    pacmd list-sinks |
+        awk '/index:/{i++} /* index:/{print i; exit}'
+}
+
+
 # Get the volume and check if muted or not (STATE):
-VOLUME=`amixer -D pulse sget Master | \
-        grep 'Left:' | \
-        awk -F'[][]' '{ print $2 }' | \
-        sed --expression 's/%//g'`
+VOLUME=`pacmd list-sinks | awk '/^\svolume:/{i++} i=='$(getsink)'{print $5; exit}' | sed -e 's/\%//'`
 
 STATE=`amixer -D pulse sget Master          | \
        egrep -m 1 'Playback.*?\[o' | \
