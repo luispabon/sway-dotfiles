@@ -2,9 +2,9 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2020-08-10T16:27:11.461617",
-        "last_commit": "8c30af5f99ee28bff8ae623c3ed0ff08110f26b4",
-        "last_commit_time": "2020-06-19T16:28:40"
+        "updated_at": "2020-10-16T11:52:29.896433",
+        "last_commit": "3b2639fd106ed3ef664953eb868b80c2fb8428ea",
+        "last_commit_time": "2020-09-22T18:29:15"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
@@ -37,9 +37,9 @@
     "com.github.luispabon.ulauncher-virtualbox": {
         "id": "com.github.luispabon.ulauncher-virtualbox",
         "url": "https://github.com/luispabon/ulauncher-virtualbox",
-        "updated_at": "2019-09-25T10:56:25.186842",
-        "last_commit": "940f775b4893670b95a94d78b0d1394e763642e8",
-        "last_commit_time": "2019-09-24T18:46:46"
+        "updated_at": "2020-09-23T02:29:51.294391",
+        "last_commit": "d8f495df3c7f41ee8493b207d17f06fc0372c84e",
+        "last_commit_time": "2020-09-23T01:29:15"
     },
     "com.github.zensoup.ulauncher-unicode": {
         "id": "com.github.zensoup.ulauncher-unicode",
