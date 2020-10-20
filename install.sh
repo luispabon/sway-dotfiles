@@ -41,6 +41,7 @@ sudo apt install \
     libnl-3-200 \
     libnotify4 \
     libnotify-bin \
+    moreutils \
     playerctl \
     python3-pip \
     gir1.2-playerctl-2.0 \
