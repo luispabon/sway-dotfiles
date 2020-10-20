@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-pkill wl-paste || echo "Already dead"
+pkill wl-paste || echo "Restarting clipman: already dead" | ts
 
-wl-paste -t text --watch clipman store 1>> ~/logs/clipman.log 2>&1 &
-# wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json" &
+exec wl-paste -t text --watch clipman store 2>&1 | ts > ~/logs/clipman.log
