@@ -1,5 +1,3 @@
-# set $menu ~/sway/scripts/rofi.sh
-
 exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1>> ~/logs/ulauncher.log 2>&1
 set $menu ulauncher-toggle
 
@@ -7,5 +5,4 @@ set $menu ulauncher-toggle
 bindsym $mod+D exec wldash
 
 ## Power menu
-
 bindsym $mod+P exec ~/sway/scripts/wofi-power.sh

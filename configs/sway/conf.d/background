@@ -1,4 +1,3 @@
-# output * bg ~/Pictures/backgrounds/1810_FlamyBoil-Parressman.png fill
 output * bg ~/Pictures/backgrounds/kate-hazen-fractal-mountains.png fill
 
 exec ~/.azotebg

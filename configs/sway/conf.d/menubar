@@ -1,5 +1,4 @@
 exec_always bash -c "pkill waybar; waybar"
 
-# exec_always nm-applet
 exec blueman-applet
 exec nm-applet

@@ -10,6 +10,7 @@ input "*" xkb_layout gb
 input "1118:219:Microsoft_Natural®_Ergonomic_Keyboard_4000" xkb_numlock enabled
 
 ### Touchscreen
+# map_to_output ensures touchscreen only points to things on the laptop's display - not on any other active display
 input "1267:9376:ELAN_Touchscreen" {
     map_to_output eDP-1
     natural_scroll disabled
