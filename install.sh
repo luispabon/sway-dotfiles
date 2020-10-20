@@ -10,6 +10,7 @@ mkdir -p ~/bin
 mkdir -p ~/Pictures
 mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
+mkdir -p ~/logs
 
 # FF beta ppa (wayland support pre-69 is pretty glitchy)
 sudo add-apt-repository ppa:mozillateam/firefox-next
@@ -115,4 +116,4 @@ sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-pr
 
 # For autotiling git@github.com:nwg-piotr/autotiling.git
 pip3 install i3ipc
-ln -s ${current}/scripts/autotiling/autotiling.py ~/bin/
+ln -sf ${current}/scripts/autotiling/autotiling.py ~/bin/

@@ -21,13 +21,13 @@ eval (ssh-agent -c)
 find ~/.ssh ! -name "*.pub" ! -name "config" ! -name "known_hosts" -type f | xargs ssh-add 2>&1 > /dev/null
 
 # Back previous
-mv ~/sway.log ~/sway-prev.log
+mv ~/logs/sway.log ~/logs/sway-prev.log
 
 # Start sway with or without debug
 argparse --name='ssway' "d/debug" -- $argv
 echo $_flag_d
 if test -n "$_flag_d"
-    exec sway -d 2> ~/sway.log
+    exec sway -d 2> ~/logs/sway.log
 else
-    exec sway 2> ~/sway.log
+    exec sway 2> ~/logs/sway.log
 end

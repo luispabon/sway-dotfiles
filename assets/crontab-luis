@@ -1,4 +1,4 @@
-30 17 * * MON-FRI . $HOME/shell-config/borg-backups-env && nice -n19 $HOME/Projects/borg-s3-home-backup/borg-backup.sh > /home/luis/backup.log 2>&1
+30 17 * * MON-FRI . $HOME/shell-config/borg-backups-env && nice -n19 $HOME/Projects/borg-s3-home-backup/borg-backup.sh > /home/luis/logs/backup.log 2>&1
 38 17 * * MON-FRI nice -n19 yes|docker system prune
 50 17 * * MON-FRI nice -n19 yes|docker volume prune
 */15 * * * *  pkill wl-paste && wl-paste -t text --watch clipman store &; disown

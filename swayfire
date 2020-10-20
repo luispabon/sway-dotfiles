@@ -18,5 +18,5 @@ eval (ssh-agent -c)
 find ~/.ssh ! -name "*.pub" ! -name "config" ! -name "known_hosts" -type f | xargs ssh-add 2>&1 > /dev/null
 
 # Back previous
-mv ~/wayfire.log ~/wayfire-prev.log
-exec wayfire 2> ~/wayfire.log
+mv ~/logs/wayfire.log ~/logs/wayfire-prev.log
+exec wayfire 2> ~/logs/wayfire.log
