@@ -93,11 +93,6 @@ echo -e "\n${start_green} Installing assets (backgrounds, fonts, app desktop fil
 ln -sf ${current}/assets/backgrounds ~/Pictures/
 ln -sf ${current}/assets/fonts/* ~/.local/share/fonts/
 
-# Make FF wayland default (workaround to https://bugzilla.mozilla.org/show_bug.cgi?id=1508803)
-# Don't exactly need the desktop file when starting from the ssway script as the env var is set already
-ln -sf ${current}/assets/*.desktop ~/.local/share/applications/
-xdg-settings set default-web-browser firefox-wayland.desktop
-
 # Install Scripts in bin folder
 ln -sf ${current}/scripts/notifications/brightness-notification.sh ~/bin/
 ln -sf ${current}/scripts/notifications/audio-notification.sh      ~/bin/
@@ -113,17 +108,6 @@ sudo cp ${current}/ssway /usr/bin/ssway
 sudo cp ${current}/swayfire /usr/bin/swayfire
 sudo cp ${current}/assets/ubuntu-wayfire.desktop /usr/share/wayland-sessions/
 
-# Services
-sudo pip3 install undervolt
-sudo cp assets/nvidia-power.service /etc/systemd/system/
-sudo cp assets/undervolt.service /etc/systemd/system/
-sudo cp assets/undervolt.timer /etc/systemd/system/
-sudo systemctl enable undervolt
-sudo systemctl enable nvidia-power
-
-# Disable dell TB16 dock audio autosuspend in tlp
-sudo sed -i 's/#USB_BLACKLIST="1111:2222 3333:4444"/USB_BLACKLIST="0bda:4014"/g' /etc/default/tlp
-
 # Enable mpd to connect to pulseaudio
 mkdir -p ~/.config/pulse
 cp /etc/pulse/default.pa ~/.config/pulse/
@@ -132,7 +116,3 @@ sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-pr
 # For autotiling git@github.com:nwg-piotr/autotiling.git
 pip3 install i3ipc
 ln -s ${current}/scripts/autotiling/autotiling.py ~/bin/
-
-# Installing crontabs
-cat ${current}/assets/crontab-root | sudo crontab -
-cat ${current}/assets/crontab-luis | crontab -
