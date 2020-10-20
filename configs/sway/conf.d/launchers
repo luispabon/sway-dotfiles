@@ -9,4 +9,3 @@ bindsym $mod+D exec wldash
 ## Power menu
 
 bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
-# bindsym $mod+P exec ~/.config/rofi/modi/power
