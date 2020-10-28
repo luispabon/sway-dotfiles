@@ -12,26 +12,21 @@ mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/fonts
 mkdir -p ~/logs
 
-# FF beta ppa (wayland support pre-69 is pretty glitchy)
-sudo add-apt-repository ppa:mozillateam/firefox-next
-
-# Ulauncher
-
-# sudo add-apt-repository ppa:agornostal/ulauncher
-
-#Azote (wallpaper manager) https://github.com/nwg-piotr/azote
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
-curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
-touch ~/.azotebg
-
-# Install all the rest of them things
+echo -e "\n${start_green} Installing base apps...${end_green}"
 sudo apt install \
-    azote \
     bash \
+    blueman \
     brightnessctl \
-    firefox \
+    curl \
+    evolution \
+    fish \
+    direnv \
+    thefuck \
+    fonts-noto-core \
+    htop \
     jq \
     grim \
+    grub-customizer \
     libglib2.0-bin \
     libmpdclient2 \
     libnl-3-200 \
@@ -39,16 +34,85 @@ sudo apt install \
     libnotify-bin \
     moreutils \
     playerctl \
+    powertop \
     python3-pip \
     gir1.2-playerctl-2.0 \
     units \
     rofi \
     slurp \
     tlp \
-    ulauncher \
     wl-clipboard \
+    wget \
     wmctrl \
     xdotool
+
+sudo apt install --no-install-recommends \
+    gnome-tweaks \
+    golang-go \
+    virtualbox-qt
+
+sudo apt autoremove --purge \
+    thunderbird
+
+echo -e "\n${start_green} Installing third party PPAs and apps...${end_green}"
+# PPAs
+sudo add-apt-repository -y ppa:mozillateam/firefox-next
+sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
+sudo add-apt-repository -y ppa:daniruiz/flat-remix
+sudo add-apt-repository -y ppa:agornostal/ulauncher
+sudo add-apt-repository -y ppa:solaar-unifying/stable
+
+# Install chrome (installs both chrome stable + repository)
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
+# Azote (wallpaper manager) https://github.com/nwg-piotr/azote
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
+curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
+touch ~/.azotebg
+
+# Install all the rest of them things
+sudo apt install \
+    azote \
+    google-chrome-unstable \
+    flat-remix \
+    firefox \
+    firefox-trunk \
+    solaar \
+    ulauncher
+
+# Installing chrome unstable duplicates the same chrome repo created when installing chrome stable, under a difrerent file
+sudo rm -f /etc/apt/sources.list.d/google-chrome-unstable.list*
+
+echo -e "\n${start_green} Installing snap apps...${end_green}"
+sudo snap install chromium --channel latest/edge --classic
+sudo snap install youtube-dl
+sudo snap install spotify
+sudo snap install insomnia
+sudo snap install retroarch
+sudo snap install kubectl --classic
+sudo snap install google-cloud-sdk --classic
+sudo snap install code --classic
+sudo snap install phpstorm --classic
+sudo snap install pycharm-professional --classic
+
+# Try installing Slack. The snap version is a pain to use as links do not open on the current browser session
+# We should be able to revert to it after https://bugs.launchpad.net/snapd/+bug/1835024/ is fixed
+slack_link=$(curl -sS https://slack.com/intl/en-gb/downloads/instructions/ubuntu | grep "https://downloads.slack-edge.com/linux_releases/slack-desktop-[0-9.-]*-amd64.deb" -o)
+echo -e "\n${start_green} Attempting to install slack from their website...${end_green}"
+if [[ "${slack_link}" != "" ]]; then
+    echo -e "\n${start_green} Found download link ${slack_link} ${end_green}"
+
+    slack_deb=/tmp/slack.deb
+    wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.10.3-amd64.deb -O "${slack_deb}"
+    sudo dpkg -i ${slack_deb}
+    rm ${slack_deb}
+
+    echo -e "\n${start_green} Slack installed${end_green}"
+else
+    echo -e "\n${start_green} Could not find slack link on their website. Try installing by hand from https://slack.com/intl/en-gb/downloads/linux${end_green}"
+fi
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 
