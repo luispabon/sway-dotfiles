@@ -1,0 +1,10 @@
+[Unit]
+Description=XPS 9560 Built in devices power saving
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xps-powersave-service.sh
+
+# Removed in favour of timer
+[Install]
+WantedBy=multi-user.target sleep.target
