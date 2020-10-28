@@ -16,20 +16,16 @@ mkdir -p ~/logs
 sudo add-apt-repository ppa:mozillateam/firefox-next
 
 # Ulauncher
-sudo add-apt-repository ppa:agornostal/ulauncher
 
-# Azote (wallpaper manager) https://github.com/nwg-piotr/azote
+# sudo add-apt-repository ppa:agornostal/ulauncher
+
+#Azote (wallpaper manager) https://github.com/nwg-piotr/azote
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/ /' > /etc/apt/sources.list.d/azote.list"
 curl https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_19.04/Release.key | sudo apt-key add -
 touch ~/.azotebg
 
 # Install all the rest of them things
 sudo apt install \
-    sway \
-    sway-backgrounds \
-    swaybg \
-    swayidle \
-    mako-notifier \
     azote \
     bash \
     brightnessctl \
@@ -52,7 +48,6 @@ sudo apt install \
     ulauncher \
     wl-clipboard \
     wmctrl \
-    xdg-desktop-portal-wlr \
     xdotool
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
@@ -109,6 +104,8 @@ ln -sf ${current}/ssway                                            ~/bin/
 sudo cp ${current}/ssway /usr/bin/ssway
 sudo cp ${current}/swayfire /usr/bin/swayfire
 sudo cp ${current}/assets/ubuntu-wayfire.desktop /usr/share/wayland-sessions/
+sudo cp ${current}/assets/ubuntu-sway.desktop /usr/share/wayland-sessions/
+sudo cp ${current}/assets/ubuntu-sway-debug.desktop /usr/share/wayland-sessions/
 
 # Enable mpd to connect to pulseaudio
 mkdir -p ~/.config/pulse
