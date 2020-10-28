@@ -6,6 +6,7 @@ sudo pip3 install undervolt
 sudo cp assets/undervolt.service /etc/systemd/system/
 sudo cp assets/undervolt.timer /etc/systemd/system/
 sudo systemctl enable undervolt
+sudo systemctl enable undervolt.timer
 
 sudo cp assets/xps-powersave.service /etc/systemd/system
 sudo cp assets/xps-powersave-service.sh /usr/bin/
