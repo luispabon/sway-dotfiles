@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export XDG_RUNTIME_DIR=/run/user/`id -u`
+
 pkill wl-paste || echo "Restarting clipman: already dead" | ts
 
 exec wl-paste -t text --watch clipman store 2>&1 | ts > ~/logs/clipman.log
