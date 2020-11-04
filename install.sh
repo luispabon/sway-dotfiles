@@ -14,6 +14,7 @@ mkdir -p ~/logs
 
 echo -e "\n${start_green} Installing base apps...${end_green}"
 sudo apt install \
+    ack \
     bash \
     blueman \
     brightnessctl \
@@ -49,7 +50,8 @@ sudo apt install \
 sudo apt install --no-install-recommends \
     gnome-tweaks \
     golang-go \
-    virtualbox-qt
+    virtualbox-qt \
+    yarnpkg
 
 sudo apt autoremove --purge \
     thunderbird
@@ -113,6 +115,8 @@ if [[ "${slack_link}" != "" ]]; then
 else
     echo -e "\n${start_green} Could not find slack link on their website. Try installing by hand from https://slack.com/intl/en-gb/downloads/linux${end_green}"
 fi
+
+sudo ln -sf $(which yarnpkg) /usr/bin/yarn
 
 echo -e "\n${start_green} Fixing brightness controls for ${USER}...${end_green}"
 
