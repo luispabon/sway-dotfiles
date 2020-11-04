@@ -1,5 +1,8 @@
 #!/usr/bin/fish
 
+# Ensure we can find objects we've built by hand and not into debs
+export LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu/
+
 export WLR_DRM_NO_MODIFIERS=1
 
 # Fixes issues on jetbrains ides
