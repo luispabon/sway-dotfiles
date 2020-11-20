@@ -41,6 +41,7 @@ for_window [app_id="mpv"] border pixel 0
 for_window [app_id="firefox" title="Firefox – Sharing Indicator"] floating enable
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
 for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
+for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 
 # Jetbrains popup float fixes
 for_window [class="jetbrains-(.*)" title="Go to Line/Column"] floating enable
