@@ -59,6 +59,12 @@ window#waybar.solo {
     min-width: 82px;
 }
 
+#custom-recorder {
+	font-size: 18px;
+	margin: 2px 7px 0px 7px;
+	color:#c9545d;
+}
+
 #tray,
 #mode,
 #battery,

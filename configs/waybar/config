@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
+    "modules-right": ["custom/recorder", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -47,6 +47,13 @@
         "escape": true,
         "on-click": "~/sway/scripts/wofi-power.sh"
     },
+    "custom/recorder": {
+		"format": "",
+		"return-type": "json",
+		"interval": 1,
+		"exec": "echo '{\"class\": \"recording\"}'",
+		"exec-if": "pgrep wf-recorder"
+	},
     "battery": {
         "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
         "format-icons": ["", "", "", "", ""],
