@@ -2,16 +2,16 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2020-10-16T11:52:29.896433",
-        "last_commit": "3b2639fd106ed3ef664953eb868b80c2fb8428ea",
-        "last_commit_time": "2020-09-22T18:29:15"
+        "updated_at": "2020-12-16T11:20:51.311231",
+        "last_commit": "9268d22afd93748821164e12f806b049533fc873",
+        "last_commit_time": "2020-12-08T21:03:45"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
         "url": "https://github.com/Ulauncher/ulauncher-emoji",
-        "updated_at": "2019-09-25T10:56:14.560328",
-        "last_commit": "4734455e255a401ff7507192386ed62361cb3748",
-        "last_commit_time": "2019-05-20T18:00:00"
+        "updated_at": "2020-12-16T11:18:55.939757",
+        "last_commit": "d56b2c8106ab5fbc87b55f608a3bd75db23f2904",
+        "last_commit_time": "2020-10-03T19:10:03"
     },
     "com.github.fisadev.ulauncher-better-file-browser": {
         "id": "com.github.fisadev.ulauncher-better-file-browser",
@@ -23,9 +23,9 @@
     "com.github.nesivmi.ulauncher-translate": {
         "id": "com.github.nesivmi.ulauncher-translate",
         "url": "https://github.com/nesivmi/ulauncher-translate",
-        "updated_at": "2019-09-25T10:56:19.065319",
-        "last_commit": "9bf5513e57b37a3f68acce459f7c878e57e8a16d",
-        "last_commit_time": "2019-09-16T20:21:07"
+        "updated_at": "2020-12-16T11:19:09.881602",
+        "last_commit": "38cf20f4621704b26a1e866d066ccb6a2acac5f2",
+        "last_commit_time": "2020-11-21T21:26:56"
     },
     "com.github.skykooler.ulauncher-conversion": {
         "id": "com.github.skykooler.ulauncher-conversion",
@@ -51,9 +51,9 @@
     "com.github.brpaz.ulauncher-jetbrains": {
         "id": "com.github.brpaz.ulauncher-jetbrains",
         "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2020-06-19T13:57:40.950021",
-        "last_commit": "f650831570ae79b6d521804fb82c68a1951b6b95",
-        "last_commit_time": "2020-06-02T20:08:25"
+        "updated_at": "2020-12-16T11:20:59.390014",
+        "last_commit": "0f107684801c0daacfceaefe15d08c6b17b58bfb",
+        "last_commit_time": "2020-11-15T13:48:18"
     },
     "com.github.rdnetto.ulauncher-sway": {
         "id": "com.github.rdnetto.ulauncher-sway",
