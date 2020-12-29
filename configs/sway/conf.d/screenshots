@@ -1,17 +1,18 @@
     # Screenshot to clipboard (all displays)
-    bindsym Print exec screenshots.sh all-to-clipboard
+    # bindsym Print exec screenshots.sh all-to-clipboard
+    bindsym Print exec grimshot --notify copy
 
     # Screenshot to file (all displays)
-    bindsym $mod+Print exec screenshots.sh all-to-file
+    bindsym $mod+Print exec  grimshot --notify save
 
     # Current window to clipboard (doesn't work on floating windows tho)
-    bindsym alt+Print exec screenshots.sh window-to-clipboard
+    bindsym alt+Print exec  grimshot --notify copy active
 
     # Region-select-screenshot to clipboard
-    bindsym ctrl+Print exec screenshots.sh region-to-clipboard
+    bindsym ctrl+Print exec grimshot --notify copy area
 
     # Region-select-screenshot to file
-    bindsym $mod+ctrl+Print exec screenshots.sh region-to-file
+    bindsym $mod+ctrl+Print exec grimshot --notify save area
 
     # Current display to clipboard
-    bindsym ctrl+alt+Print exec screenshots.sh active-display-to-clipboard
+    bindsym ctrl+alt+Print exec grimshot --notify copy output
