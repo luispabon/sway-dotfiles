@@ -61,5 +61,12 @@
         "updated_at": "2020-07-02T12:52:36.188280",
         "last_commit": "ca6e8365723fd444b302236fb72eded4a1378c3e",
         "last_commit_time": "2020-07-01T16:04:10"
+    },
+    "com.github.elken.terminal-runner": {
+        "id": "com.github.elken.terminal-runner",
+        "url": "https://github.com/elken/Terminal-Runner",
+        "updated_at": "2021-01-02T14:16:50.793793",
+        "last_commit": "6807ebe6047462bcce6063c63228eddcb8c6b481",
+        "last_commit_time": "2020-02-22T23:04:04"
     }
 }
