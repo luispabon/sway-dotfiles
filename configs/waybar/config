@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
@@ -21,8 +21,9 @@
         }
     },
     "sway/window": {
-        "max-length": 80,
+        "max-length": 60,
         "tooltip": false
+        // "format": "( {} )"
     },
     "clock": {
         "format": "{:%a %d %b - %H:%M}",
@@ -50,7 +51,7 @@
     "custom/recorder": {
 		"format": "",
 		"return-type": "json",
-		"interval": 1,
+		"interval": 4,
 		"exec": "echo '{\"class\": \"recording\"}'",
 		"exec-if": "pgrep wf-recorder"
 	},
@@ -140,5 +141,13 @@
     "tray": {
         "icon-size": 18,
         "spacing": 18
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     }
 }

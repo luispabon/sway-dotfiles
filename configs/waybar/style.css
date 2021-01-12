@@ -1,8 +1,15 @@
+#waybar {
+    font-family: "Fira Sans SemiBold";
+    font-size: 13px;
+}
+
+#window {
+    padding: 0 10px;
+}
+
 window#waybar {
     border: none;
     border-radius: 0;
-    font-family: "Fira Sans SemiBold";
-    font-size: 13px;
     box-shadow: none;
     text-shadow: none;
     transition-duration: 0s;
@@ -12,6 +19,12 @@ window#waybar {
 
 window#waybar.solo {
     background: rgb(35, 31, 32);
+    /* font-family: "Ubuntu Medium";
+    font-size: 15px; */
+}
+
+window#waybar.empty {
+    /* display: none; */
 }
 
 #workspaces {
