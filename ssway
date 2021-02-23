@@ -1,5 +1,7 @@
 #!/usr/bin/fish
 
+export TERM=terminator
+
 # Ensure we can find objects we've built by hand and not into debs
 export LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu/
 
@@ -14,6 +16,9 @@ export XDG_CURRENT_DESKTOP=sway
 # Force firefox into wayland and enable hw video decoding (ff 75+)
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_WAYLAND_USE_VAAPI=1
+
+# Disable pipewire in Firefox - Ubuntu 20.04 does not have the correct plumbing for screensharing gtk apps
+export MOZ_DISABLE_PIPEWIRE=1
 
 # QT apps theme
 export QT_QPA_PLATFORMTHEME=qt5ct
