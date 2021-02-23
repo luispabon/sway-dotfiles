@@ -1,4 +1,4 @@
-exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1>> ~/logs/ulauncher.log 2>&1
+exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1 > ~/logs/ulauncher.log 2>&1
 set $menu ulauncher-toggle
 
 # A fallback in case ulauncher stops working
