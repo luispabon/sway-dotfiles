@@ -11,3 +11,4 @@ icon-path=/usr/share/icons/Yaru/
 actions=1
 default-timeout=3333
 # ignore-timeout=1
+layer=overlay
