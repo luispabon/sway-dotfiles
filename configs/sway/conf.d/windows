@@ -52,5 +52,8 @@ for_window [class="jetbrains-(.*)" title="Rename"] floating enable
 for_window [class="jetbrains-(.*)" title="Open Project"] floating enable
 for_window [class="jetbrains-(.*)" title="win0"] floating enable
 
+# Ensure authy has borders, otherwise it can be hard to see if the bottom app has a clear background
+for_window [title="Twilio Authy"] border pixel 2
+
 # XWayland default floats
 #for_window [class="[.]*"] floating enable
