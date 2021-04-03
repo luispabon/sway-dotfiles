@@ -4,4 +4,4 @@ exec blueman-applet
 exec_always bash -c "libinput-gestures-setup stop; libinput-gestures-setup start"
 exec solaar --window=hide
 
-exec /usr/libexec/xdg-desktop-portal --verbose -r > ~/logs/xdg-desktop-portal.log
+# exec /usr/libexec/xdg-desktop-portal --verbose -r > ~/logs/xdg-desktop-portal.log 2>&1
