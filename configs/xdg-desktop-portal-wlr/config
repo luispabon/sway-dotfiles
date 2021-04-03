@@ -1,5 +1,8 @@
 [screencast]
-output_name=eDP-1
+# output_name=eDP-1
+#chooser_cmd="slurp -f %o -o"
+chooser_type=dmenu
+chooser_cmd=wofi --show=dmenu
 max_fps=30
 # exec_before=disable_notifications.sh
 # exec_after=enable_notifications.sh
