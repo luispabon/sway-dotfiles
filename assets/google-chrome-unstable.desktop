@@ -9,7 +9,7 @@ GenericName[es]=Navegador web
 Comment=Wayland version
 Comment[en_GB]=Wayland version
 Comment[es]=Accede a Internet.
-Exec=/usr/bin/google-chrome-unstable  --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Exec=/usr/bin/google-chrome-unstable --enable-features=UseOzonePlatform --ozone-platform=wayland %U
 StartupNotify=true
 Terminal=false
 Icon=google-chrome-unstable
