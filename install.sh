@@ -144,7 +144,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "configs/mako" "assets/icons" "configs/swaylock" "configs/mpv")
+folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "configs/mako" "assets/icons" "configs/swaylock" "configs/mpv" "configs/environment.d" "configs/xdg-desktop-portal-wlr")
 for folder in ${folders_to_linky[@]}; do
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -sf ${PWD}/${folder}/ "${HOME}/.config/"
