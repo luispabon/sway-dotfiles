@@ -2,9 +2,9 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2020-12-16T11:20:51.311231",
-        "last_commit": "9268d22afd93748821164e12f806b049533fc873",
-        "last_commit_time": "2020-12-08T21:03:45"
+        "updated_at": "2021-04-19T15:13:06.953299",
+        "last_commit": "0d2999aec50de7c9488f20ed893869c328de42c0",
+        "last_commit_time": "2021-04-15T13:40:47"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
@@ -23,9 +23,9 @@
     "com.github.nesivmi.ulauncher-translate": {
         "id": "com.github.nesivmi.ulauncher-translate",
         "url": "https://github.com/nesivmi/ulauncher-translate",
-        "updated_at": "2020-12-16T11:19:09.881602",
-        "last_commit": "38cf20f4621704b26a1e866d066ccb6a2acac5f2",
-        "last_commit_time": "2020-11-21T21:26:56"
+        "updated_at": "2021-04-19T15:12:49.732806",
+        "last_commit": "f81d32c583c7e3542bdba655e991a56e6d9a2c28",
+        "last_commit_time": "2021-04-09T18:12:40"
     },
     "com.github.skykooler.ulauncher-conversion": {
         "id": "com.github.skykooler.ulauncher-conversion",
