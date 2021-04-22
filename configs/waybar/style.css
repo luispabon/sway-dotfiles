@@ -32,7 +32,7 @@ window#waybar.empty {
 }
 
 #workspaces button {
-    padding: 0 2px;
+    padding: 0 8px;
     color: rgba(217, 216, 216, 0.4);
     border: 3px solid rgba(217, 216, 216, 0);
     border-radius: 10px;
