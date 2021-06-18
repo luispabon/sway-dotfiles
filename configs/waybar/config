@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/recorder", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed","sway/language", "battery", "custom/powermenu"],
+    "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -40,7 +40,7 @@
         "on-click": "terminator -e htop"
     },
     "sway/language": {
-        "format": "<span font='Font Awesome 5 Free 11'></span>  {}",
+        "format": "<span font='Font Awesome 5 Free 9'>🏳️</span>  {}",
         "max-length": 50,
         "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
     },
