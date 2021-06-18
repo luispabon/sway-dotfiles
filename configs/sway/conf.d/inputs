@@ -6,7 +6,12 @@ input "1739:31251:DLL07BE:01_06CB:7A13_Touchpad" {
 }
 
 ### Keyboards
-input "*" xkb_layout gb
+input type:keyboard {
+    xkb_layout gb,es
+    # xkb_options grp:rctrl_toggle
+}
+
+# input "*" xkb_layout gb
 input "1118:219:Microsoft_Natural®_Ergonomic_Keyboard_4000" xkb_numlock enabled
 
 ### Touchscreen
