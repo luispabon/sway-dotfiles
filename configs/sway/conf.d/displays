@@ -3,3 +3,7 @@ output eDP-1 scale 2 pos 0 0 res 3840x2160
 
 # Run kanshi to manage display config
 exec_always bash -c "killall kanshi; kanshi 2>&1 | ts  > ~/logs/kanshi.log"
+
+# Disable laptop's display when closed
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
