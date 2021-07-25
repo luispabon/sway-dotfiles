@@ -2,7 +2,7 @@ exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1 > ~/logs/ulauncher.log 
 set $menu ulauncher-toggle
 
 # A fallback in case ulauncher stops working
-bindsym $mod+D exec wldash
+bindsym $mod+D exec wofi --show drun --allow-images
 
 ## Power menu
 bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
