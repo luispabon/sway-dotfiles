@@ -1,6 +1,6 @@
 set $lock_bg ~/Pictures/backgrounds/galen-crout-175291.jpg
 
-bindsym Alt+l exec swaylock -i $lock_bg
+bindsym Alt+l exec swaylock --hide-keyboard-layout -i $lock_bg
 
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
@@ -10,10 +10,10 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000 -i $lock_bg' \
+         timeout 300 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg' \
          timeout 600 'swaymsg "output * dpms off"' \
               resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000 -i $lock_bg'
+         before-sleep 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
