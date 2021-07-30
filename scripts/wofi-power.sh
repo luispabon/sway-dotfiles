@@ -1,11 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-# if rofi >= 1.5.2 "Lock \x00icon\x1ffile-browser," works
+entries="⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻ Shutdown"
 
-entries="Logout\nSuspend\nReboot\nShutdown"
-
-# selected=$(echo $entries | rofi -show-icons -m 0 -dmenu -sep ',' -p "power" -i | awk '{print tolower($1)}')
-selected=$(echo $entries|wofi --width 300 --height 190 --dmenu --cache-file /dev/null | awk '{print tolower($1)}')
+export LC_ALL=C
+selected=$(echo -e $entries|wofi --width 250 --height 210 --dmenu --cache-file /dev/null | sed 's/[^\x00-\x7F]//g' | awk '{print tolower($1)}')
 
 case $selected in
   logout)
