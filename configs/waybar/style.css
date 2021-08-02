@@ -39,12 +39,18 @@ window#waybar.empty {
 }
 
 #workspaces button.visible {
-    color: rgba(217, 216, 216, 1);
+    /* color: rgba(217, 216, 216, 1); */
+    color: lightcoral;
 }
 
 #workspaces button.focused {
     border-top: 3px solid rgba(217, 216, 216, 1);
     border-bottom: 3px solid rgba(217, 216, 216, 1);
+}
+
+#workspaces button.focused.current_output {
+    color: orange;
+    border-color: orange;
 }
 
 #workspaces button.urgent {
@@ -66,16 +72,34 @@ window#waybar.empty {
 
 #pulseaudio {
     /* font-size: 26px; */
+    color:khaki;
 }
 
 #custom-cpu_speed {
     min-width: 82px;
+    color:lightsteelblue;
 }
 
 #custom-recorder {
-	font-size: 18px;
-	margin: 2px 7px 0px 7px;
-	color:#c9545d;
+    font-size: 18px;
+    margin: 2px 7px 0px 7px;
+    color: #c9545d;
+}
+
+#custom-powermenu {
+    color:lightcoral;
+}
+
+#temperature {
+    color: lightpink;
+}
+
+#idle_inhibitor {
+    color: powderblue;
+}
+
+#language {
+    color: orchid;
 }
 
 #tray,
@@ -96,7 +120,7 @@ window#waybar.empty {
 #custom-weather,
 #custom-mail,
 #custom-media {
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 5px;
     padding: 0 5px;
     /* border-top: 3px solid rgba(217, 216, 216, 0.5); */
 }
@@ -105,6 +129,10 @@ window#waybar.empty {
     margin:     0px 16px 0px 10px;
     min-width:  140px;
 } */
+
+#battery {
+    color: lightgreen;
+}
 
 #battery.warning {
     color: rgba(255, 210, 4, 1);
