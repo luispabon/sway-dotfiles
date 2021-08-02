@@ -1,0 +1,143 @@
+#waybar {
+    font-family: "Fira Sans SemiBold";
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+#window {}
+
+window#waybar {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar.solo {}
+
+window#waybar.empty {}
+
+#workspaces {
+    border: 2px solid lightsalmon;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 0 10px 0 0;
+    color: white;
+    box-shadow: none;
+}
+
+#workspaces button {
+    color: white;
+    padding: 2px 10px;
+    margin: 0;
+}
+
+#workspaces button.visible {
+    background-color: rgba(255, 160, 122, 0.582);
+}
+
+#workspaces button.focused {}
+
+#workspaces button.focused.current_output {
+    background-color: lightsalmon;
+    color: black;
+}
+
+#workspaces button.urgent {}
+
+#workspaces button:hover {
+    background-color: rgba(255, 160, 122, 0.582);
+    color: white;
+}
+
+/* Repeat style here to ensure properties are overwritten as there's no !important and button:hover above resets the colour */
+
+/*
+#workspaces button.focused {
+    color: white;
+}
+
+#pulseaudio {
+    color:khaki;
+}
+
+#custom-cpu_speed {
+    min-width: 82px;
+    color:lightsteelblue;
+}
+
+#custom-recorder {
+    font-size: 18px;
+    margin: 2px 7px 0px 7px;
+    color: #c9545d;
+}
+
+#custom-powermenu {
+    color:lightcoral;
+}
+
+#temperature {
+    color: lightpink;
+}
+
+#idle_inhibitor {
+    color: powderblue;
+}
+
+#language {
+    color: orchid;
+}
+
+#tray,
+#mode,
+#battery,
+#temperature,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#sway-language,
+#backlight,
+#custom-storage,
+#custom-cpu_speed,
+#custom-powermenu,
+#custom-spotify,
+#custom-weather,
+#custom-mail,
+#custom-media {
+    margin: 0px 0px 0px 5px;
+    padding: 0 5px;
+}
+
+#battery {
+    color: lightgreen;
+}
+
+#battery.warning {
+    color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
+}
+
+#custom-storage.warning {
+    color: rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+} */
