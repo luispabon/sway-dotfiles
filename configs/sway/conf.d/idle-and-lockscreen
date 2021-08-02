@@ -6,15 +6,12 @@ for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
 
 ### Idle configuration
-#
-# Example configuration:
-#
-exec swayidle -w \
-         timeout 300 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg' \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg'
-#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+         timeout 300 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg' \
+         timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+         after-resume 'swaymsg "output * enable"' \
+         before-sleep 'swaylock --hide-keyboard-layout -f -c 000000 -i $lock_bg'
