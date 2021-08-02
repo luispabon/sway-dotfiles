@@ -40,8 +40,8 @@
         "on-click": "terminator -e htop"
     },
     "sway/language": {
-        "format": "<span font='Font Awesome 5 Free 9'>🏳️</span>  {}",
-        "max-length": 50,
+        "format": "<span font='Font Awesome 5 Free 9'>🏳️</span> {}",
+        "tooltip-format": "{long}",
         "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
     },
     "custom/powermenu": {
@@ -86,12 +86,12 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}%",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume:4}%",
         "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}%",
         "format-alt-click": "click-right",
         "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
         "format-icons": {
-            "phone": [" ", " ", " ", " "],
+            "headphone": [" ", " ", " ", " "],
             "default": ["", "", "", ""]
         },
         "scroll-step": 2,
