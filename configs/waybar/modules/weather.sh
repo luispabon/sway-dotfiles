@@ -40,9 +40,7 @@ weather=($(cat $cachedir/$cachefile))
 # Restore IFSClear
 IFS=$SAVEIFS
 
-temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g')
-
-#echo ${weather[1]##*,}
+temperature=$(echo ${weather[2]} | sed -E 's/ //g')
 
 # https://fontawesome.com/icons?s=solid&c=weather
 # echo $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]')
