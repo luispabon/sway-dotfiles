@@ -2,9 +2,9 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2021-04-19T15:13:06.953299",
-        "last_commit": "0d2999aec50de7c9488f20ed893869c328de42c0",
-        "last_commit_time": "2021-04-15T13:40:47"
+        "updated_at": "2021-08-03T16:38:18.625668",
+        "last_commit": "639facd8be9208afde0371def31913b0804709e8",
+        "last_commit_time": "2021-06-01T14:45:38"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
@@ -58,14 +58,28 @@
     "com.github.rdnetto.ulauncher-sway": {
         "id": "com.github.rdnetto.ulauncher-sway",
         "url": "https://github.com/rdnetto/ulauncher-sway",
-        "updated_at": "2020-07-02T12:52:36.188280",
-        "last_commit": "ca6e8365723fd444b302236fb72eded4a1378c3e",
-        "last_commit_time": "2020-07-01T16:04:10"
+        "updated_at": "2021-08-03T16:37:16.684542",
+        "last_commit": "9fc141f01959fb5086518699229af97d920ca865",
+        "last_commit_time": "2021-07-22T12:29:13"
+    },
+    "com.github.sebastian-correa.ulauncher-rae-dle": {
+        "id": "com.github.sebastian-correa.ulauncher-rae-dle",
+        "url": "https://github.com/sebastian-correa/ulauncher-rae-dle",
+        "updated_at": "2021-08-06T12:31:52.290760",
+        "last_commit": "8495885beef04af7064f592993ad73524143715a",
+        "last_commit_time": "2021-07-13T19:12:45"
+    },
+    "com.github.ygun.ulauncher-nm": {
+        "id": "com.github.ygun.ulauncher-nm",
+        "url": "https://github.com/ygun/ulauncher-nm",
+        "updated_at": "2021-08-06T12:38:32.036272",
+        "last_commit": "036a0b3b24fb325f7aa648872c916d04966e7101",
+        "last_commit_time": "2021-02-03T13:17:59"
     },
     "com.github.elken.terminal-runner": {
         "id": "com.github.elken.terminal-runner",
         "url": "https://github.com/elken/Terminal-Runner",
-        "updated_at": "2021-01-02T14:16:50.793793",
+        "updated_at": "2021-08-06T12:43:36.977055",
         "last_commit": "6807ebe6047462bcce6063c63228eddcb8c6b481",
         "last_commit_time": "2020-02-22T23:04:04"
     }
