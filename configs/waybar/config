@@ -27,7 +27,7 @@
     },
     "clock": {
         "format": "{:%a %d %b - %H:%M}",
-        "tooltip": false,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
         "on-click": "gnome-calendar"
     },
     "custom/cpu_speed": {
