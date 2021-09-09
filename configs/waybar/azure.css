@@ -1,19 +1,11 @@
 * {
-    border-radius: 10px;
     font-family: "Fira Sans SemiBold";
     font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    /* border-radius: 15px;
-    padding-bottom: 1px;
-    padding-top: 1px;
-    padding: 15px; */
-    /* background: transparent;
-    color: white; */
 }
-
 
 tooltip {
 	background: #2a2e38;
@@ -21,6 +13,12 @@ tooltip {
 	border-width: 2px;
 	border-style: solid;
 	border-color: #2a2e38;
+}
+
+#workspaces {
+	/* background-color: #2a2e38;
+	border-radius: 15px 0px 0px 15px;
+    margin-left: 10px;*/
 }
 
 #workspaces button {
@@ -43,7 +41,7 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #2a2e38;
+    color: #6d4774;
     background-color: #7bc275;
     border-radius: 15px;
 }
@@ -54,6 +52,10 @@ tooltip {
 	border-radius: 15px;
 }
 
+#workspaces button.focused:hover {
+    color: white;
+    background-color: yellow;
+}
 
 #clock,
 #backlight,
@@ -76,16 +78,10 @@ tooltip {
 #tray,
 #window,
 #workspaces {
-	/* background-color: #2a2e38; */
 	padding: 1px 10px;
-	margin: 0 2px;
 }
 
-#workspaces {
-	/* background-color: #2a2e38;
-	border-radius: 15px 0px 0px 15px;
-    margin-left: 10px;*/
-}
+
 
 #custom-powermenu {
     /* color: #FCCE7B;
@@ -113,4 +109,22 @@ tooltip {
 
 #pulseaudio {
 	color: #4db5bd;
+}
+
+#custom-recorder {
+	font-size: 18px;
+	margin: 2px 7px 0px 7px;
+	color:#c9545d;
+}
+
+#custom-powermenu {
+    color:lightcoral;
+}
+
+#temperature {
+    color: lightpink;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
 }
