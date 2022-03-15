@@ -2,16 +2,16 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2021-08-03T16:38:18.625668",
-        "last_commit": "639facd8be9208afde0371def31913b0804709e8",
-        "last_commit_time": "2021-06-01T14:45:38"
+        "updated_at": "2021-11-22T18:14:30.583227",
+        "last_commit": "667613bf7bb6b4affa4f2121b58589477cd89829",
+        "last_commit_time": "2021-11-08T18:16:55"
     },
     "com.github.ulauncher.ulauncher-emoji": {
         "id": "com.github.ulauncher.ulauncher-emoji",
         "url": "https://github.com/Ulauncher/ulauncher-emoji",
-        "updated_at": "2020-12-16T11:18:55.939757",
-        "last_commit": "d56b2c8106ab5fbc87b55f608a3bd75db23f2904",
-        "last_commit_time": "2020-10-03T19:10:03"
+        "updated_at": "2021-11-22T18:13:54.205359",
+        "last_commit": "4c6af50d1c9a24d5aad2c597634ff0c634972a5c",
+        "last_commit_time": "2021-08-08T19:19:59"
     },
     "com.github.fisadev.ulauncher-better-file-browser": {
         "id": "com.github.fisadev.ulauncher-better-file-browser",
@@ -51,9 +51,9 @@
     "com.github.brpaz.ulauncher-jetbrains": {
         "id": "com.github.brpaz.ulauncher-jetbrains",
         "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2021-02-24T11:11:19.449335",
-        "last_commit": "9b87628917d4d475e16af6609955e450b78d6bc1",
-        "last_commit_time": "2021-02-03T20:02:39"
+        "updated_at": "2022-02-15T16:18:07.370985",
+        "last_commit": "8f2906ce7fdef83ba830341142f7043ae3e2c028",
+        "last_commit_time": "2021-12-12T15:47:07"
     },
     "com.github.rdnetto.ulauncher-sway": {
         "id": "com.github.rdnetto.ulauncher-sway",
