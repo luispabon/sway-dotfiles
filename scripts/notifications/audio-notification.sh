@@ -30,7 +30,7 @@ if [[ $STATE != '[off]' ]]; then
                 ICON=~/.config/icons/vol-high.png
         fi
 
-        notify-send.sh "Volume: $VOLUME%" \
+        ~/sway/notify-send.sh/notify-send.sh "Volume: $VOLUME%" \
             --replace-file=/tmp/audio-notification \
             -t 2000 \
             -i ${ICON} \
@@ -39,7 +39,7 @@ if [[ $STATE != '[off]' ]]; then
 
 # If volume is muted, display the mute sybol:
 else
-        notify-send.sh "Muted (volume: $VOLUME%)" \
+        ~/sway/notify-send.sh/notify-send.sh "Muted (volume: $VOLUME%)" \
             --replace-file=/tmp/audio-notification \
             -t 2000 \
             -i ~/.config/icons/vol-mute.png \
