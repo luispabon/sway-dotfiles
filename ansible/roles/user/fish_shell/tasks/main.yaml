@@ -1,0 +1,55 @@
+- name: Install fish
+  become: true
+  apt:
+    state: present
+    pkg:
+      - fish
+      - git
+      - thefuck
+
+- name: Check if OMF installed
+  stat:
+    path: "/home/{{ ansible_user_id }}/.local/share/omf"
+  register: omf_config_result
+
+- name: Set up OMF (Oh My Fish)
+  when: not omf_config_result.stat.exists
+  block:
+    - name: Install OMF repository
+      git:
+        repo: https://github.com/oh-my-fish/oh-my-fish
+        clone: true
+        dest: /tmp/omf
+
+    - name: Install omf
+      shell:
+        chdir: /tmp/omf
+        cmd: fish bin/install --offline --noninteractive || echo "Already installed"
+
+    - name: Cleanup
+      file:
+        state: absent
+        path: /tmp/omf
+
+    - name: Set agnoster theme
+      shell:
+        cmd: omf install agnoster
+        executable: /usr/bin/fish
+
+- name: Set fish shell for default user
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/fish
+
+- name: Add path config file for fish
+  file:
+    name: /home/{{ ansible_user_id }}/.config/fish/conf.d/path.fish
+    state: touch
+
+- name: Tweak fish' path to be more inclusive
+  blockinfile:
+    path: /home/{{ ansible_user_id }}/.config/fish/conf.d/path.fish
+    backup: false
+    block: set PATH $PATH /usr/sbin /snap/bin
+    owner: "{{ ansible_user_id }}"

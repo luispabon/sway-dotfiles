@@ -1,0 +1,13 @@
+- name: Install laptop tools (apt)
+  become: true
+  apt:
+    state: present
+    pkg:
+      - powertop
+      - tlp
+
+- name: Install auto-cpufreq
+  become: true
+  snap:
+    state: present
+    name: auto-cpufreq

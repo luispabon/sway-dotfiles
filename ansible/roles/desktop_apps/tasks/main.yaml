@@ -1,0 +1,181 @@
+- name: Install utils & apps
+  become: true
+  apt:
+    state: present
+    pkg:
+      - ack
+      - bash
+      - ca-certificates
+      - cron
+      - curl
+      - direnv
+      - docker.io
+      - docker-compose
+      - jq
+      - git
+      - htop
+      - make
+      - moreutils
+      - nano
+      - neofetch
+      - pulseadio
+      - python3-pip
+      - snapd
+      - software-properties-common
+      - units
+      - wget
+
+- name: Install desktop building blocks
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - brightnessctl
+      - fonts-noto-core
+      - grim
+      - playerctl
+      - rofi
+      - slurp
+      - wl-clipboard
+      - wmctrl
+      - xdotool
+      - network-manager-gnome
+
+- name: Install desktop apps (apt, with recommends)
+  become: true
+  apt:
+    state: present
+    pkg:
+      - blueman
+      - evolution
+      - fonts-noto-core
+      - grub-customizer
+
+- name: Install desktop apps (apt, non-recommends)
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - gdm3
+      - gnome-control-center
+      - gnome-calendar
+      - gnome-editor
+      - gnome-online-accounts
+      - gnome-terminal
+      - gnome-tweaks
+      - golang-go
+      - libreoffice
+      - nautilus
+      - slack
+      - virtualbox-qt
+      - xwayland
+      - yarnpk
+
+- name: Install snap apps (default channel & confinement)
+  become: true
+  snap:
+    state: present
+    name:
+      - authy
+      - retroarch
+      - spotify
+      - youtube-dl
+      - zoom-client
+
+- name: Install snap apps (default channel; classic confinement)
+  become: true
+  snap:
+    state: present
+    classic: true
+    name:
+      - code
+      - goland
+      - google-cloud-sdk
+      - kubectl
+      - phpstorm
+      - pycharm-professional
+
+- name: Install Chromium
+  become: true
+  snap:
+    state: present
+    classic: true
+    channel: latest/edge
+    name:
+      - chromium
+
+- name: Install Google Chrome (nightly)
+  become: true
+  apt:
+    state: present
+    deb: https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
+
+- name: Install Firefox
+  become: true
+  snap:
+    state: present
+    channel: latest/beta
+    name:
+      - firefox
+
+- name: Firefox Nightly
+  become: true
+  block:
+    - name: Add Mozilla Nightly PPA
+      apt_repository:
+        repo: ppa:ubuntu-mozilla-daily/ppa
+    - name: Install firefox-trunk
+      apt:
+        state: present
+        pkg: firefox-trunk
+
+- name: Ulauncher
+  become: true
+  block:
+    - name: Add Ulauncher PPA
+      apt_repository:
+        repo: ppa:agornostal/ulauncher
+        codename: hirsute
+    - name: Install ulauncher
+      apt:
+        state: present
+        pkg: ulauncher
+
+- name: Solaar (Logitech devices)
+  become: true
+  block:
+    - name: Add Solaar PPA
+      apt_repository:
+        repo: ppa:solaar-unifying/stable
+    - name: Install solaar
+      apt:
+        state: present
+        pkg: solaar
+
+- name: Install PHP
+  become: true
+  apt:
+    state: present
+    pkg:
+      - php-apcu
+      - php-cli
+      - php-common
+      - php-curl
+      - php-igbinary
+      - php-intl
+      - php-mbstring
+      - php-readline
+      - php-redis
+      - php-xdebug
+      - php-xml
+      - php-zip
+
+- name: Install golang
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - golang-go
