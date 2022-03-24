@@ -1,0 +1,55 @@
+- name: Node
+  become: true
+  block:
+    - name: Install node & yarn
+      apt:
+        install_recommends: false
+        pkg:
+          - nodejs
+          - yarnpkg
+
+    - name: Link yarnpkg to yarn
+      file:
+        src: /usr/bin/yarnpkg
+        dest: /usr/local/bin/yarn
+
+- name: Install IDEs & other snap tools
+  become: true
+  snap:
+    state: present
+    classic: true
+    name:
+      - code
+      - goland
+      - google-cloud-sdk
+      - kubectl
+      - phpstorm
+      - pycharm-professional
+
+- name: Install PHP
+  become: true
+  apt:
+    state: present
+    pkg:
+      - php-apcu
+      - php-cli
+      - php-common
+      - php-curl
+      - php-igbinary
+      - php-intl
+      - php-mbstring
+      - php-readline
+      - php-redis
+      - php-xdebug
+      - php-xml
+      - php-zip
+
+- name: Install golang
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - golang-go
+
+- name: Install awscli

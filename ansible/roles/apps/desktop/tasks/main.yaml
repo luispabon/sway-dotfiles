@@ -85,19 +85,6 @@
       - youtube-dl
       - zoom-client
 
-- name: Install snap apps (default channel; classic confinement)
-  become: true
-  snap:
-    state: present
-    classic: true
-    name:
-      - code
-      - goland
-      - google-cloud-sdk
-      - kubectl
-      - phpstorm
-      - pycharm-professional
-
 - name: Install Chromium
   become: true
   snap:
@@ -183,29 +170,3 @@
       apt:
         state: present
         pkg: solaar
-
-- name: Install PHP
-  become: true
-  apt:
-    state: present
-    pkg:
-      - php-apcu
-      - php-cli
-      - php-common
-      - php-curl
-      - php-igbinary
-      - php-intl
-      - php-mbstring
-      - php-readline
-      - php-redis
-      - php-xdebug
-      - php-xml
-      - php-zip
-
-- name: Install golang
-  become: true
-  apt:
-    state: present
-    install_recommends: false
-    pkg:
-      - golang-go
