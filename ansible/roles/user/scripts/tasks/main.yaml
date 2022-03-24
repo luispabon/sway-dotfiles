@@ -21,8 +21,8 @@
 - name: Add notify-send.sh
   become_user: "{{ user_username }}"
   get_url:
-    url: "{{ item.path }}"
-    dest: "~/bin/{{ item.path | basename }}"
+    url: "{{ item }}"
+    dest: "~/bin/{{ item | basename }}"
     force: true
   with_items:
     - https://raw.githubusercontent.com/vlevit/notify-send.sh/master/notify-action.sh

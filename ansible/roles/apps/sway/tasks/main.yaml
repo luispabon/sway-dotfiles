@@ -1,0 +1,60 @@
+- name: Check if build repo is present
+  become_user: "{{ user_username }}"
+  stat:
+    path: "~/Projects/sway_build"
+  register: sway_build_folder
+
+- name: Build repository setup
+  become_user: "{{ user_username }}"
+  when: not sway_build_folder.stat.exists
+  block:
+    - name: Create projects folder
+      file:
+        path: ~/Projects
+        state: directory
+
+    - name: Acquire sway build repo
+      git:
+        repo: git@github.com:luispabon/sway-ubuntu.git
+        dest: ~/Projects/sway_build
+
+- name: Check if sway is already installed
+  stat:
+    path: "/usr/local/bin/sway"
+  register: sway_bin
+
+- name: YOLO
+  become: true
+  when: not sway_bin.stat.exists
+  block:
+    - name: Build & install EVERYTHING
+      make:
+        chdir: "{{ sway_build_folder.stat.path }}"
+        target: yolo
+
+    - name: Fix permissions
+      file:
+        path: "{{ sway_build_folder.stat.path }}"
+        owner: "{{ user_username }}"
+        group: "{{ user_username }}"
+        recurse: true
+
+- name: Set up sway & wayfire sessions
+  become: true
+  block:
+    - name: Add startup scripts
+      copy:
+        src: "assets/{{ item }}"
+        dest: "/usr/local/bin/{{ item }}"
+      with_items:
+        - ssway
+        - swayfire
+
+    - name: Add wayland session scripts
+      copy:
+        src: "assets/{{ item }}"
+        dest: "/usr/share/wayland-sessions/{{ item }}"
+      with_items:
+        - ubuntu-sway.desktop
+        - ubuntu-sway-debug.desktop
+        - ubuntu-wayfire.desktop

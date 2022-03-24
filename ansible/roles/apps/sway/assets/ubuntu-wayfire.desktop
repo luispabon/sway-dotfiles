@@ -1,6 +1,5 @@
 [Desktop Entry]
-Name=Ubuntu Sway
+Name=Ubuntu Wayfire
 Comment=An i3-compatible Wayland compositor
-Exec=ssway
+Exec=/usr/local/bin/swayfire
 Type=Application
-DesktopNames=sway
