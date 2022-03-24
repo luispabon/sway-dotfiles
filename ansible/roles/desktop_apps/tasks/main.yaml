@@ -11,6 +11,7 @@
       - direnv
       - docker.io
       - docker-compose
+      - gpg
       - jq
       - git
       - htop
@@ -34,13 +35,13 @@
       - brightnessctl
       - fonts-noto-core
       - grim
+      - network-manager-gnome
       - playerctl
       - rofi
       - slurp
       - wl-clipboard
       - wmctrl
       - xdotool
-      - network-manager-gnome
 
 - name: Install desktop apps (apt, with recommends)
   become: true
@@ -73,7 +74,7 @@
       - xwayland
       - yarnpk
 
-- name: Install snap apps (default channel & confinement)
+- name: Install snap apps (default channel; strict confinement)
   become: true
   snap:
     state: present
@@ -112,13 +113,42 @@
     state: present
     deb: https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
 
-- name: Install Firefox
+- name: Azote
   become: true
-  snap:
-    state: present
-    channel: latest/beta
-    name:
-      - firefox
+  block:
+    - name: Add azote PPA
+      command: |
+        echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_20.04/ /' | tee /etc/apt/sources.list.d/azote.list
+        curl -fsSL https://download.opensuse.org/repositories/home:Head_on_a_Stick:azote/xUbuntu_20.04/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_Head_on_a_Stick_azote.gpg > /dev/null
+      args:
+        creates: /etc/apt/sources.list.d/azote.list
+
+    - name: Install azote
+      apt:
+        update_cache: true
+        pkg:
+          - azote
+
+- name: Firefox beta from mozilla's PPA (not snap)
+  become: true
+  block:
+    - name: Ensure the PPA has the priority over the system package
+      become: true
+      blockinfile:
+        path: /etc/apt/preferences.d/firefox-apt-ppa
+        block: |
+          Package: firefox
+          Pin: release o=LP-PPA-mozillateam-firefox-next
+          Pin-Priority: 1000
+
+    - name: Add Mozilla PPA
+      apt_repository:
+        repo: ppa:mozillateam/firefox-next
+
+    - name: Install firefox
+      apt:
+        state: present
+        pkg: firefox
 
 - name: Firefox Nightly
   become: true

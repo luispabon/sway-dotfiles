@@ -4,8 +4,9 @@
   hosts: sway_desk
   roles:
     - system_bootstrap
-    -
+    - desktop_apps
     - xps_9560_tweaks
     - crontab
+    - config_files
   vars:
     system_hostname: kerberos
