@@ -5,4 +5,4 @@ set $menu ulauncher-toggle
 bindsym $mod+D exec wofi --show drun --allow-images
 
 ## Power menu
-bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
+bindsym $mod+P exec ~/bin/wofi-power.sh

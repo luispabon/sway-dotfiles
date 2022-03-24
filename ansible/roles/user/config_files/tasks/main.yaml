@@ -55,6 +55,18 @@
         state: link
       with_items: "{{ fonts.files }}"
 
+- name: Brightness
+  block:
+    - name: Add bightnessctl udev rules
+      become: true
+      copy:
+        src: assets/misc/90-brightnessctl.rules
+        dest: /etc/udev/rules.d/90-brightnessctl.rules
 
-
-
+    - name: Create user
+      become: true
+      user:
+        name: "{{ user_username }}"
+        append: yes
+        groups:
+          - video

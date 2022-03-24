@@ -3,13 +3,13 @@
 - name: System setup
   hosts: sway_desk
   roles:
-    - system_bootstrap
-    - apps/desktop
-    - apps/development
-    - xps_9560_tweaks
-    - crontab
+    - system/bootstrap
+    - system/xps_9560_tweaks
     - user/creation
     - user/config_files
     - user/fish_shell
+    - apps/desktop
+    - apps/development
+    - crontab
   vars:
     user_username: luis

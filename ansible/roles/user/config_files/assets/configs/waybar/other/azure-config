@@ -69,7 +69,7 @@
         "custom/wofi-power": {
             "format": "",
             "interval": "once",
-            "on-click": "~/.config/scripts/wofi-power.sh",
+            "on-click": "~/bin/wofi-power.sh",
         },
     }
 }

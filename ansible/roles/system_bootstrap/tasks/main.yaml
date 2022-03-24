@@ -1,7 +1,0 @@
----
-
-- name: Upgrade system
-  become: true
-  apt:
-    update_cache: true
-    upgrade: dist
