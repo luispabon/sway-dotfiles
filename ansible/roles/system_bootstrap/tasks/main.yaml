@@ -1,15 +1,4 @@
 ---
-- name: Set hostname
-  become: true
-  hostname:
-    use: systemd
-    name: "{{ hostname_prefix }}{{ system_hostname }}"
-
-- name: Add host to hosts file
-  become: true
-  blockinfile:
-    path: /etc/hosts
-    block: "127.0.0.1 {{ hostname_prefix }}{{ system_hostname }}"
 
 - name: Upgrade system
   become: true

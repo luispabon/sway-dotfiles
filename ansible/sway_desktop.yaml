@@ -8,8 +8,8 @@
     - apps/development
     - xps_9560_tweaks
     - crontab
-    - user/luis
+    - user/creation
     - user/config_files
     - user/fish_shell
   vars:
-    system_hostname: kerberos
+    user_username: luis

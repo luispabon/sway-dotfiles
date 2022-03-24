@@ -13,7 +13,7 @@
         src: /usr/bin/yarnpkg
         dest: /usr/local/bin/yarn
 
-- name: Install IDEs & other snap tools
+- name: Install IDEs & other tools via Snap
   become: true
   snap:
     state: present
@@ -44,12 +44,11 @@
       - php-xml
       - php-zip
 
-- name: Install golang
+- name: Install golang & other apt tools
   become: true
   apt:
     state: present
     install_recommends: false
     pkg:
+      - awscli
       - golang-go
-
-- name: Install awscli

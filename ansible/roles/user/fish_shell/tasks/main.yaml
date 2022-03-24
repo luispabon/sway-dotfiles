@@ -7,6 +7,12 @@
       - git
       - thefuck
 
+- name: Switch shell on user
+  become: true
+  user:
+    name: "{{ user_username }}"
+    shell: /usr/bin/fish
+
 - name: Check if OMF installed
   stat:
     path: "/home/{{ ansible_user_id }}/.local/share/omf"
@@ -14,6 +20,7 @@
 
 - name: Set up OMF (Oh My Fish)
   when: not omf_config_result.stat.exists
+  become_user: "{{ user_username }}"
   block:
     - name: Install OMF repository
       git:
@@ -24,23 +31,21 @@
     - name: Install omf
       shell:
         chdir: /tmp/omf
-        cmd: fish bin/install --offline --noninteractive || echo "Already installed"
+        cmd: fish bin/install --offline --noninteractive
 
     - name: Cleanup
       file:
         state: absent
         path: /tmp/omf
 
-    - name: Set agnoster theme
+    - name: Install OMF packages
       shell:
-        cmd: omf install agnoster
+        cmd: omf install bobthefish
         executable: /usr/bin/fish
-
-- name: Set fish shell for default user
-  become: true
-  user:
-    name: "{{ ansible_user_id }}"
-    shell: /usr/bin/fish
+      loop:
+        - bobthefish
+        - bass
+        - https://github.com/dgrant/fish-autovenv2.git
 
 - name: Add path config file for fish
   file:
