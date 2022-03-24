@@ -13,8 +13,4 @@
       - plugdev
       - input
       - lpadmin
-      - lxd
       - sambashare
-      - docker
-      - vboxusers
-      - microk8s

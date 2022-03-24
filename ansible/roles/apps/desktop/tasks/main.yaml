@@ -9,8 +9,6 @@
       - cron
       - curl
       - direnv
-      - docker.io
-      - docker-compose
       - gpg
       - jq
       - git

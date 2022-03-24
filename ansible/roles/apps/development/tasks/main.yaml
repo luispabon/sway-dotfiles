@@ -32,6 +32,27 @@
     path: /etc/sysctl.d/99-jetbrains-inotify.conf
     block: fs.inotify.max_user_watches = 524288
 
+- name: Install docker
+  become: true
+  apt:
+    state: present
+    pkg:
+      - docker.io
+      - docker-compose
+
+- name: Ensure user can access docker & others
+  become: true
+  user:
+    name: "{{ user_username }}"
+    create_home: true
+    shell: /usr/bin/bash
+    append: yes
+    groups:
+      - lxd
+      - docker
+      - vboxusers
+      - microk8s
+
 - name: Install PHP
   become: true
   apt:
