@@ -1,0 +1,60 @@
+---
+- name: Install configs into ~/.config
+  block:
+    - name: Create ~/.config folder
+      file:
+        path: ~/.config
+        state: directory
+        mode: '0755'
+
+    - name: Find all dotfiles to link
+      find:
+        paths: assets/config
+        file_type: any
+      register: dotfiles
+
+    - name: Create symlinks to ~/.config
+      file:
+        src: "{{ item.path }}"
+        path: "~/.config/{{ item.path | basename }}"
+        state: link
+      with_items: "{{ dotfiles.files }}"
+
+- name: Background images
+  block:
+    - name: Create ~/Pictures folder
+      file:
+        path: ~/Pictures
+        state: directory
+        mode: '0755'
+
+    - name: Install background images
+      file:
+        src: assets/backgrounds
+        path: ~/Pictures/
+        state: link
+
+- name: Fonts
+  block:
+    - name: Create fonts folder
+      file:
+        path: ~/.local/share/fonts
+        state: directory
+        mode: '0755'
+
+    - name: Find all fonts to link
+      find:
+        paths: assets/fonts
+        file_type: file
+      register: fonts
+
+    - name: Symlink fonts
+      file:
+        src: "{{ item.path }}"
+        path: "~/.local/share/fonts/{{ item.path | basename }}"
+        state: link
+      with_items: "{{ fonts.files }}"
+
+
+
+
