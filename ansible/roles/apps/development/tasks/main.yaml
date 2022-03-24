@@ -26,6 +26,12 @@
       - phpstorm
       - pycharm-professional
 
+- name: Fix inotify limits for Jetbrains apps
+  become: true
+  blockinfile:
+    path: /etc/sysctl.d/99-jetbrains-inotify.conf
+    block: fs.inotify.max_user_watches = 524288
+
 - name: Install PHP
   become: true
   apt:
