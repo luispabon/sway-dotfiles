@@ -17,6 +17,7 @@
       git:
         repo: git@github.com:luispabon/sway-ubuntu.git
         dest: ~/Projects/sway_build
+        reference: impish
 
 - name: Check if sway is already installed
   stat:

@@ -40,6 +40,20 @@
       - docker.io
       - docker-compose
 
+- name: Install virtualbox
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - virtualbox-qt
+
+- name: Ensure virtualbox's private networks can be had on any IP range
+  become: true
+  blockinfile:
+    path: /etc/vbox/networks.conf
+    block: "* 0.0.0.0/0 ::/0"
+
 - name: Ensure user can access docker & others
   become: true
   user:

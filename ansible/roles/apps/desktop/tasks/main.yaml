@@ -68,7 +68,6 @@
       - libreoffice
       - nautilus
       - slack
-      - virtualbox-qt
       - xwayland
       - yarnpk
 
