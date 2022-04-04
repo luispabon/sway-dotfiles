@@ -1,0 +1,51 @@
+all:
+  children:
+    home:
+      hosts:
+        192.168.1.173:
+          ansible_user: pi
+
+    kube:
+      hosts:
+        # Vagrant
+        192.168.33.30:
+          hostname_prefix: vagrant-
+          helm_os_arch: amd64
+          phpdocker_prod_certs: true
+
+        # RPI
+        192.168.1.10:
+          ansible_user: pi
+          helm_os_arch: arm
+          phpdocker_prod_certs: false
+
+        # GCE
+        35.242.148.170:
+          ansible_user: luis
+          helm_os_arch: amd64
+          phpdocker_prod_certs: false
+          hostname_prefix: gce-
+
+    kerberos:
+      hosts:
+        # Vagrant
+        192.168.33.14:
+          pihole_ip: 192.168.33.14
+          pihole_interface: eth1
+          dhcp_router: 10.0.2.2
+          dhcp_ip_start: 192.168.33.100
+          dhcp_ip_end: 192.168.33.251
+          network_domain: vagrant-pihole
+          hostname_prefix: vagrant-
+          wireguard_port: 27899
+
+        # RPI
+        192.168.1.2:
+          ansible_user: pi
+          pihole_ip: 192.168.1.2
+          pihole_interface: wlan0
+          dhcp_router: 192.168.1.1
+          dhcp_ip_start: 192.168.1.100
+          dhcp_ip_end: 192.168.1.251
+          network_domain: lusa
+          wireguard_port: 27899

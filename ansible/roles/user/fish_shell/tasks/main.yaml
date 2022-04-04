@@ -1,0 +1,60 @@
+- name: Install fish
+  become: true
+  apt:
+    state: present
+    pkg:
+      - fish
+      - git
+      - thefuck
+
+- name: Switch shell on user
+  become: true
+  user:
+    name: "{{ user_username }}"
+    shell: /usr/bin/fish
+
+- name: Check if OMF installed
+  stat:
+    path: "/home/{{ ansible_user_id }}/.local/share/omf"
+  register: omf_config_result
+
+- name: Set up OMF (Oh My Fish)
+  when: not omf_config_result.stat.exists
+  become_user: "{{ user_username }}"
+  block:
+    - name: Install OMF repository
+      git:
+        repo: https://github.com/oh-my-fish/oh-my-fish
+        clone: true
+        dest: /tmp/omf
+
+    - name: Install omf
+      shell:
+        chdir: /tmp/omf
+        cmd: fish bin/install --offline --noninteractive
+
+    - name: Cleanup
+      file:
+        state: absent
+        path: /tmp/omf
+
+    - name: Install OMF packages
+      shell:
+        cmd: omf install bobthefish
+        executable: /usr/bin/fish
+      loop:
+        - bobthefish
+        - bass
+        - https://github.com/dgrant/fish-autovenv2.git
+
+- name: Add path config file for fish
+  file:
+    name: /home/{{ ansible_user_id }}/.config/fish/conf.d/path.fish
+    state: touch
+
+- name: Tweak fish' path to be more inclusive
+  blockinfile:
+    path: /home/{{ ansible_user_id }}/.config/fish/conf.d/path.fish
+    backup: false
+    block: set PATH $PATH /usr/sbin /snap/bin
+    owner: "{{ ansible_user_id }}"

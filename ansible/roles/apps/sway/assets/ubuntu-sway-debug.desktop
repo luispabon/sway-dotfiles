@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Ubuntu Sway (debug)
 Comment=An i3-compatible Wayland compositor
-Exec=ssway -d
+Exec=/usr/local/bin/ssway -d
 Type=Application
 DesktopNames=sway

@@ -1,0 +1,16 @@
+- name: Create user
+  become: true
+  user:
+    name: "{{ user_username }}"
+    create_home: true
+    shell: /usr/bin/bash
+    append: yes
+    groups:
+      - adm
+      - cdrom
+      - sudo
+      - dip
+      - plugdev
+      - input
+      - lpadmin
+      - sambashare

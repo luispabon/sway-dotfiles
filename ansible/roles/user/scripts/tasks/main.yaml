@@ -1,0 +1,29 @@
+- name: Create bin folder for user
+  become_user: "{{ user_username }}"
+  file:
+    path: ~/bin
+    state: directory
+
+- name: Find all scripts to link
+  find:
+    paths: assets
+    file_type: file
+  register: scripts
+
+- name: Create symlinks into ~/.config
+  become_user: "{{ user_username }}"
+  file:
+    src: "{{ item.path }}"
+    path: "~/bin/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ scripts.files }}"
+
+- name: Add notify-send.sh
+  become_user: "{{ user_username }}"
+  get_url:
+    url: "{{ item }}"
+    dest: "~/bin/{{ item | basename }}"
+    force: true
+  with_items:
+    - https://raw.githubusercontent.com/vlevit/notify-send.sh/master/notify-action.sh
+    - https://raw.githubusercontent.com/vlevit/notify-send.sh/master/notify-send.sh

@@ -1,0 +1,20 @@
+---
+
+- name: Upgrade system
+  become: true
+  apt:
+    update_cache: true
+    upgrade: dist
+
+- name: Add powersaving audio modprobe config
+  become: true
+  copy:
+    src: assets/etc-modprobe-d-audio-powersave.conf
+    dest: /etc/modprobe.d/audio-powersave.conf
+    backup: true
+
+- name: Fix snap apps not showing in some launchers
+  become: true
+  copy:
+    src: assets/apps-bin-path.sh
+    dest: /etc/profile.d/apps-bin-path.sh

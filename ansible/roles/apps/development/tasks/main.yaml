@@ -1,0 +1,81 @@
+- name: Node
+  become: true
+  block:
+    - name: Install node & yarn
+      apt:
+        install_recommends: false
+        pkg:
+          - nodejs
+          - yarnpkg
+
+    - name: Link yarnpkg to yarn
+      file:
+        src: /usr/bin/yarnpkg
+        dest: /usr/local/bin/yarn
+
+- name: Install IDEs & other tools via Snap
+  become: true
+  snap:
+    state: present
+    classic: true
+    name:
+      - code
+      - goland
+      - google-cloud-sdk
+      - kubectl
+      - phpstorm
+      - pycharm-professional
+
+- name: Fix inotify limits for Jetbrains apps
+  become: true
+  blockinfile:
+    path: /etc/sysctl.d/99-jetbrains-inotify.conf
+    block: fs.inotify.max_user_watches = 524288
+
+- name: Install docker
+  become: true
+  apt:
+    state: present
+    pkg:
+      - docker.io
+      - docker-compose
+
+- name: Ensure user can access docker & others
+  become: true
+  user:
+    name: "{{ user_username }}"
+    create_home: true
+    shell: /usr/bin/bash
+    append: yes
+    groups:
+      - lxd
+      - docker
+      - vboxusers
+      - microk8s
+
+- name: Install PHP
+  become: true
+  apt:
+    state: present
+    pkg:
+      - php-apcu
+      - php-cli
+      - php-common
+      - php-curl
+      - php-igbinary
+      - php-intl
+      - php-mbstring
+      - php-readline
+      - php-redis
+      - php-xdebug
+      - php-xml
+      - php-zip
+
+- name: Install golang & other apt tools
+  become: true
+  apt:
+    state: present
+    install_recommends: false
+    pkg:
+      - awscli
+      - golang-go

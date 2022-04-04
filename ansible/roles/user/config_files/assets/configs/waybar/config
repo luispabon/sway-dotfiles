@@ -51,7 +51,7 @@
         "format-icons": [""],
         "interval": 3600,
         "escape": true,
-        "on-click": "~/sway/scripts/wofi-power.sh"
+        "on-click": "~/bin/wofi-power.sh"
     },
     "custom/recorder": {
 		"format": "",
