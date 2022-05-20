@@ -21,6 +21,7 @@
 - name: Set up OMF (Oh My Fish)
   when: not omf_config_result.stat.exists
   become_user: "{{ user.name }}"
+  become: true
   block:
     - name: Install OMF repository
       git:

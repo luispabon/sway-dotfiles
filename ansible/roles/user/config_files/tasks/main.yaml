@@ -1,6 +1,7 @@
 ---
 - name: Install configs into ~/.config
   become_user: "{{ user.name }}"
+  become: true
   block:
     - name: Create ~/.config folder
       file:
@@ -23,6 +24,7 @@
 
 - name: Background images
   become_user: "{{ user.name }}"
+  become: true
   block:
     - name: Create ~/Pictures folder
       file:
@@ -34,9 +36,11 @@
       file:
         src: assets/backgrounds
         path: ~/Pictures/backgrounds
+        state: link
 
 - name: Fonts
   become_user: "{{ user.name }}"
+  become: true
   block:
     - name: Create fonts folder
       file:
