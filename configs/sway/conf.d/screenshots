@@ -1,20 +1,20 @@
-    # Current display to clipboard
-    bindsym Print exec grimshot --notify copy output
+# Current display to clipboard
+bindsym Print exec grimshot --notify copy output
 
-    # Current display to file
-    bindsym $mod+Print exec grimshot --notify save output
+# Current display to file
+bindsym $mod+Print exec grimshot --notify save output
 
-    # All displays to file
-    bindsym ctrl+alt+Print exec grimshot --notify save
+# All displays to file
+bindsym ctrl+alt+Print exec grimshot --notify save
 
-    # Current window to file
-    bindsym alt+Print exec grimshot --notify save active
+# Current window to file
+bindsym alt+Print exec grimshot --notify save active
 
-    # Current window to clipboard
-    bindsym alt+Print exec grimshot --notify copy active
+# Current window to clipboard
+bindsym alt+Print exec grimshot --notify copy active
 
-    # Region-select-screenshot to clipboard
-    bindsym ctrl+Print exec grimshot --notify copy area
+# Region-select-screenshot to clipboard
+bindsym ctrl+Print exec grimshot --notify copy area
 
-    # Region-select-screenshot to file
-    bindsym $mod+ctrl+Print exec grimshot --notify save area
+# Region-select-screenshot to file
+bindsym $mod+ctrl+Print exec grimshot --notify save area
