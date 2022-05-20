@@ -39,7 +39,6 @@ sudo apt install \
     python3-pip \
     gir1.2-playerctl-2.0 \
     units \
-    rofi \
     slurp \
     tlp \
     wl-clipboard \
@@ -91,8 +90,6 @@ echo -e "\n${start_green} Installing snap apps...${end_green}"
 sudo snap install chromium --channel latest/edge --classic
 sudo snap install youtube-dl
 sudo snap install spotify
-sudo snap install insomnia
-sudo snap install retroarch
 sudo snap install kubectl --classic
 sudo snap install google-cloud-sdk --classic
 sudo snap install code --classic
@@ -130,10 +127,9 @@ echo -e "\n${start_green} Setting longid config...${end_green}"
 
 sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf-bak
 sudo cp assets/logind.conf /etc/systemd/logind.conf
-sudo cp /etc/pulse/daemon.conf /etc/pulse/daemon.conf-bak
-sudo cp assets/etc-pulse-daemon.conf /etc/pulse/daemon.conf
 sudo cp assets/etc-sysctl.d-jetbrains-inotify.conf /etc/sysctl.d/99-jetbrains-inotify.conf
-sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/modprobe.d/audio-powersave.conf
+sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/vbox/networks.conf
+sudo cp assets/etc-vbox-networks.conf /etc/modprobe.d/audio-powersave.conf
 
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
@@ -174,11 +170,6 @@ sudo cp ${current}/swayfire /usr/bin/swayfire
 sudo cp ${current}/assets/ubuntu-wayfire.desktop /usr/share/wayland-sessions/
 sudo cp ${current}/assets/ubuntu-sway.desktop /usr/share/wayland-sessions/
 sudo cp ${current}/assets/ubuntu-sway-debug.desktop /usr/share/wayland-sessions/
-
-# Enable mpd to connect to pulseaudio
-mkdir -p ~/.config/pulse
-cp /etc/pulse/default.pa ~/.config/pulse/
-sed -i 's/^#load-module module-native-protocol-tcp$/load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1/g' ~/.config/pulse/default.pa
 
 # For autotiling git@github.com:nwg-piotr/autotiling.git
 pip3 install i3ipc
