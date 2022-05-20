@@ -16,5 +16,5 @@
 - name: Fix snap apps not showing in some launchers
   become: true
   copy:
-    src: assets/apps-bin-path.sh
-    dest: /etc/profile.d/apps-bin-path.sh
+    src: assets/snap-apps-fix.sh
+    dest: /etc/profile.d/snap-apps-fix.sh
