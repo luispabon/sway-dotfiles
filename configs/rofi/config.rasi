@@ -1,7 +1,8 @@
 configuration {
-  terminal: "kitty";
-  modi: "combi,window,drun";
-  combi-modi: "drun,window";
+  terminal: "terminator";
+  ssh-command: "{terminal} -e '{ssh-client} {host} [-p {port}]'";
+  modi: "combi,drun,ssh";
+  combi-modi: "drun";
   font: "Noto Sans Bold 10";
   show-icons: true;
   icon-theme: "Tela circle dark";
@@ -13,5 +14,7 @@ configuration {
   hide-scrollbar: true;
   sidebar-mode: false;
   auto-select: false;
-  theme: "~/sway/configs/rofi/themes/doom-one.rasi";
 }
+
+//@theme "/usr/local/share/rofi/themes/Indego.rasi"
+@theme "/usr/local/share/rofi/themes/Arc-Dark.rasi"
