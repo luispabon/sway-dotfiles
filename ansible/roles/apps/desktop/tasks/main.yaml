@@ -8,6 +8,7 @@
       - ca-certificates
       - cron
       - curl
+      - cups
       - direnv
       - gpg
       - jq
@@ -17,12 +18,27 @@
       - moreutils
       - nano
       - neofetch
-      - pulseadio
       - python3-pip
       - snapd
       - software-properties-common
       - units
       - wget
+
+- name: Install pipewire
+  become: true
+  apt:
+    state: present
+    pkg:
+      - libfdk-aac2
+      - libldacbt-abr2
+      - libldacbt-enc2
+      - libopenaptx0
+      - pipewire
+      - pipewire-audio-client-libraries
+      - pipewire-bin
+      - pipewire-pulse
+      - libspa-0.2-bluetooth
+      - wireplumber
 
 - name: Install desktop building blocks
   become: true
@@ -49,7 +65,7 @@
       - blueman
       - evolution
       - fonts-noto-core
-      - grub-customizer
+      - samba
 
 - name: Install desktop apps (apt, non-recommends)
   become: true
@@ -60,16 +76,25 @@
       - gdm3
       - gnome-control-center
       - gnome-calendar
-      - gnome-editor
+      - gnome-text-editor
       - gnome-online-accounts
       - gnome-terminal
       - gnome-tweaks
       - golang-go
       - libreoffice
       - nautilus
+      - nautilus-share
       - slack
+      - terminator
       - xwayland
-      - yarnpk
+
+- name: Clean up pulseaudio
+  become: true
+  apt:
+    state: absent
+    pkg:
+      - pulseaudio-module-bluetooth
+      - pulseaudio
 
 - name: Install snap apps (default channel; strict confinement)
   become: true
@@ -77,10 +102,8 @@
     state: present
     name:
       - authy
-      - retroarch
       - spotify
       - youtube-dl
-      - zoom-client
 
 - name: Install Chromium
   become: true
@@ -100,12 +123,14 @@
 - name: Azote
   become: true
   block:
-    - name: Add azote PPA
-      command: |
-        echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_20.04/ /' | tee /etc/apt/sources.list.d/azote.list
-        curl -fsSL https://download.opensuse.org/repositories/home:Head_on_a_Stick:azote/xUbuntu_20.04/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_Head_on_a_Stick_azote.gpg > /dev/null
-      args:
-        creates: /etc/apt/sources.list.d/azote.list
+    - name: Add azote PPA source
+      blockinfile:
+        create: true
+        dest: /etc/apt/sources.list.d/azote.list
+        block: deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/azote/xUbuntu_20.04/ /
+
+    - name: Add azote PPA keys
+      shell: curl -fsSL https://download.opensuse.org/repositories/home:Head_on_a_Stick:azote/xUbuntu_20.04/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_Head_on_a_Stick_azote.gpg > /dev/null
 
     - name: Install azote
       apt:
@@ -119,7 +144,8 @@
     - name: Ensure the PPA has the priority over the system package
       become: true
       blockinfile:
-        path: /etc/apt/preferences.d/firefox-apt-ppa
+        create: true
+        dest: /etc/apt/preferences.d/firefox-apt-ppa
         block: |
           Package: firefox
           Pin: release o=LP-PPA-mozillateam-firefox-next
