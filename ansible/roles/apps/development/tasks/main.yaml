@@ -12,6 +12,7 @@
       file:
         src: /usr/bin/yarnpkg
         dest: /usr/local/bin/yarn
+        state: link
 
 - name: Install IDEs & other tools via Snap
   become: true
@@ -29,6 +30,7 @@
 - name: Fix inotify limits for Jetbrains apps
   become: true
   blockinfile:
+    create: true
     path: /etc/sysctl.d/99-jetbrains-inotify.conf
     block: fs.inotify.max_user_watches = 524288
 
@@ -46,11 +48,13 @@
     state: present
     install_recommends: false
     pkg:
+      - vagrant
       - virtualbox-qt
 
 - name: Ensure virtualbox's private networks can be had on any IP range
   become: true
   blockinfile:
+    create: true
     path: /etc/vbox/networks.conf
     block: "* 0.0.0.0/0 ::/0"
 
@@ -65,7 +69,6 @@
       - lxd
       - docker
       - vboxusers
-      - microk8s
 
 - name: Install PHP
   become: true
