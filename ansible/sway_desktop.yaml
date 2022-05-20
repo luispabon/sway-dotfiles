@@ -5,11 +5,11 @@
   roles:
     - system/bootstrap
     - system/xps_9560_tweaks
+    - apps/desktop
+    - apps/development
     - user/creation
     - user/config_files
     - user/fish_shell
-    - apps/desktop
-    - apps/development
     - crontab
   vars:
     user_username: luis
