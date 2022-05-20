@@ -1,11 +1,11 @@
 - name: Check if build repo is present
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   stat:
     path: "~/Projects/sway_build"
   register: sway_build_folder
 
 - name: Build repository setup
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   when: not sway_build_folder.stat.exists
   block:
     - name: Create projects folder
@@ -36,8 +36,8 @@
     - name: Fix permissions
       file:
         path: "{{ sway_build_folder.stat.path }}"
-        owner: "{{ user_username }}"
-        group: "{{ user_username }}"
+        owner: "{{ user.name }}"
+        group: "{{ user.name }}"
         recurse: true
 
 - name: Set up sway & wayfire sessions

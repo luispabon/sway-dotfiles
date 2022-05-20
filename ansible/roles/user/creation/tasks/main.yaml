@@ -1,7 +1,8 @@
 - name: Create user
   become: true
   user:
-    name: "{{ user_username }}"
+    name: "{{ user.name }}"
+    password: "{{ user.password }}"
     create_home: true
     shell: /usr/bin/bash
     append: yes

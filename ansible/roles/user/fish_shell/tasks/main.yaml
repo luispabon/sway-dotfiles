@@ -10,7 +10,7 @@
 - name: Switch shell on user
   become: true
   user:
-    name: "{{ user_username }}"
+    name: "{{ user.name }}"
     shell: /usr/bin/fish
 
 - name: Check if OMF installed
@@ -20,7 +20,7 @@
 
 - name: Set up OMF (Oh My Fish)
   when: not omf_config_result.stat.exists
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   block:
     - name: Install OMF repository
       git:

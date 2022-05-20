@@ -1,3 +1,4 @@
 *.tar.gz
 *.tar.xz
 .vscode
+.ansible_vault_password

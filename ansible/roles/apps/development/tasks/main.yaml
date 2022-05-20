@@ -61,7 +61,7 @@
 - name: Ensure user can access docker & others
   become: true
   user:
-    name: "{{ user_username }}"
+    name: "{{ user.name }}"
     create_home: true
     shell: /usr/bin/bash
     append: yes

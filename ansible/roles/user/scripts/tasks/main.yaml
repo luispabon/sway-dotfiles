@@ -1,5 +1,5 @@
 - name: Create bin folder for user
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   file:
     path: ~/bin
     state: directory
@@ -11,7 +11,7 @@
   register: scripts
 
 - name: Create symlinks into ~/.config
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   file:
     src: "{{ item.path }}"
     path: "~/bin/{{ item.path | basename }}"
@@ -19,7 +19,7 @@
   with_items: "{{ scripts.files }}"
 
 - name: Add notify-send.sh
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.name }}"
   get_url:
     url: "{{ item }}"
     dest: "~/bin/{{ item | basename }}"

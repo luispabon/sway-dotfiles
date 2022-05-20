@@ -12,4 +12,7 @@
     - user/fish_shell
     - crontab
   vars:
-    user_username: luis
+    # Make sure you change your password on first login
+    user:
+      name: luis
+      password: password
