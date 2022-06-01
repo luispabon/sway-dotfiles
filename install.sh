@@ -125,11 +125,11 @@ sudo usermod -a -G input $(whoami)
 
 echo -e "\n${start_green} Setting longid config...${end_green}"
 
-sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf-bak
-sudo cp assets/logind.conf /etc/systemd/logind.conf
+sudo cp /etc/systemd/logind.conf                   /etc/systemd/logind.conf-bak
+sudo cp assets/logind.conf                         /etc/systemd/logind.conf
 sudo cp assets/etc-sysctl.d-jetbrains-inotify.conf /etc/sysctl.d/99-jetbrains-inotify.conf
-sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/vbox/networks.conf
-sudo cp assets/etc-vbox-networks.conf /etc/modprobe.d/audio-powersave.conf
+sudo cp assets/etc-modprobe-d-audio-powersave.conf /etc/modprobe.d/audio-powersave.conf
+sudo cp assets/etc-vbox-networks.conf              /etc/vbox/networks.conf
 
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
