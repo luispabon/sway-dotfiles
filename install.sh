@@ -34,6 +34,7 @@ sudo apt install \
     libnotify4 \
     libnotify-bin \
     moreutils \
+    pulsemixer \
     playerctl \
     powertop \
     python3-pip \
