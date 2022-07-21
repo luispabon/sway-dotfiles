@@ -8,6 +8,8 @@ sleep 0.05
 # Get the volume and check if muted or not (STATE):
 VOLUME=`pulsemixer --get-volume | awk '{ print $1 }'`
 
+# Future: get volume via "wpctl get-volume @DEFAULT_AUDIO_SINK@" and get rid of pulsemixer.
+
 STATE=`amixer -D pulse sget Master          | \
        egrep -m 1 'Playback.*?\[o' | \
        egrep -o '\[o.+\]'`
