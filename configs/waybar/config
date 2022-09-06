@@ -86,7 +86,8 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span>{volume:4}%",
+        "format": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}% - {desc}",
+        "format-bluetooth": "<span font='Font Awesome 5 Free 11'> {icon:2}</span> {volume:4}% - {desc}",
         "format-alt": "<span font='Font Awesome 5 Free 11'>{icon:2}</span> {volume:4}%",
         "format-alt-click": "click-right",
         "format-muted": "<span font='Font Awesome 5 Free 11'></span>",
