@@ -175,3 +175,7 @@ sudo cp ${current}/assets/ubuntu-sway-debug.desktop /usr/share/wayland-sessions/
 # For autotiling git@github.com:nwg-piotr/autotiling.git
 pip3 install i3ipc
 ln -sf ${current}/scripts/autotiling/autotiling.py ~/bin/
+
+# Reduce boot times
+sudo systemctl disable NetworkManager-wait-online.service
+sudo systemctl disable gpu-manager.service
