@@ -39,6 +39,8 @@ focus_follows_mouse no
 #
     bindsym alt+Tab exec ~/sway/scripts/Swytch/swytch.sh
 
+    bindsym $mod+ctrl+a exec ~/sway/scripts/audio_switch.sh
+
     # start a terminal
     bindsym $mod+Return exec $term
 
