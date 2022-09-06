@@ -28,7 +28,7 @@ set $term terminator
 
 # exec --no-startup-id libinput-gestures
 
-font pango:Ubuntu 12
+font pango:Ubuntu 11
 
 ### Focus
 focus_follows_mouse no
