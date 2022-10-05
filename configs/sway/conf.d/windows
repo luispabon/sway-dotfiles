@@ -26,8 +26,8 @@ client.focused           #be5046 #be5046 #ffffff #be5046   #be5046
 bindsym $mod+Shift+s sticky toggle
 
 # Wayland default floats
-for_window [app_id="gnome-(calendar|calculator|power-statistics|control-center)"] floating enable
-for_window [app_id="org.gnome.(Nautilus|Weather)"] floating enable
+for_window [app_id="gnome-(power-statistics)"] floating enable
+for_window [app_id="org.gnome.(Calculator|Calendar|Settings|Nautilus|Weather)"] floating enable
 for_window [app_id="(pavucontrol|psensor)"] floating enable
 for_window [app_id="evolution-alarm-notify"] floating enable
 for_window [app_id="nemo"] floating enable
