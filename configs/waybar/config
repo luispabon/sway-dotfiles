@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "hyprland"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
@@ -27,8 +27,12 @@
     },
     "clock": {
         "format": "{:%a %d %b - %H:%M}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+        //"tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
         "on-click": "gnome-calendar"
+    },
+    "hyprland/window": {
+        "format": "👉 {}",
+        "separate-outputs": true
     },
     "custom/cpu_speed": {
         "interval": 10,
@@ -120,7 +124,7 @@
         //"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
         "hwmon-path": "/sys/class/thermal/thermal_zone10/temp",
         //"on-click": "terminator -e 'watch -n1 sensors'"
-        "on-click": "psensor"
+        "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/weather": {
         "format": "{}",
