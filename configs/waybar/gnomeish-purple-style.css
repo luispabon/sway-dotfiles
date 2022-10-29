@@ -1,0 +1,133 @@
+* {
+    font-family: "Fira Sans SemiBold";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.87);
+}
+
+tooltip {
+	background: #2a2e38;
+	border-radius: 8px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #2a2e38;
+}
+
+#workspaces {
+	/* background-color: #2a2e38;
+	border-radius: 8px 0px 0px 15px;
+    margin-left: 10px;*/
+}
+
+#workspaces button {
+    padding: 5px 10px;
+    color: #bbc2cf;
+}
+
+#workspaces button.visible {
+    box-shadow: 2px 2px 6px 1px black;
+    color: #2a2e38;
+    background-color: #5a5d5f;
+    border-radius: 8px;
+}
+
+#workspaces button.focused.current_output {
+    box-shadow: 2px 2px 6px 1px black;
+    color: #ffffff;
+    background-color: #603487;
+    border-radius: 8px;
+}
+
+#workspaces button.urgent {
+    color: #6d4774;
+    background-color: #7bc275;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+	background-color: #5cEfFF;
+	color: white;
+	border-radius: 8px;
+}
+
+#workspaces button.focused:hover {
+    color: white;
+    background-color: yellow;
+}
+
+
+
+#clock,
+#backlight,
+#battery,
+#cpu,
+#custom-cpu_speed,
+#custom-mail,
+#custom-media,
+#custom-powermenu,
+#custom-spotify,
+#custom-storage,
+#custom-weather,
+#idle_inhibitor,
+#language,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces {
+	padding: 1px 10px;
+}
+
+
+
+#custom-powermenu {
+    /* color: #FCCE7B;
+    border-radius: 0px 15px 15px 0px;
+    margin-right: 10px; */
+}
+
+#battery {
+    color: #7bc275;
+}
+
+#battery.charging {
+    color: #7bc275;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #2a2e38;
+    color: #FCCE7B;
+}
+
+#custom-cpu_speed {
+	color: #C57BDB;
+	border-radius: 0px 0px 0px 0px;
+}
+
+#pulseaudio {
+	color: #4db5bd;
+}
+
+#custom-recorder {
+	font-size: 18px;
+	margin: 2px 7px 0px 7px;
+	color:#c9545d;
+}
+
+#custom-powermenu {
+    color:lightcoral;
+}
+
+#temperature {
+    color: lightpink;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
+}
