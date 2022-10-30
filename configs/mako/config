@@ -1,10 +1,10 @@
 font=Fira Sans
 background-color=#222222d0
-progress-color=#555555d0
+progress-color=#5f27cdd0
 icons=1
 padding=20
 width=450
-border-color=#555555d0
+border-color=#5f27cdd0
 border-size=3
 border-radius=8
 icon-path=/usr/share/icons/Yaru/

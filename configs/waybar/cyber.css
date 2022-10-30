@@ -7,14 +7,14 @@
 window#waybar {
     background: rgba(0, 0, 0, 0.87);
     border-width: 2px;
-    border-color: #9400ff;
+    border-color: #5f27cd;
     border-style: solid;
     border-radius: 6px;
     padding: 0;
 }
 
 button.focused {
-    background-color: #9400ff;
+    background-color: #5f27cd;
 }
 
 #workspaces {
@@ -34,7 +34,7 @@ button.focused {
 
 button:hover,
 #workspaces button:hover {
-    background: #9400ff;
+    background: #5f27cd;
 }
 
 button:hover {
@@ -50,7 +50,7 @@ button:hover {
 
 #workspaces button.focused.current_output {
     color: #ffffff;
-    background-color: #9400ff;
+    background-color: #5f27cd;
     border-radius: 0px;
 }
 

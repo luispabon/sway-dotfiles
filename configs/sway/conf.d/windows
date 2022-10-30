@@ -9,7 +9,7 @@ default_floating_border pixel 0
 hide_edge_borders smart
 
 # class                 border  backgr. text    indicator child_border
-client.focused           #9400ff #9400ff #ffffff #9400ff   #9400ff
+client.focused           #5f27cd #5f27cd #ffffff #5f27cd   #5f27cd
 #client.focused_inactive  #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 #client.unfocused         #5c6370 #3b3228 #ffffff #5c6370   #5c6370
 
