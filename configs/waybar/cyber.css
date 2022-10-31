@@ -1,7 +1,7 @@
 * {
     font-family: "Fira Sans SemiBold";
     font-size: 12px;
-    min-height: 20px;
+    min-height: 22px;
 }
 
 window#waybar {
@@ -10,7 +10,6 @@ window#waybar {
     border-color: #5f27cd;
     border-style: solid;
     border-radius: 0px;
-    padding: 0;
 }
 
 button.focused {
