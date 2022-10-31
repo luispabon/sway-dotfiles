@@ -12,12 +12,12 @@
         "disable-markup": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "<span font='Font Awesome 5 Free 11'> </span>",
-            "2": "<span font='Font Awesome 5 Free 11'> </span>",
-            "3": "<span font='Font Awesome 5 Free 11'> </span>",
-            "4": "<span font='Font Awesome 5 Free 11'> </span>",
-            "5": "<span font='Font Awesome 5 Free 11'> </span>",
-            "6": "<span font='Font Awesome 5 Free 11'> </span>"
+            "1": "1 <span font='Font Awesome 5 Free 11'> </span>",
+            "2": "2 <span font='Font Awesome 5 Free 11'> </span>",
+            "3": "3 <span font='Font Awesome 5 Free 11'> </span>",
+            "4": "4 <span font='Font Awesome 5 Free 11'> </span>",
+            "5": "5 <span font='Font Awesome 5 Free 11'> </span>",
+            "6": "6 <span font='Font Awesome 5 Free 11'> </span>"
         }
     },
     "sway/window": {
