@@ -2,7 +2,6 @@
 # exec --no-startup-id  ~/bin/autotiling.py
 
 #:::::::::disable_window_borders::::::::
-for_window [class="^.*"] border pixel 0
 default_border pixel 2
 default_floating_border pixel 0
 
