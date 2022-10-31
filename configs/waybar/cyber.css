@@ -9,7 +9,7 @@ window#waybar {
     border-width: 2px;
     border-color: #5f27cd;
     border-style: solid;
-    border-radius: 6px;
+    border-radius: 0px;
     padding: 0;
 }
 
@@ -44,7 +44,7 @@ button:hover {
 }
 
 #workspaces button.visible {
-    color: #2a2e38;
+    color: #bbc2cf;
     border-radius: 0px;
 }
 
@@ -88,14 +88,6 @@ button:hover {
 #window,
 #workspaces {
     padding: 1px 10px;
-}
-
-
-
-#custom-powermenu {
-    /* color: #FCCE7B;
-    border-radius: 0px 15px 15px 0px;
-    margin-right: 10px; */
 }
 
 #battery {
