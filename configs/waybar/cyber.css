@@ -37,6 +37,10 @@ button:hover,
     background: #5f27cd;
 }
 
+button {
+    border: 0px;
+}
+
 button:hover {
     border-radius: 0;
     box-shadow: none;
