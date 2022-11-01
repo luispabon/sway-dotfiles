@@ -11,6 +11,6 @@
     background-alt: #282A36FF;
     foreground:     #FFFFFFFF;
     selected:       #5f27cdFF;
-    active:         #50FA7BFF;
-    urgent:         #FF5555FF;
+    active:         rgb(54, 24, 116);
+    urgent:         rgb(138, 49, 49);
 }
