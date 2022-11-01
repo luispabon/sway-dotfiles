@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "hyprland"],
+    "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
@@ -23,11 +23,9 @@
     "sway/window": {
         "max-length": 60,
         "tooltip": false
-        // "format": "( {} )"
     },
     "clock": {
         "format": "{:%a %d %b - %H:%M}",
-        //"tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
         "on-click": "gnome-calendar"
     },
     "hyprland/window": {
@@ -55,7 +53,7 @@
         "format-icons": [""],
         "interval": 3600,
         "escape": true,
-        "on-click": "~/sway/scripts/wofi-power.sh"
+        "on-click": "~/sway/scripts/powermenu"
     },
     "custom/recorder": {
 		"format": "",
@@ -121,9 +119,7 @@
     },
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 9'></span> {temperatureC:3}°C",
-        //"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input",
         "hwmon-path": "/sys/class/thermal/thermal_zone10/temp",
-        //"on-click": "terminator -e 'watch -n1 sensors'"
         "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/weather": {
@@ -155,7 +151,7 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 14,
-        "icon-theme": "Numix-Circle",
+        "icon-theme": "Flat-Remix-Violet-Dark",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close"

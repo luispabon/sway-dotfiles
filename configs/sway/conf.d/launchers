@@ -7,4 +7,4 @@ bindsym $mod+D exec ~/sway/scripts/rofi.sh
 
 ## Power menu
 # bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
-bindsym $mod+P exec ~/sway/configs/rofi/scripts/powermenu_t1
+bindsym $mod+P exec ~/sway/scripts/powermenu
