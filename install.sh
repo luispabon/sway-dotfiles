@@ -34,6 +34,7 @@ sudo apt install \
     libnotify4 \
     libnotify-bin \
     moreutils \
+    mpc \
     pulsemixer \
     playerctl \
     powertop \

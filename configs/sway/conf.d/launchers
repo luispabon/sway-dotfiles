@@ -3,7 +3,8 @@ set $menu ulauncher-toggle
 
 # A fallback in case ulauncher stops working
 #bindsym $mod+D exec wofi --show drun --allow-images
-bindsym $mod+D exec rofi -show drun -show-icons
+bindsym $mod+D exec ~/sway/scripts/rofi.sh
 
 ## Power menu
-bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
+# bindsym $mod+P exec ~/sway/scripts/wofi-power.sh
+bindsym $mod+P exec ~/sway/configs/rofi/scripts/powermenu_t1
