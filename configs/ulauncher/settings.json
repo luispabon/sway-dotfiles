@@ -4,5 +4,5 @@
     "hotkey-show-app": "<Primary>space",
     "show-indicator-icon": false,
     "show-recent-apps": "8",
-    "theme-name": "adwaita"
+    "theme-name": "catppuccin-mocha"
 }
