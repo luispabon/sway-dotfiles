@@ -30,6 +30,7 @@
 .app {
     background-color: @window_bg;
     border-color: @window_border_color;
+    border-width: 2px;
 }
 
 .input {
