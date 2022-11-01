@@ -28,16 +28,18 @@ button.focused {
 #workspaces button {
     padding: 5px 15px 5px 10px;
     color: #bbc2cf;
-    border: 0px;
+    margin: 1px 0;
 }
+
 
 button:hover,
 #workspaces button:hover {
-    background: #5f27cd;
+    background: #2b125d;
 }
 
 button {
     border: 0px;
+    margin: 2px 0;
 }
 
 button:hover {
@@ -48,7 +50,10 @@ button:hover {
 
 #workspaces button.visible {
     color: #bbc2cf;
-    border-radius: 0px;
+    background-color: #2b125d;
+    border-radius: 0;
+    box-shadow: none;
+    border-width: 0px;
 }
 
 #workspaces button.focused.current_output {
@@ -65,7 +70,7 @@ button:hover {
 
 #workspaces button.focused:hover {
     color: white;
-    background-color: #8003d9;
+    background-color: #2b125d;
 }
 
 
