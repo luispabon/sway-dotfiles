@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Rofi Theme File
  * Rofi Version: 1.7.3
  **/
@@ -131,7 +131,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
@@ -206,7 +206,7 @@ element-icon {
 }
 element-text {
     background-color:            transparent;
-    text-color:                  inherit;
+    text-color:                  #ffffffff;
     highlight:                   inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
@@ -236,7 +236,7 @@ button {
 }
 button selected {
     background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    text-color:                  #ffffffff;
 }
 
 /*****----- Message -----*****/
