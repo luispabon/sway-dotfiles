@@ -7,7 +7,7 @@
  **/
 
 * {
-    background:     #1E1F29FF;
+    background:     rgb(18, 18, 18);
     background-alt: #282A36FF;
     foreground:     #FFFFFFFF;
     selected:       #5f27cdFF;
