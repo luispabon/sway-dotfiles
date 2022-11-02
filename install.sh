@@ -89,7 +89,7 @@ sudo apt install \
 sudo rm -f /etc/apt/sources.list.d/google-chrome-unstable.list*
 
 echo -e "\n${start_green} Installing snap apps...${end_green}"
-sudo snap install chromium --channel latest/edge --classic
+sudo snap install chromium --channel latest/edge
 sudo snap install youtube-dl
 sudo snap install spotify
 sudo snap install kubectl --classic
@@ -168,6 +168,7 @@ ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session
+sudo mkdir -p /usr/share/wayland-sessions/
 sudo cp ${current}/ssway /usr/bin/ssway
 sudo cp ${current}/swayfire /usr/bin/swayfire
 sudo cp ${current}/assets/ubuntu-wayfire.desktop /usr/share/wayland-sessions/
