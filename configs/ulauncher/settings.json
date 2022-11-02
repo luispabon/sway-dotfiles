@@ -3,7 +3,7 @@
     "clear-previous-query": true,
     "disable-desktop-filters": false,
     "hotkey-show-app": "<Primary>space",
-    "show-indicator-icon": true,
+    "show-indicator-icon": false,
     "show-recent-apps": "8",
     "theme-name": "catppuccin-mocha"
 }
