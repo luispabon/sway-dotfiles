@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Fira Sans 12";
+    font: "Fira Sans 11";
 }
