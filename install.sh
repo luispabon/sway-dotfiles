@@ -27,7 +27,6 @@ sudo apt install \
     htop \
     jq \
     grim \
-    grub-customizer \
     libglib2.0-bin \
     libmpdclient2 \
     libnl-3-200 \
@@ -35,7 +34,6 @@ sudo apt install \
     libnotify-bin \
     moreutils \
     mpc \
-    pulsemixer \
     playerctl \
     powertop \
     python3-pip \
@@ -64,6 +62,7 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
 sudo add-apt-repository -y ppa:daniruiz/flat-remix
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo add-apt-repository -y ppa:solaar-unifying/stable
+sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
 
 # Install chrome (installs both chrome stable + repository)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -77,9 +76,9 @@ touch ~/.azotebg
 
 # Install all the rest of them things
 sudo apt install \
-    azote \
-    google-chrome-unstable \
     flat-remix \
+    grub-customizer \
+    google-chrome-unstable \
     firefox \
     firefox-trunk \
     solaar \
