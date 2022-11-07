@@ -1,6 +1,6 @@
 #!/bin/bash
 
-laptop_speakers="alsa_output.pci-0000_00_1f.3.analog-stereo"
+laptop_speakers=`pactl list short sinks | grep pci | grep analog-stereo | awk 'BEGIN {FS="\t"}; {print $2}'`
 bose_headphones="bluez_output.78_2B_64_16_45_95.1"
 
 current_sink=`pactl get-default-sink`
