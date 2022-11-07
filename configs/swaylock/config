@@ -10,7 +10,7 @@ screenshots
 fade-in=0.2
 
 effect-blur=30x2
-effect-greyscale
+#effect-greyscale
 effect-scale=0.1
 
 indicator
