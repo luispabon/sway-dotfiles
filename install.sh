@@ -181,3 +181,8 @@ ln -sf ${current}/scripts/autotiling/autotiling.py ~/bin/
 # Reduce boot times
 sudo systemctl disable NetworkManager-wait-online.service
 sudo systemctl disable gpu-manager.service
+
+# Gnome Online Accounts workaround after suspend
+sudo cp assets/gnome-online-accounts.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable gnome-online-accounts.service
