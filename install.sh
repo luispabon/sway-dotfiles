@@ -23,6 +23,7 @@ sudo apt install \
     fish \
     direnv \
     thefuck \
+    lxpolkit \
     fonts-noto-core \
     htop \
     jq \
@@ -59,7 +60,7 @@ echo -e "\n${start_green} Installing third party PPAs and apps...${end_green}"
 # PPAs
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
-sudo add-apt-repository -y ppa:daniruiz/flat-remix
+# sudo add-apt-repository -y ppa:daniruiz/flat-remix
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo add-apt-repository -y ppa:solaar-unifying/stable
 sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
@@ -76,9 +77,8 @@ touch ~/.azotebg
 
 # Install all the rest of them things
 sudo apt install \
-    flat-remix \
     grub-customizer \
-    google-chrome-unstable \
+    google-chrome-stable \
     firefox \
     firefox-trunk \
     solaar \
@@ -142,7 +142,7 @@ fi
 
 echo -e "\n${start_green} Linking sway config folders into ~/.config... ${end_green}"
 
-folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "configs/mako" "assets/icons" "configs/swaylock" "configs/mpv" "configs/environment.d" "configs/xdg-desktop-portal-wlr")
+folders_to_linky=("configs/sway" "configs/waybar" "configs/kanshi" "configs/rofi" "configs/mako" "assets/icons" "configs/swaylock" "configs/mpv" "configs/environment.d" "configs/xdg-desktop-portal-wlr" "configs/ulauncher")
 for folder in ${folders_to_linky[@]}; do
     if [[ ! -e "${HOME}/.config/${folder}" ]]; then
         ln -sf ${PWD}/${folder}/ "${HOME}/.config/"
