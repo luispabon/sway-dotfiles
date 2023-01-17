@@ -23,6 +23,9 @@ exec dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # End of workaround
 
+# Polkit: privilege escalation dialog
+exec lxpolkit
+
 # Workaround: zombie vscode leftover from a previous killed sway session
 exec pkill code
 # End of workaround
