@@ -1,3 +1,14 @@
 28 17 * * MON-FRI nice -n19 /usr/bin/find /home/luis \! -user luis -print0 | /usr/bin/xargs -0 -n1 /usr/bin/chown luis:luis
 45 17 * * MON-FRI nice -n19 journalctl --vacuum-size=500M
 # */5 * * * * pgrep -af '/docker($| )' || (docker ps -q | grep . ||	 (systemctl stop docker &&	 ip -brief link show | awk '{ print $1 }' |   grep -E '^(docker0|br-[0-9a-f]{12})$' | xargs -INAME ip link set dev NAME down ) )
+
+# ZFS backup to the vault
+0 16 * * 1 truncate -s1048576 /var/log/zfs_zroot_root_vault_backup.log
+0 16 * * 1 truncate -s1048576 /var/log/zfs_zroot_home_vault_backup.log
+0 16 * * 1 truncate -s1048576 /var/log/zfs_zroot_storage_vault_backup.log
+
+# Back up select datasheets to NAS
+# The sendoptions=w argument ensures datasets are sent raw, which keeps them encrypted with our local key
+0  17 * * MON-FRI nice -n19 syncoid --sendoptions="w" -r --no-sync-snap zroot/ROOT    vault:backups/luis-xps/zroot/ROOT    > /var/log/zfs_zroot_root_vault_backup.log    2>&1
+5  17 * * MON-FRI nice -n19 syncoid --sendoptions="w" -r --no-sync-snap zroot/home    vault:backups/luis-xps/zroot/home    > /var/log/zfs_zroot_home_vault_backup.log    2>&1
+15 17 * * MON-FRI nice -n19 syncoid --sendoptions="w" -r --no-sync-snap zroot/storage vault:backups/luis-xps/zroot/storage > /var/log/zfs_zroot_storage_vault_backup.log 2>&1
