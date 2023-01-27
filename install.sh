@@ -29,6 +29,7 @@ sudo apt install \
     jq \
     grim \
     libglib2.0-bin \
+    libinput-tools \
     libmpdclient2 \
     libnl-3-200 \
     libnotify4 \
@@ -60,7 +61,7 @@ echo -e "\n${start_green} Installing third party PPAs and apps...${end_green}"
 # PPAs
 sudo add-apt-repository -y ppa:mozillateam/firefox-next
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/ppa
-# sudo add-apt-repository -y ppa:daniruiz/flat-remix
+sudo add-apt-repository -y ppa:daniruiz/flat-remix
 sudo add-apt-repository -y ppa:agornostal/ulauncher
 sudo add-apt-repository -y ppa:solaar-unifying/stable
 sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
@@ -133,6 +134,14 @@ sudo cp assets/etc-modprobe-d-audio-powersave.conf  /etc/modprobe.d/audio-powers
 sudo cp assets/etc-vbox-networks.conf               /etc/vbox/networks.conf
 sudo cp assets/etc-apt-preferencesd-firefox-apt-ppa /etc/apt/preferences.d/firefox-apt-ppa
 
+# Disable unattended-upgrades from updating firefox
+cat <<EOF | sudo tee /etc/apt/apt.conf.d/99unattended-upgrades-firefox
+Unattended-Upgrade::Package-Blacklist {
+    // Disable unattended firefox upgrades to avoid undesired forced restarts
+    "firefox";
+};
+EOF
+
 echo -e "\n${start_green} Fixing snap apps in menu... ${end_green}"
 
 snap_apps_fix=/etc/profile.d/apps-bin-path.sh
@@ -164,6 +173,7 @@ ln -sf ${current}/scripts/network-manager                          ~/bin/
 ln -sf ${current}/scripts/docker                                   ~/bin/
 ln -sf ${current}/scripts/screenshots.sh                           ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
+ln -sf ${current}/nextmeeting/nextmeeting                          ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session
