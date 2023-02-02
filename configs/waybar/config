@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window", "custom/agenda"],
+    "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window"],
     //"modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "custom/agenda"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
