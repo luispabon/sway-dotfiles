@@ -15,6 +15,7 @@ mkdir -p ~/logs
 echo -e "\n${start_green} Installing base apps...${end_green}"
 sudo apt install \
     ack \
+    alsa-utils \
     bash \
     blueman \
     brightnessctl \
@@ -25,7 +26,9 @@ sudo apt install \
     thefuck \
     lxpolkit \
     fonts-noto-core \
+    gvfs-fuse \
     htop \
+    intel-gpu-tools \
     jq \
     grim \
     libglib2.0-bin \
@@ -34,10 +37,12 @@ sudo apt install \
     libnl-3-200 \
     libnotify4 \
     libnotify-bin \
+    libspa-0.2-bluetooth \
     moreutils \
     mpc \
     playerctl \
     powertop \
+    pulsemixer \
     python3-pip \
     gir1.2-playerctl-2.0 \
     units \
