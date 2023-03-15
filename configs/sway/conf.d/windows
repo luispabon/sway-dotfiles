@@ -42,7 +42,7 @@ for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating ena
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
 for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
-for_window [app_id="telegramdesktop"] floating enable
+for_window [app_id="telegram-desktop_telegram-desktop"] floating enable
 
 # Brave, chrome, chromium
 for_window [title="Picture-in-picture"] floating enable
