@@ -120,7 +120,7 @@
     },
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 9'></span> {temperatureC:3}°C",
-        "hwmon-path": "/sys/class/thermal/thermal_zone10/temp",
+        "hwmon-path": "/sys/class/thermal/thermal_zone11/temp",
         "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/weather": {
