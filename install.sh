@@ -18,6 +18,7 @@ sudo apt install \
     alsa-utils \
     bash \
     blueman \
+    bolt \
     brightnessctl \
     curl \
     evolution \
@@ -138,6 +139,10 @@ sudo cp assets/etc-sysctl.d-jetbrains-inotify.conf  /etc/sysctl.d/99-jetbrains-i
 sudo cp assets/etc-modprobe-d-audio-powersave.conf  /etc/modprobe.d/audio-powersave.conf
 sudo cp assets/etc-vbox-networks.conf               /etc/vbox/networks.conf
 sudo cp assets/etc-apt-preferencesd-firefox-apt-ppa /etc/apt/preferences.d/firefox-apt-ppa
+
+# Ensure containers DNS is independent of my home DNS
+sudo mkdir -p /etc/docker
+sudo cp assets/etc-docker-daemon.json /etc/docker/daemon.json
 
 # Disable unattended-upgrades from updating firefox
 cat <<EOF | sudo tee /etc/apt/apt.conf.d/99unattended-upgrades-firefox
