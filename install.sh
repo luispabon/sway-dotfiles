@@ -185,7 +185,6 @@ ln -sf ${current}/scripts/network-manager                          ~/bin/
 ln -sf ${current}/scripts/docker                                   ~/bin/
 ln -sf ${current}/scripts/screenshots.sh                           ~/bin/
 ln -sf ${current}/notify-send.sh/notify-*.sh                       ~/bin/
-ln -sf ${current}/nextmeeting/nextmeeting                          ~/bin/
 ln -sf ${current}/ssway                                            ~/bin/
 
 # Install login session

@@ -2,7 +2,6 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window"],
-    //"modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "custom/agenda"],
     "modules-center": ["clock"],
     "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
@@ -156,15 +155,5 @@
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close"
-    },
-    "custom/agenda": {
-        "format": "{}",
-        "exec": "size=30;swaymsg -t get_outputs -p |grep -q 'Current mode: 3440x1440' && size=80; nextmeeting --max-title-length ${size} --waybar",
-        "on-click": "nextmeeting --open-meet-url",
-        "on-click-right": "kitty --class=GClock -- /bin/bash -c \"batz;echo;cal -3;echo;nextmeeting;read;\";",
-        "interval": 59,
-        "return-type": "json",
-        "tooltip": "true",
-        "tooltip-format": "{tooltip}",
     },
 }
