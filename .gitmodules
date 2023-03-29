@@ -7,6 +7,3 @@
 [submodule "scripts/autotiling"]
 	path = scripts/autotiling
 	url = git@github.com:nwg-piotr/autotiling.git
-[submodule "nextmeeting"]
-	path = nextmeeting
-	url = https://github.com/chmouel/nextmeeting.git
