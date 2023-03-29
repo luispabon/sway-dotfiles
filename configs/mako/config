@@ -1,13 +1,13 @@
-font=Fira Sans
+font=Noto 11
 background-color=#222222d0
 progress-color=#5f27cdd0
 icons=1
-padding=20
+padding=16
 width=450
 border-color=#5f27cdd0
 border-size=2
-margin=10
-border-radius=6
+margin=8
+border-radius=4
 icon-path=/usr/share/icons/Yaru/
 actions=1
 default-timeout=3333
