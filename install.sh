@@ -32,6 +32,7 @@ sudo apt install \
     intel-gpu-tools \
     jq \
     grim \
+    libfdk-aac2 \
     libglib2.0-bin \
     libinput-tools \
     libmpdclient2 \
@@ -139,6 +140,7 @@ sudo cp assets/etc-sysctl.d-jetbrains-inotify.conf  /etc/sysctl.d/99-jetbrains-i
 sudo cp assets/etc-modprobe-d-audio-powersave.conf  /etc/modprobe.d/audio-powersave.conf
 sudo cp assets/etc-vbox-networks.conf               /etc/vbox/networks.conf
 sudo cp assets/etc-apt-preferencesd-firefox-apt-ppa /etc/apt/preferences.d/firefox-apt-ppa
+sudo cp assets/etc-apt-preferencesd-disable-grub    /etc/apt/preferences.d/disable-grub
 
 # Ensure containers DNS is independent of my home DNS
 sudo mkdir -p /etc/docker
@@ -206,3 +208,7 @@ sudo systemctl disable gpu-manager.service
 sudo cp assets/gnome-online-accounts.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable gnome-online-accounts.service
+
+# Tweak systemd boot & shutdown not to hang on stuck services for too long
+sudo sed --in-place=bak1 's/#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g' /etc/systemd/system.conf
+sudo sed --in-place=bak2 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=15s/g'   /etc/systemd/system.conf

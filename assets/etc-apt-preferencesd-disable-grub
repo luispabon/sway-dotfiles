@@ -1,0 +1,3 @@
+Package: grub-pc
+Pin: release *
+Pin-Priority: -1
