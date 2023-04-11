@@ -48,13 +48,6 @@
         "last_commit": "0ad36c00a888e687b4bfbf76f266f1000040b337",
         "last_commit_time": "2019-07-11T06:53:31"
     },
-    "com.github.brpaz.ulauncher-jetbrains": {
-        "id": "com.github.brpaz.ulauncher-jetbrains",
-        "url": "https://github.com/brpaz/ulauncher-jetbrains",
-        "updated_at": "2022-11-01T15:38:14.510423",
-        "last_commit": "813b94421424b1195bd39d76677b0b5483e76b1e",
-        "last_commit_time": "2022-06-13T15:48:58"
-    },
     "com.github.rdnetto.ulauncher-sway": {
         "id": "com.github.rdnetto.ulauncher-sway",
         "url": "https://github.com/rdnetto/ulauncher-sway",
@@ -82,5 +75,19 @@
         "updated_at": "2021-08-06T12:43:36.977055",
         "last_commit": "6807ebe6047462bcce6063c63228eddcb8c6b481",
         "last_commit_time": "2020-02-22T23:04:04"
+    },
+    "com.github.zakuciael.ulauncher-jetbrains-reloaded": {
+        "id": "com.github.zakuciael.ulauncher-jetbrains-reloaded",
+        "url": "https://github.com/zakuciael/ulauncher-jetbrains-reloaded",
+        "updated_at": "2023-03-29T15:09:13.604947",
+        "last_commit": "f6ee473c216881568ecaa3c31c326094ad1d7ba7",
+        "last_commit_time": "2022-07-09T16:17:10"
+    },
+    "com.github.brpaz.ulauncher-aws": {
+        "id": "com.github.brpaz.ulauncher-aws",
+        "url": "https://github.com/brpaz/ulauncher-aws",
+        "updated_at": "2023-03-29T15:37:37.938971",
+        "last_commit": "1b62f4538eef8d6954229d34812b9d4c7d329fdb",
+        "last_commit_time": "2022-09-17T09:20:26"
     }
 }
