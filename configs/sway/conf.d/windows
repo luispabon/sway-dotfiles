@@ -34,9 +34,12 @@ for_window [app_id="solaar"] floating enable
 for_window [app_id="evolution" title="Compose Message"] floating enable
 for_window [app_id="evolution" title="Re(.*)"] floating enable
 for_window [app_id="evolution" title="Fwd(.*)"] floating enable
-for_window [app_id="mpv"] floating enable
-for_window [app_id="mpv"] resize set 960 540
-for_window [app_id="mpv"] border pixel 0
+for_window [app_id="(mpv|com\.github\.rafostar\.Clapper)"] floating enable
+for_window [app_id="(mpv|com\.github\.rafostar\.Clapper)"] resize set 960 540
+for_window [app_id="(mpv|com\.github\.rafostar\.Clapper)"] border pixel 0
+
+
+
 for_window [app_id="firefox" title="Pushbullet"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
@@ -58,3 +61,15 @@ for_window [title="Twilio Authy"] border pixel 2
 
 # XWayland default floats
 #for_window [class="[.]*"] floating enable
+
+# Launch specific apps on specific workspaces
+assign [app_id="firefox"] → workspace 1
+assign [app_id="chromium"] → workspace 1
+assign [class="jetbrains-(.*)"] → workspace 3
+assign [class="Code"] → workspace 3
+assign [app_id="code-url-handler"] → workspace 3
+assign [app_id="evolution"] → workspace 4
+assign [class="Slack"] → workspace 5
+assign [class="Spotify"] → workspace 6
+assign [class="Jellyfin(.*)"] → workspace 6
+assign [app_id="virt-manager"] → workspace 7
