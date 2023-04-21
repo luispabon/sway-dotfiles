@@ -6,16 +6,14 @@
 sleep 0.05
 
 # Get the volume and check if muted or not (STATE):
-VOLUME=`pulsemixer --get-volume | awk '{ print $1 }'`
+VOLUME=`pamixer --get-volume`
 
 # Future: get volume via "wpctl get-volume @DEFAULT_AUDIO_SINK@" and get rid of pulsemixer.
 
-STATE=`amixer -D pulse sget Master          | \
-       egrep -m 1 'Playback.*?\[o' | \
-       egrep -o '\[o.+\]'`
+IS_MUTE=`pamixer --get-mute`
 
 # Have a different symbol for varying volume levels:
-if [[ $STATE != '[off]' ]]; then
+if [[ $IS_MUTE == 'false' ]]; then
         if [ "${VOLUME}" == "0" ]; then
                 ICON=~/.config/icons/vol-mute.png
         elif [ "${VOLUME}" -lt "33" ] && [ $VOLUME -gt "0" ]; then

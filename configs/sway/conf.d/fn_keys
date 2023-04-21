@@ -1,7 +1,7 @@
 # Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id bash -c "amixer -D pulse sset Master 5%+; ~/sway/scripts/notifications/audio-notification.sh"
-bindsym XF86AudioLowerVolume exec --no-startup-id bash -c "amixer -D pulse sset Master 5%-; ~/sway/scripts/notifications/audio-notification.sh"
-bindsym XF86AudioMute exec --no-startup-id bash -c "amixer -D pulse sset Master toggle; ~/sway/scripts/notifications/audio-notification.sh"
+bindsym XF86AudioRaiseVolume exec --no-startup-id bash -c "pamixer --increase 5; ~/sway/scripts/notifications/audio-notification.sh"
+bindsym XF86AudioLowerVolume exec --no-startup-id bash -c "pamixer --decrease 5; ~/sway/scripts/notifications/audio-notification.sh"
+bindsym XF86AudioMute exec --no-startup-id bash -c "pamixer -t; ~/sway/scripts/notifications/audio-notification.sh"
 
 # MPRIS controls
 bindsym --locked XF86AudioPlay exec playerctl play-pause

@@ -15,7 +15,6 @@ mkdir -p ~/logs
 echo -e "\n${start_green} Installing base apps...${end_green}"
 sudo apt install \
     ack \
-    alsa-utils \
     bash \
     blueman \
     bolt \
@@ -42,6 +41,7 @@ sudo apt install \
     libspa-0.2-bluetooth \
     moreutils \
     mpc \
+    pamixer \
     playerctl \
     powertop \
     pulsemixer \
