@@ -45,6 +45,7 @@ sudo apt install \
     playerctl \
     powertop \
     pulsemixer \
+    pulseaudio-utils \
     python3-pip \
     gir1.2-playerctl-2.0 \
     units \
