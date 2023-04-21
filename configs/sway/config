@@ -62,7 +62,7 @@ focus_follows_mouse no
 
     # Audio config
     # bindsym $mod+Shift+a exec pavucontrol
-    bindsym $mod+Shift+a exec gnome-control-center sound
+    bindsym $mod+Shift+a exec pavucontrol
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
