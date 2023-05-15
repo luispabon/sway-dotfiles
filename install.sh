@@ -49,6 +49,7 @@ sudo apt install \
     python3-pip \
     gir1.2-playerctl-2.0 \
     units \
+    sanoid \
     slurp \
     tlp \
     wl-clipboard \
@@ -142,6 +143,9 @@ sudo cp assets/etc-modprobe-d-audio-powersave.conf  /etc/modprobe.d/audio-powers
 sudo cp assets/etc-vbox-networks.conf               /etc/vbox/networks.conf
 sudo cp assets/etc-apt-preferencesd-firefox-apt-ppa /etc/apt/preferences.d/firefox-apt-ppa
 sudo cp assets/etc-apt-preferencesd-disable-grub    /etc/apt/preferences.d/disable-grub
+
+mkdir -p /etc/sanoid/sanoid.conf
+sudo cp assets/etc-sanoid-sanoid.conf /etc/sanoid/sanoid.conf
 
 # Ensure containers DNS is independent of my home DNS
 sudo mkdir -p /etc/docker
