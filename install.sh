@@ -204,11 +204,6 @@ ln -sf ${current}/scripts/autotiling/autotiling.py ~/bin/
 sudo systemctl disable NetworkManager-wait-online.service
 sudo systemctl disable gpu-manager.service
 
-# Gnome Online Accounts workaround after suspend
-sudo cp assets/gnome-online-accounts.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable gnome-online-accounts.service
-
 # Tweak systemd boot & shutdown not to hang on stuck services for too long
 sudo sed --in-place=bak1 's/#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g' /etc/systemd/system.conf
 sudo sed --in-place=bak2 's/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=15s/g'   /etc/systemd/system.conf
