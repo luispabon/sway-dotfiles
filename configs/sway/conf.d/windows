@@ -72,4 +72,5 @@ assign [app_id="evolution"] → workspace 4
 assign [class="Slack"] → workspace 5
 assign [class="Spotify"] → workspace 6
 assign [class="Jellyfin(.*)"] → workspace 6
+assign [app_id="org.jellyfin.jellyfinmediaplayer"] → workspace 6
 assign [app_id="virt-manager"] → workspace 7
