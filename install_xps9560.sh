@@ -13,6 +13,11 @@ sudo cp assets/xps-powersave.service /etc/systemd/system
 sudo cp assets/xps-powersave-service.sh /usr/bin/
 sudo systemctl enable xps-powersave
 
+sudo cp assets/powertop/powertop-xps9560.service /etc/systemd/system
+sudo cp assets/powertop/powertop-xps9560.sh /usr/local/bin
+sudo systemctl enable powertop-xps9560
+sudo systemctl start powertop-xps9560
+
 # sudo cp assets/nvidia-power.service /etc/systemd/system/
 # sudo systemctl enable nvidia-power
 

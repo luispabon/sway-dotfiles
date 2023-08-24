@@ -1,0 +1,9 @@
+[Unit]
+Description=Extend the battery life of laptop
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/powertop-xps9560.sh
+
+[Install]
+WantedBy=multi-user.target
