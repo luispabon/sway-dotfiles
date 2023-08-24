@@ -1,4 +1,4 @@
-exec_always bash -c "pkill waybar; waybar"
+exec_always bash -c "pkill waybar; cp ~/logs/waybar.log ~/logs/waybar-old.log && waybar > ~/logs/waybar.log 2>&1"
 
 exec blueman-applet
 exec nm-applet
