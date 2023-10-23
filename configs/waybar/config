@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/notification", "custom/powermenu"],
+    "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -125,11 +125,11 @@
         "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/temperature": {
-        "return-type": "json",
+        // "return-type": "json",
         "exec": "sensors -j|jq '.\"coretemp-isa-0000\".\"Package id 0\".temp1_input'",
         "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>  {}",
         "format-icons": ["🌡"],
-        "interval": 3600,
+        "interval": 5,
         "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/weather": {

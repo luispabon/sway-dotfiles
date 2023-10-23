@@ -84,6 +84,7 @@ button:hover {
 #custom-powermenu,
 #custom-spotify,
 #custom-storage,
+#custom-temperature,
 #custom-weather,
 #idle_inhibitor,
 #language,
@@ -130,7 +131,7 @@ button:hover {
     color: lightcoral;
 }
 
-#temperature {
+#temperature, #custom-temperature {
     color: lightpink;
 }
 
