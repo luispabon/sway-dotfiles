@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "wlr/taskbar", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/powermenu"],
+    "modules-right": ["custom/recorder","sway/language", "tray", "idle_inhibitor", "pulseaudio", "temperature", "custom/cpu_speed", "battery", "custom/notification", "custom/powermenu"],
     "sway/mode": {
         "format": " {}"
     },
@@ -74,7 +74,7 @@
             "critical": 10
         },
         "tooltip": false,
-        "on-click": "gnome-power-statistics"
+        "on-click": "2"
     },
     "network": {
         "format": "{icon}",
@@ -120,6 +120,16 @@
     "temperature": {
         "format": "<span font='Font Awesome 5 Free 9'></span> {temperatureC:3}°C",
         "hwmon-path": "/sys/class/thermal/thermal_zone11/temp",
+        // "hwmon-path": "/sys/class/hwmon/hwmon7/temp1_input",
+        // "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+        "on-click": "terminator -e 'watch -n1 sensors'"
+    },
+    "custom/temperature": {
+        "return-type": "json",
+        "exec": "sensors -j|jq '.\"coretemp-isa-0000\".\"Package id 0\".temp1_input'",
+        "format": "<span font='Font Awesome 5 Free 9'>{icon}</span>  {}",
+        "format-icons": ["🌡"],
+        "interval": 3600,
         "on-click": "terminator -e 'watch -n1 sensors'"
     },
     "custom/weather": {
@@ -156,4 +166,24 @@
         "on-click": "activate",
         "on-click-middle": "close"
     },
+    "custom/notification": {
+        "tooltip": false,
+        "format": " {} {icon} ",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-none": "",
+          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+      },
 }

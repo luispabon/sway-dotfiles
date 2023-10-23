@@ -137,3 +137,7 @@ button:hover {
 #temperature.critical {
     background: #eb4d4b;
 }
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+  }
