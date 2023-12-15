@@ -16,9 +16,9 @@ IS_MUTE=`pamixer --get-mute`
 if [[ $IS_MUTE == 'false' ]]; then
         if [ "${VOLUME}" == "0" ]; then
                 ICON=~/.config/icons/vol-mute.png
-        elif [ "${VOLUME}" -lt "33" ] && [ $VOLUME -gt "0" ]; then
+        elif [ "${VOLUME}" -lt "33" ]; then
                 ICON=~/.config/icons/vol-low.png
-        elif [ "${VOLUME}" -lt "90" ] && [ $VOLUME -ge "33" ]; then
+        elif [ "${VOLUME}" -lt "90" ]; then
                 ICON=~/.config/icons/vol-med.png
         else
                 ICON=~/.config/icons/vol-high.png
