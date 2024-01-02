@@ -1,3 +1,5 @@
+## Archived & deprecated - moved everything to https://github.com/luispabon/dotfiles
+
 # Sway dotfiles
 
 This is my sway configuration, together with scripts and assets required to make it work.
