@@ -1,4 +1,4 @@
-## Archived & deprecated - moved everything to https://github.com/luispabon/dotfiles
+## Archived & deprecated - everything moved to https://github.com/luispabon/dotfiles
 
 # Sway dotfiles
 
